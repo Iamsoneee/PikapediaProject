@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecc22e;
+  color: white;
+}
+
+#contents-area {
+  background-color: rgb(172, 215, 215);
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#pikapedia-logo {
+  width: 11.25em;
+  height: 3em;
+}
+
+.header-icons img {
+  width: 1em;
+}
+
+article {
+  border: 1px solid blue;
+  width: 100%;
+  height: 100vh;
+}
+
+.pokemon-main {
+  border: 1px solid red;
+  height: 100vh;
+  width: 80%;
+}
