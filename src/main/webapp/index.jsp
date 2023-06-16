@@ -50,7 +50,7 @@ pageEncoding="UTF-8"%>
         <li><a href="./jsp/quizHome.jsp">Quiz</a></li>
         <li><a href="myRewardsC">My Rewards</a></li>
         <li><a href="./jsp/community.jsp">Community</a></li>
-        <li><a href="./jsp/login.jsp">Login</a></li>
+        <li><a href="loginC">Login</a></li>
         <li><a href="./jsp/join.jsp">Join</a></li>
       </ul>
     </header>

@@ -9,6 +9,5 @@
 </head>
 <body>
 	<h1>My Rewards Page</h1>
-	<div id="container"></div>
 </body>
 </html>
