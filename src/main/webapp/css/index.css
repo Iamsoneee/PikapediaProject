@@ -27,10 +27,13 @@ article {
   height: 100vh;
 }
 
+/* Header Area */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 7.75em;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0.5em 0.75em;
   font-size: 1em;
@@ -67,4 +70,10 @@ article {
 
 .drop-menu li a {
   color: white;
+}
+
+/* Footer Area */
+
+.footer {
+  height: 9.375em;
 }
