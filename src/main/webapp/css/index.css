@@ -10,28 +10,6 @@ body {
   color: white;
 }
 
-#contents-area {
-  background-color: rgb(172, 215, 215);
-  height: 100vh;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.5em 0.75em;
-}
-
-#pikapedia-logo {
-  width: 11.25em;
-  height: 3em;
-}
-
-.header-icons img {
-  width: 1em;
-}
-
 article {
   border: 1px solid blue;
   width: 100%;
@@ -42,4 +20,60 @@ article {
   border: 1px solid red;
   height: 100vh;
   width: 80%;
+}
+
+#contents-area {
+  background-color: rgb(172, 215, 215);
+  height: 100vh;
+}
+
+/* Header Area */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7.75em;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5em 0.75em;
+  font-size: 1em;
+}
+
+#pikapedia-logo {
+  width: 11.25em;
+  height: 3em;
+}
+
+.menu-area {
+  display: flex;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.header-icons li {
+  padding: 0.5em 0.75em;
+}
+
+.header-icons img {
+  width: 1em;
+}
+
+.drop-menu {
+  display: flex;
+}
+
+.drop-menu li {
+  padding: 0.5em 0.75em;
+}
+
+.drop-menu li a {
+  color: white;
+}
+
+/* Footer Area */
+
+.footer {
+  height: 9.375em;
 }
