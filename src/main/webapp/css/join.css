@@ -1,1 +1,26 @@
 @charset "UTF-8";
+
+.signup-outer {
+    border: black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.signup-container {
+    border: black solid;
+    width: 40%;
+    display: flex;
+    align-content: center;
+}
+
+.signup-input-img {
+    height: 1rem;
+}
+.signup-btn{
+    background-color: gray;
+    text-align: center;
+}
+.google-btn{
+    text-align: center;
+}
