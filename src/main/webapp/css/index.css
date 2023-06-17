@@ -3,6 +3,7 @@
   margin: 0;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -18,12 +19,7 @@ article {
 
 .pokemon-main {
   border: 1px solid red;
-  height: 100vh;
   width: 80%;
-}
-
-#contents-area {
-  background-color: rgb(172, 215, 215);
   height: 100vh;
 }
 
@@ -31,10 +27,17 @@ article {
 
 .header {
   display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-wrapper {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
   height: 7.75em;
-  background-color: rgba(255, 255, 255, 0.1);
+
   padding: 0.5em 0.75em;
   font-size: 1em;
 }
@@ -72,8 +75,41 @@ article {
   color: white;
 }
 
+/* Main Area */
+
+#contents-area  /* Include Area */ {
+  background-color: rgb(172, 215, 215, 0.8);
+  height: 100vh;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-text {
+  display: flex;
+  justify-content: center;
+  height: 0;
+}
+
+#pikapedia-bg-text {
+  position: absolute;
+  top: 40%;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 18vw;
+  font-weight: 800;
+  z-index: -9999;
+}
+
 /* Footer Area */
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 9.375em;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.5);
 }
