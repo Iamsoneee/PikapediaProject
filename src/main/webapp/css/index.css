@@ -1,115 +1,111 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
 }
 
 body {
-  background-color: #ecc22e;
-  color: white;
+	background-color: #ecc22e;
+	color: white;
 }
 
 article {
-  border: 1px solid blue;
-  width: 100%;
-  height: 100vh;
+	border: 1px solid blue;
+	width: 100%;
+	height: 100vh;
 }
 
 .pokemon-main {
-  border: 1px solid red;
-  width: 80%;
-  height: 100vh;
+	border: 1px solid red;
+	width: 80%;
+	height: 100vh;
 }
 
 /* Header Area */
-
 .header {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  height: 7.75em;
-
-  padding: 0.5em 0.75em;
-  font-size: 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	height: 7.75em;
+	padding: 0.5em 0.75em;
+	font-size: 1em;
 }
 
 #pikapedia-logo {
-  width: 11.25em;
-  height: 3em;
+	width: 11.25em;
+	height: 3em;
 }
 
 .menu-area {
-  display: flex;
+	display: flex;
 }
 
 .header-icons {
-  display: flex;
+	display: flex;
 }
 
 .header-icons li {
-  padding: 0.5em 0.75em;
+	padding: 0.5em 0.75em;
 }
 
 .header-icons img {
-  width: 1em;
+	width: 1em;
 }
 
 .drop-menu {
-  display: flex;
+	display: flex;
 }
 
 .drop-menu li {
-  padding: 0.5em 0.75em;
+	padding: 0.5em 0.75em;
 }
 
 .drop-menu li a {
-  color: white;
+	color: white;
 }
 
 /* Main Area */
-
-#contents-area  /* Include Area */ {
-  background-color: rgb(172, 215, 215, 0.8);
-  height: 100vh;
+#contents-area /* Include Area */ {
+	background-color: rgb(172, 215, 215, 0.8);
+	height: 100vh;
 }
 
 .article {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .bg-text {
-  display: flex;
-  justify-content: center;
-  height: 0;
+	display: flex;
+	justify-content: center;
+	height: 0;
 }
 
 #pikapedia-bg-text {
-  position: absolute;
-  top: 40%;
-  color: rgba(255, 255, 255, 0.1);
-  font-size: 18vw;
-  font-weight: 800;
-  z-index: -9999;
+	position: absolute;
+	top: 50%;
+	color: rgba(255, 255, 255, 0.1);
+	font-size: 18vw;
+	font-weight: 800;
+	z-index: -9999;
 }
 
 /* Footer Area */
-
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 9.375em;
-  font-size: 1.5em;
-  font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 9.375em;
+	font-size: 1.5em;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0.5);
 }

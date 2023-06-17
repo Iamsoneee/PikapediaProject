@@ -8,11 +8,9 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/myRewards.css" />
   </head>
   <body>
-    <div class="pokedex-frame">
-      <h1>
-        My <br />
-        Rewards
-      </h1>
-    </div>
+    <h1>
+      My <br />
+      Rewards
+    </h1>
   </body>
 </html>
