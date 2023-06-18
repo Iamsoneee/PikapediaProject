@@ -29,7 +29,7 @@
 
 
 <div>
-	<form id="follow" action="ShadowC">
+	<form action="../ShadowC">
 	 	<button>이동하기</button>
 	</form>
 </div>

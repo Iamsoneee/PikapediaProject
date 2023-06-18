@@ -13,14 +13,14 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class AccountDAO {
 
 	public static void Login(HttpServletRequest request) {
-		// 1. °ª
+		// 1. ï¿½ï¿½
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		// 2. ÆÇÁ¤ 
+		// 2. ï¿½ï¿½ï¿½ï¿½ 
 		String result ="";
 		
-		// 3. db¶û ºñ±³
+		// 3. dbï¿½ï¿½ ï¿½ï¿½
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -36,9 +36,9 @@ public class AccountDAO {
 			if (rs.next()) {
 				dbpw = rs.getString("a_pw");
 				if (dbpw.equals(pw)) {
-					result = "·Î±×ÀÎ ¼º°ø!";
+					result = "ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!";
 					System.out.println(result);
-					// ¼¼¼Ç
+					// ï¿½ï¿½ï¿½ï¿½
 					Account account = new Account();
 					account.setName(rs.getString("a_name"));
 					account.setId(rs.getString("a_id"));
@@ -48,11 +48,11 @@ public class AccountDAO {
 					HttpSession hs = request.getSession();
 					hs.setAttribute("account", account);
 				}else {
-					result = "ºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù.";
+					result = "ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ Æ²ï¿½ï¿½ï¿½Ï´ï¿½.";
 					System.out.println(result);
 				}
 			}else {
-				result = "Á¸ÀçÇÏÁö ¾Ê´Â È¸¿øÀÔ´Ï´Ù";
+				result = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ È¸ï¿½ï¿½ï¿½Ô´Ï´ï¿½";
 				System.out.println(result);
 			}
 			
@@ -76,10 +76,10 @@ public class AccountDAO {
 	}
 
 	public static void Logout(HttpServletRequest request) {
-		// ·Î±×¾Æ¿ô ÇÏ´Â ÀÏ
+		// ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½
 		
-		// ¾ÖÃÊ¿¡ ¸¸µé¾îÁøÀûÀÌ ¾ø°Å³ª, ¼³Á¤½Ã°£ ¸¸·á
-		// ¼¼¼Ç Á×ÀÌ±â
+		// ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½
 		HttpSession hs = request.getSession();
 		
 		hs.setAttribute("account", null);
@@ -87,7 +87,7 @@ public class AccountDAO {
 	}
 
 	public static void joinAccount(HttpServletRequest request) {
-		// 1. °ª or db
+		// 1. ï¿½ï¿½ or db
 		String sql = "insert into account values(?, ?, ?, ?, 'default.png')";
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -113,7 +113,7 @@ public class AccountDAO {
 		pstmt.setString(4, email);
 				
 		if (pstmt.executeUpdate() == 1) {
-			System.out.println("µî·Ï ¼º°ø!");
+			System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
 		}
 				
 		} catch (Exception e) {

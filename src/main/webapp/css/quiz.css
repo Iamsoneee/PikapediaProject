@@ -1,68 +1,146 @@
-@charset "UTF-8";
-
 @font-face {
-     font-family: 'DungGeunMo';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
+  font-family: "DungGeunMo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.quiz-Container {
+  height: 540.3645629882812px;
+  width: 1094.13818359375px;
+  left: 424px;
+  top: 290.9999694824219px;
+  border-radius: 50px;
+  /* border: 3px solid black; */
+}
+.quiz-Center {
+  height: 538.6261596679688px;
+  width: 740px;
+  margin-left: 175px;
+  left: 601px;
+  top: 291px;
+  /* border: 1px solid red; */
+}
+.center-Up {
+  width: 730px;
+  height: 350px;
+  /* border: 3px solid rgb(120, 120, 38); */
+  display: flex;
+  border: 2px solid black;
+  border-bottom: none;
 }
 
-
-.header {
-    height: 200px;
-    width: 850px;
+.cetner-Down {
+  width: 740px;
+  height: 178px;
+  /* border: 3px solid rgb(120, 120, 38); */
+  display: flex;
 }
 
-#imgshaddow {
-    filter: brightness(0%);
-    width: 500px;
-    height: 500px;
+.blank-Space {
+  height: 180px;
+  width: 340px;
+  border: 2px solid black;
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.blank-SpaceIn {
+  height: 160px;
+  width: 320px;
+  border-top: 5px solid black;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  border-radius: 5%;
 }
 
-#gameLogo {
-    width: 500px;
+.btn-Four {
+  height: 180px;
+  width: 390px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.btn-Four-In {
+  height: 160px;
+  width: 370px;
+  border-top: 5px solid black;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 23pt;
+  font-family: "DungGeunMo";
+  border-radius: 5%;
+}
+.fightPokemon {
+  height: 160px;
+  width: 185px;
+  /* border: 3px solid black; */
 }
 
-button {
-    background-color: transparent;
-    border: none;
-    width: 200px;
-    font-size: 20pt;
-    padding-top: 20px;
+.itemQuit {
+  height: 160px;
+  width: 185px;
+  /* border: 3px solid red; */
 }
-
-.hver {
-   z-index: -1;
+.fight-Btn {
+  height: 80px;
+  width: 185px;
+  /* border: 3px solid skyblue; */
 }
-button:hover  {
-    z-index: 1;
-    cursor : pointer;
-    transform:scale(1.1);   
+.poke-Btn {
+  height: 80px;
+  width: 185px;
+  /* border: 3px solid skyblue; */
 }
-
-button {
-    font-family: 'Dunggeunmo';
+.items-Btn {
+  height: 80px;
+  width: 185px;
+  /* border: 3px solid skyblue; */
 }
-
-.mainDescription {
-	height: 600px;
-	width : 500px;
-	border: 3px solid red;
-	text-align: center;
-	font-size: 15pt;
+.quit-Btn {
+  height: 80px;
+  width: 185px;
+  /* border: 3px solid skyblue; */
 }
-#follow {
-	text-align: center;
+.myPoke {
+  height: 350px;
+  width: 370px;
+  /* border: 4px solid purple; */
 }
-
-.nameQuestion {
-		text-align: center;
-		border: 1px solid red;
-		width: 500px; 
-		height: 100px;
-		font-size: 20pt;
-		letter-spacing: 8pt;
+.myPoke-Up {
+  height: 175px;
+  width: 450px;
+  /* border: 3px solid black; */
 }
-.hiddenText {
-	visibility: hidden;
+.myPoke-Down {
+  height: 175px;
+  width: 330px;
+  /* border: 3px solid black; */
+}
+.enemyPoke {
+  height: 350px;
+  width: 370px;
+  /* border: 3px solid rgb(70, 28, 234); */
+}
+.enemyPoke-Up {
+  height: 175px;
+  width: 360px;
+  /* border: 3px solid black; */
+}
+.enemyPoke-Down {
+  height: 175px;
+  width: 350px;
+  /* border: 5px solid rgb(239, 21, 21); */
 }
