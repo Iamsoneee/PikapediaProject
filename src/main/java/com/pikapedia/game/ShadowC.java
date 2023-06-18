@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 public class ShadowC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * Model.random(request); request.setAttribute("contentPage", "output.jsp");
-		 * request.getRequestDispatcher("index.jsp").forward(request, response);
-		 */
-	
+		
+		GameModel.random(request);
+		request.setAttribute("contentPage", "jsp/quizOutput.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
