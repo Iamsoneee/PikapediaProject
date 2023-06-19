@@ -41,19 +41,3 @@
   border-radius: 50px;
 }
 
-#pokedex-blue-frame {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 98%;
-  height: 68vh;
-  padding: 1.5vw;
-  background: white;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  justify-content: center;
-}
