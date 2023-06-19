@@ -7,20 +7,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-// db°ü·Ã ÀÛ¾÷À» ÇÒ¶§ ¿¬°áÄÚµå¸¦ ¾´ ÀÌÈÄ¿¡ ÀÛ¾÷ ÇØ¿È
-// ´Ù ¾²¸é ´ÝÀ½
+// dbï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Ò¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµå¸¦ ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½Û¾ï¿½ ï¿½Ø¿ï¿½
+// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-// ±×°É AOP ÇÏÀÚ
-public class DBManager {
+// ï¿½×°ï¿½ AOP ï¿½ï¿½ï¿½ï¿½
+public class DBManager2 {
 
-	// dbÀÛ¾÷½Ã¿£ ¾îÂ¶µç ¿¬°á ÇØ¾ßµÊ
+	// dbï¿½Û¾ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½Â¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ßµï¿½
 	public static Connection connect() throws SQLException {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		System.out.println("¿¬°á ¼º°ø!");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
 		return DriverManager.getConnection(url, "c##lcy", "lcy");
 	}
 
-	// ´ÝÀ»°Ô ¸¹Àºµ¥ ÇÑ¹ø¿¡ ´Ý±â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½Ý±ï¿½
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if (rs != null) {

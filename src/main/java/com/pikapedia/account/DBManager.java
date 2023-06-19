@@ -7,22 +7,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-// db°ü·Ã ÀÛ¾÷À» ÇÒ¶§ ¿¬°áÄÚµå¸¦ ¾´ ÀÌÈÄ¿¡ ÀÛ¾÷ ÇØ¿È
-// ´Ù ¾²¸é ´ÝÀ½
-
-// ±×°É AOP ÇÏÀÚ
 public class DBManager {
 	
 	
-	// db ÀÛ¾÷½Ã¿£ ¾îÂ¶µç ¿¬°á ÇØ¾ßµÊ
 	static Connection connect() throws SQLException {
 		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=C:/HJP/Wallet_J3ZTYAOVKH9AOAWJ";
 		Connection con = DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");		
-		System.out.println("¿¬°á ¼º°ø!");
+		System.out.println("ì—°ê²° ì™„ë£Œ!");
 		return DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");
 	}
 	
-	//´ÝÀ»°Ô ¸¹Àºµ¥ ÇÑ¹ø¿¡ ´Ý±â
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 				

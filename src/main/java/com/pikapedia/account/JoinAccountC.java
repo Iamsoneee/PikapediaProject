@@ -16,9 +16,9 @@ public class JoinAccountC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// °¡ÀÔÇÏ´Â ÀÏ
+		// íšŒì›ê°€ì…í•˜ëŠ” ì¼
 		AccountDAO.joinAccount(request);
-		// ¾îµğ·Î?
+		// ì–´ë””ë¡œ?
 		AccountDAO.checkLogin(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

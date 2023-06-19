@@ -7,8 +7,6 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.pokemon.db.Pokemon;
-
 public class SearchDAO {
 
 	public static void getAllPokemon(HttpServletRequest request) {
