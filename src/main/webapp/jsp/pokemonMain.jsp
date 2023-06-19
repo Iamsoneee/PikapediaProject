@@ -143,31 +143,63 @@ import="java.util.Map"%>
 
       <!-- Pokemon Cards Gallery -->
       <div class="scrollable">
-      <% int repeatCount = 3; // 반복 횟수 설정합니다. 
-      for (int i = 0; i <
-      repeatCount; i++) { %>
-      <a href="">
-        <div class="pokemon-card">
-          <div class="card-white-bg">
-            <div class="card-contents">
-              <p>#4</p>
-              <img
-                src="img/charmander.png"
-                alt="charmander"
-                class="card-pokemon-img"
-              />
-              <hr class="horizontal-line" />
-              <p>파이리</p>
-              <img
-                src="img/pokemon-type/circle-type/fire.png"
-                alt="fire-type"
-                class="card-type-icon"
-              />
+        <% int repeatCount = 20; // 반복 횟수 설정합니다. 
+        for (int i = 0; i <
+        repeatCount; i++) { %>
+        <!-- 단일 속성 포켓몬 카드 -->
+        <a href="">
+          <div class="pokemon-card">
+            <div class="card-white-bg">
+              <div class="card-contents">
+                <p>#4</p>
+                <img
+                  src="img/charmander.png"
+                  alt="charmander"
+                  class="card-pokemon-img"
+                />
+                <hr class="horizontal-line" />
+                <p>파이리</p>
+                <div class="type-icons-area">
+                  <img
+                    src="img/pokemon-type/circle-type/fire.png"
+                    alt="fire-type"
+                    class="card-type-icon"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-      <% } %>
+        </a>
+        <!-- 이중 속성 포켓몬 카드 -->
+        <a href="">
+          <div class="pokemon-card">
+            <div class="card-white-bg">
+              <div class="card-contents">
+                <p>#4</p>
+                <img
+                  src="img/bulbasaur.png"
+                  alt="bulbasaur"
+                  class="card-pokemon-img"
+                />
+                <hr class="horizontal-line" />
+                <p>이상해씨</p>
+                <div class="type-icons-area">
+                  <img
+                    src="img/pokemon-type/circle-type/grass.png"
+                    alt="grass-type"
+                    class="card-type-icon"
+                  />
+                  <img
+                    src="img/pokemon-type/circle-type/poison.png"
+                    alt="poison-type"
+                    class="card-type-icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <% } %>
       </div>
     </div>
   </body>

@@ -38,9 +38,10 @@
 .search-bar-area {
   display: flex;
   align-items: center;
-  width: 50vw;
+  width: 30vw;
   position: relative;
-  margin-top: 7vh;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
 #search-input {
@@ -72,14 +73,32 @@
 .scrollable {
   height: 57.5vh;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /*스크롤바의 너비*/
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /*스크롤바의 색상*/
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0); /*스크롤바 트랙 색상*/
 }
 
 .pokemon-card {
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  margin-top: 7.5vh;
+  margin-top: 5vh;
   width: 150px;
+  margin-right: 70px; /* 아이템 사이의 간격을 설정합니다. */
+  margin-bottom: 10px; /* 아이템 행 사이의 간격을 설정합니다. */
+
   height: 185px;
   background: rgba(255, 255, 255, 0.6);
   border: 0.3vw solid #e56c3e;
