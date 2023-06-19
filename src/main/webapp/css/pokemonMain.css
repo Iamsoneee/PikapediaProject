@@ -96,8 +96,8 @@
   position: relative;
   margin-top: 5vh;
   width: 150px;
-  margin-right: 70px; /* 아이템 사이의 간격을 설정합니다. */
-  margin-bottom: 10px; /* 아이템 행 사이의 간격을 설정합니다. */
+  margin-right: 70px;
+  margin-bottom: 10px;
 
   height: 185px;
   background: rgba(255, 255, 255, 0.6);
