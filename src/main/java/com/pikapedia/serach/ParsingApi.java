@@ -75,12 +75,12 @@ public class ParsingApi {
 					String languageName = (String) ((JSONObject) nameData.get("language")).get("name");
 					String name = (String) nameData.get("name");
 					if (languageName.equals("ko")) {
-						System.out.println("ÀÌ¸§: " + name);
+						System.out.println("ï¿½Ì¸ï¿½: " + name);
 						p_name = name;
 					}
 				}
 				
-				System.out.println("¹«°Ô : " + pokemonObject.get("weight"));
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + pokemonObject.get("weight"));
 				p_weight = Double.parseDouble(String.valueOf(pokemonObject.get("weight")))/10;
 				
 				
@@ -103,7 +103,7 @@ public class ParsingApi {
 						String languageName = (String) ((JSONObject) typeNameData.get("language")).get("name");
 						String typeName = (String) typeNameData.get("name");
 						if (languageName.equals("ko")) {
-							System.out.println("Å¸ÀÔ : " + typeName);
+							System.out.println("Å¸ï¿½ï¿½ : " + typeName);
 							if(typesArray.indexOf(typeObj)==0)
 							{
 								p_type1 = typeName;
@@ -124,7 +124,7 @@ public class ParsingApi {
 					String versionName = (String) ((JSONObject) nameData.get("version")).get("name");
 					String name = (String) nameData.get("flavor_text");
 					if (languageName.equals("ko")&&versionName.equals("alpha-sapphire")) {
-						System.out.println("¼³¸í : " + name);
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + name);
 						p_des = name;
 						
 					}
@@ -137,10 +137,10 @@ public class ParsingApi {
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
 				
-				System.out.println("»çÁø : " + frontDefault);
-				System.out.println("»çÁø : " + backDefault);
-				System.out.println("»çÁø : " + frontShiny);
-				System.out.println("»çÁø : " + backShiny);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + frontDefault);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + backDefault);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + frontShiny);
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + backShiny);
 				
 				System.out.println(p_name);
 				System.out.println(p_des);
@@ -153,7 +153,7 @@ public class ParsingApi {
 				String sql = "insert into pokemon values (?,?,?,?,?,?,?,?,?,?,?)";
 				
 				
-				con = DBManager.connect();
+				con = DBManager2.connect();
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setInt(1, guide);
@@ -168,7 +168,7 @@ public class ParsingApi {
 				pstmt.setString(10, frontShiny);
 				pstmt.setString(11, backShiny);
 				if(pstmt.executeUpdate() == 1) {
-					System.out.println("µî·Ï¿Ï·á");
+					System.out.println("ï¿½ï¿½Ï¿Ï·ï¿½");
 				}
 						
 			}
@@ -177,7 +177,7 @@ public class ParsingApi {
 			catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				DBManager.close(con, pstmt, rs);
+				DBManager2.close(con, pstmt, rs);
 			}
 		}	
 	}

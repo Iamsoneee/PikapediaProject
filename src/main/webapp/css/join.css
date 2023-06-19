@@ -17,6 +17,9 @@
 .signup-input-img {
     height: 1rem;
 }
+.signup-input-btn{
+    background-color: lightgray;
+}
 .signup-btn{
     background-color: gray;
     text-align: center;

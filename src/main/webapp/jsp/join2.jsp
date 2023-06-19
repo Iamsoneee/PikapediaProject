@@ -8,10 +8,6 @@
 </head>
 <link rel="stylesheet" href="../css/join.css">
 <body>
-<<<<<<< HEAD
-	<h1>Join Page</h1>
-
-=======
 	<div class="signup-outer">
 		<div class="signup-container">
 			<div>
@@ -41,6 +37,5 @@
 			</div>
 		</div>
 	</div>
->>>>>>> 1fe103b62c8a851ebb2e2a4a373563287620d3fc
 </body>
 </html>

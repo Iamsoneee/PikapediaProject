@@ -13,14 +13,14 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class AccountDAO {
 
 	public static void Login(HttpServletRequest request) {
-		// 1. ��
+		// 1. 값
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		// 2. ���� 
+		// 2. 판정 
 		String result ="";
 		
-		// 3. db�� ��
+		// 3. db랑 비교
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -36,9 +36,9 @@ public class AccountDAO {
 			if (rs.next()) {
 				dbpw = rs.getString("a_pw");
 				if (dbpw.equals(pw)) {
-					result = "�α��� ����!";
+					result = "로그인 성공!";
 					System.out.println(result);
-					// ����
+					// 세션
 					Account account = new Account();
 					account.setName(rs.getString("a_name"));
 					account.setId(rs.getString("a_id"));
@@ -48,11 +48,11 @@ public class AccountDAO {
 					HttpSession hs = request.getSession();
 					hs.setAttribute("account", account);
 				}else {
-					result = "��й�ȣ�� Ʋ���ϴ�.";
+					result = "비밀번호가 틀립니다.";
 					System.out.println(result);
 				}
 			}else {
-				result = "�������� �ʴ� ȸ���Դϴ�";
+				result = "존재하지 않는 회원입니다.";
 				System.out.println(result);
 			}
 			
@@ -76,10 +76,11 @@ public class AccountDAO {
 	}
 
 	public static void Logout(HttpServletRequest request) {
-		// �α׾ƿ� �ϴ� ��
+		// 로그아웃 하는 일
 		
-		// ���ʿ� ����������� ���ų�, �����ð� ����
-		// ���� ���̱�
+		// 애초에 만들어진적이 없거나, 설정시간 만료
+		// 세션 죽이기
+		
 		HttpSession hs = request.getSession();
 		
 		hs.setAttribute("account", null);
@@ -87,7 +88,7 @@ public class AccountDAO {
 	}
 
 	public static void joinAccount(HttpServletRequest request) {
-		// 1. �� or db
+		// 1. 값 or db
 		String sql = "insert into account values(?, ?, ?, ?, 'default.png')";
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -113,7 +114,7 @@ public class AccountDAO {
 		pstmt.setString(4, email);
 				
 		if (pstmt.executeUpdate() == 1) {
-			System.out.println("��� ����!");
+			System.out.println("등록 성공!");
 		}
 				
 		} catch (Exception e) {
