@@ -16,7 +16,7 @@ public class DBManager {
 	
 	// db �۾��ÿ� ��¶�� ���� �ؾߵ�
 	static Connection connect() throws SQLException {
-		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=C:/HJP/Wallet_J3ZTYAOVKH9AOAWJ";
+		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=C:C:\\Users\\79677\\OneDrive\\Desktop\\LJK_sbt7\\Wallet_J3ZTYAOVKH9AOAWJ";
 		Connection con = DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");		
 		System.out.println("���� ����!");
 		return DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");
