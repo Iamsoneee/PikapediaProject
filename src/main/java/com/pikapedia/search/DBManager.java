@@ -1,4 +1,4 @@
-package com.pikapedia.account;
+package com.pikapedia.search;
 
 
 import java.sql.Connection;
@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class DBManager {
 	
@@ -16,7 +17,7 @@ public class DBManager {
 		System.out.println("연결 완료!");
 		return DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");
 	}
-	
+	// C:/HJP/Wallet_J3ZTYAOVKH9AOAWJ
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 				
