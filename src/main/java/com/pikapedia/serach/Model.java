@@ -21,7 +21,7 @@ public class Model {
 		try {
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
-			con = DBManager.connect();
+			con = DBManager2.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, search);
 			rs = pstmt.executeQuery();
@@ -50,7 +50,7 @@ public class Model {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager2.close(con, pstmt, rs);
 		}
 		
 	}

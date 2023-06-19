@@ -15,20 +15,18 @@ pageEncoding="UTF-8"%>
     </h1>
     <div id="rewards">
 		<div>
-			<div class="r-account"><img alt="프로필 이미지" src="img/profile/${account.img }"></div>
-			<div class="r-account">${account.name }님의 리워드</div>
+			<div class="r-account"><img alt="프로필 이미지" src="img/profile/ball3.png"></div>
+			<div class="r-account">jp님의 리워드</div>
 		</div>
-		<c:forEach var="pokemon" items="${Pokemons }">
-		<div>
-			<div class="r-pokemon">${pokemon.no }</div>
-			<div class="r-pokemon">${pokemon.name }</div>
-			<div class="r-pokemon">${pokemon.weight }</div>
-			<div class="r-pokemon">${pokemon.height }</div>
-			<div class="r-pokemon">${pokemon.type1 }</div>
-			<div class="r-pokemon">${pokemon.type2 }</div>
-			<div class="r-pokemon"><img alt="포켓몬 이미지" src="${pokemon.frontDefault }" style="max-width: 100px;"></div>
+		<!-- <c:forEach var="pokemon" items="${Pokemons }"> -->
+		<!-- </c:forEach> -->
+		<div id="r-pokemons">
+			<div class="r-pokemon">001</div>
+			<div class="r-pokemon">이상해씨</div>
+			<div class="r-pokemon"><img alt="포켓몬 이미지" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" style="max-width: 100px;"></div>
+			<div class="r-pokemon"></div>			
+			<div class="r-pokemon"></div>			
 		</div>
-		</c:forEach>
 	</div>
   </body>
 </html>
