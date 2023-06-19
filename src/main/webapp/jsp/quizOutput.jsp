@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="css/quiz.css" />
     <link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/pokedexFrame.css" />
+	<link rel="stylesheet" href="css/pokedexFramegame.css" />
 <% Poketmon poketmon = (Poketmon) request.getAttribute("poketmon"); %>
     <script>
     	var poketmon = `${poketmon.p_name}', '${poketmon.p_front_default_img}`;
@@ -50,9 +50,8 @@
           <img src="img/pokedex-circles.png" alt="" />
         </div>
         <div id="pokedex-blue-shadow">
-          <div id="pokedex-blue-frame">
   <div class="quiz-Container">
-      <div></div>
+      <div class="quiz-LeftBlank"></div>
       <div class="quiz-Center">
         <div class="center-Up">
           <div class="myPoke">
@@ -71,7 +70,6 @@
           <div class="btn-Four">
             <div class="btn-Four-In">
               <div class="fightPokemon">
-                <br />
                 <div class="fight-Btn">
                   <button onclick="correct()">싸운다</button>
                 </div>
@@ -80,12 +78,11 @@
                 </div>
               </div>
               <div class="itemQuit">
-                <br />
                 <div class="items-Btn">
                   <button onclick="plzhint()">아이템</button>
                 </div>
                 <div class="quit-Btn">
-                  <button onclick="location.href='jsp/quizHome.jsp'">
+                  <button onclick="location.href='GameHomeC'">
                     도망간다
                   </button>
                 </div>
@@ -94,9 +91,8 @@
           </div>
         </div>
       </div>
-      <div></div>
+      <div class="quiz-RightBlank"></div>
     </div>
-          </div>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@
 				</ul>
 				<!-- Dropdown Menu -->
 				<ul class="drop-menu">
-					<li><a href="jsp/quizHome.jsp">Quiz</a></li>
+					<li><a href="GameHomeC">Quiz</a></li>
 					<li><a href="myRewardsC">My Rewards</a></li>
 					<li><a href="CommunityC">Community</a></li>
 					<li><a href="LoginC">Login</a></li>
