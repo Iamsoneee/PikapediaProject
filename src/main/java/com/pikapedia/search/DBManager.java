@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class DBManager {
 	
 	
-	static Connection connect() throws SQLException {
+	public static Connection connect() throws SQLException {
 		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=C:/HJP/Wallet_J3ZTYAOVKH9AOAWJ";
 		Connection con = DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");		
 		System.out.println("연결 완료!");

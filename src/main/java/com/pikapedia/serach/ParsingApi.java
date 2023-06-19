@@ -7,14 +7,14 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 import javax.net.ssl.HttpsURLConnection;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import com.pikapedia.search.DBManager;
 	
 public class ParsingApi {
 	public static Poketmon poketmon;
@@ -153,7 +153,7 @@ public class ParsingApi {
 				String sql = "insert into pokemon values (?,?,?,?,?,?,?,?,?,?,?)";
 				
 				
-				con = DBManager2.connect();
+				con = DBManager.connect();
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setInt(1, guide);
@@ -177,7 +177,7 @@ public class ParsingApi {
 			catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				DBManager2.close(con, pstmt, rs);
+				DBManager.close(con, pstmt, rs);
 			}
 		}	
 	}
