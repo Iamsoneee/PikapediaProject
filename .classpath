@@ -6,8 +6,14 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/79677/OneDrive/Desktop/db/sqldeveloper-22.2.1.234.1810-no-jre/sqldeveloper/jdbc/lib/ojdbc8.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
+	<classpathentry kind="lib" path="C:/Users/79677/Downloads/mysql-connector-java-5.1.0.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

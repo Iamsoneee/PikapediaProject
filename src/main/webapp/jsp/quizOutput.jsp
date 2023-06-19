@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="css/quiz.css" />
     <link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/pokedexFrame.css" />
+	<link rel="stylesheet" href="css/pokedexFramegame.css" />
 <% Poketmon poketmon = (Poketmon) request.getAttribute("poketmon"); %>
     <script>
     	var poketmon = `${poketmon.p_name}', '${poketmon.p_front_default_img}`;
