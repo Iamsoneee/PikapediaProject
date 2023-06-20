@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
     <meta charset="UTF-8" />
     <title>myRewards</title>
     <link rel="stylesheet" href="css/myRewards.css" />
-    <link rel="stylesheet" href="css/pokedexFrameAccount.css" />
+     <link rel="stylesheet" href="css/pokedexFrameAccount.css" />
   </head>
   <body>
 	<div id="pokedex-wrapper">
@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
               />
             </div>
             <div id="pokedex-white-bg">
-					<div id="r-accounts">
+					<div id="r-account">
 						<div id="r-account-img"><img alt="프로필 이미지" src="img/profile/${account.img }" style="max-width: 90px;"></div>
 						<div>${account.name }님의 리워드</div>
 					</div>	
@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%>
 							</div>
 						</div>
 					</c:forEach>
-              </div>
+            </div>
           </div>
         </div>
       </div>
