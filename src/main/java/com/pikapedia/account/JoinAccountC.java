@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class JoinAccountC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
-		request.setAttribute("contentPage", "jsp/join.jsp");
+		request.setAttribute("contentPage", "jsp/signup.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

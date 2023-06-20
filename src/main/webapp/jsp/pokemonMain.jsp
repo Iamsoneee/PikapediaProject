@@ -6,7 +6,7 @@ import="java.util.Map"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <title>pokemonMain</title>
     <link rel="stylesheet" href="css/pokemonMain.css" />
   </head>
   <body>
@@ -133,12 +133,13 @@ import="java.util.Map"%>
           type="text"
           id="search-input"
           placeholder="포켓몬의 이름 또는 도감 번호를 입력하세요"
+          maxlength="10"
         />
-        <img
-          src="img/icon/magnifier-icon.png"
-          alt="magnifier-icon"
-          id="magnifier-icon"
-        />
+          <img
+            src="img/icon/magnifier-icon.png"
+            alt="magnifier-icon"
+            id="magnifier-icon"
+          />
       </div>
 
       <!-- Pokemon Cards Gallery -->

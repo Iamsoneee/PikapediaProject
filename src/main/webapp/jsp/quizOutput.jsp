@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>quizOutput</title>
     <link rel="stylesheet" href="css/quiz.css" />
     <link rel="stylesheet" href="css/index.css" />
 	<link rel="stylesheet" href="css/pokedexFramegame.css" />
