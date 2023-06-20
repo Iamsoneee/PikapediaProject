@@ -12,14 +12,14 @@ import com.pikapedia.search.DBManager;
 public class AccountDAO {
 
 	public static void Login(HttpServletRequest request) {
-		// 1. 값
+		// 1. parameter
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		// 2. 판정 
+		// 2. result 
 		String result ="";
 		
-		// 3. db랑 비교
+		// 3. db connect
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -47,11 +47,11 @@ public class AccountDAO {
 					HttpSession hs = request.getSession();
 					hs.setAttribute("account", account);
 				}else {
-					result = "비밀번호가 틀립니다.";
+					result = "비밀번호가 다릅니다.";
 					System.out.println(result);
 				}
 			}else {
-				result = "존재하지 않는 회원입니다.";
+				result = "존재하지 않는 계정입니다.";
 				System.out.println(result);
 			}
 			
@@ -75,10 +75,8 @@ public class AccountDAO {
 	}
 
 	public static void Logout(HttpServletRequest request) {
-		// 로그아웃 하는 일
+		// logout
 		
-		// 애초에 만들어진적이 없거나, 설정시간 만료
-		// 세션 죽이기
 		
 		HttpSession hs = request.getSession();
 		

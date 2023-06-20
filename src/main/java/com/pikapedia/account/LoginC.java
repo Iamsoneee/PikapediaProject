@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LoginC")
 public class LoginC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	// 로그인.jsp로
+	// login.jsp
 		AccountDAO.checkLogin(request);
 		request.setAttribute("contentPage", "/jsp/login.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	// 로그인 하는일
+	// login work
 		AccountDAO.Login(request);
 		AccountDAO.checkLogin(request);
-	// 어디로?
+	// main.jsp
 		request.setAttribute("contentPage", "/jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
