@@ -36,7 +36,7 @@
 				<!-- Dropdown Menu -->
 				<ul class="drop-menu">
 					<li><a href="GameHomeC">Quiz</a></li>
-					<li><a href="myRewardsC">My Rewards</a></li>
+					<li><a href="MyRewardC">My Rewards</a></li>
 					<li><a href="CommunityC">Community</a></li>
 					<li><a href="LoginC">Login</a></li>
 					<li><a href="JoinAccountC">Join</a></li>

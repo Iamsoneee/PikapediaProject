@@ -15,7 +15,7 @@ public class MyRewardC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
 		SearchDAO.getAllPokemon(request);
-		request.setAttribute("contentPage", "myRewards.jsp");
+		request.setAttribute("contentPage", "jsp/myRewards.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
