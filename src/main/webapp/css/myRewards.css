@@ -1,1 +1,29 @@
 @charset "UTF-8";
+
+#r-pokemons{
+/* Frame 136 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 11px 5px;
+gap: 10px;
+
+width: 110px;
+height: 150px;
+
+background: #FFFFFF;
+border: 1px solid #787878;
+border-radius: 20px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+	
+}
