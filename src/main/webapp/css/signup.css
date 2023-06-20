@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*.signup-container {*/
+/*    border: black 1px;*/
+/*}*/
+.signup-input-img {
+    height: 1rem;
+}
+.signup-input-btn{
+    width: 25vw;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 1.5vw;
+    margin-bottom: 10px;
+}
+.signup-btn{
+    width: 25vw;
+    height: 30px;
+    background-color: gray;
+    text-align: center;
+    border-radius: 1.5vw;
+    line-height: 30px;
+    border: transparent;
+}
+.signup-google-logo{
+    text-align: center;
+    width: 100px;
+}

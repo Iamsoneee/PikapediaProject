@@ -16,7 +16,7 @@
         <div id="pokedex-blue-shadow">
             <div id="pokedex-blue-frame">
                 <div id="pokedex-title-area">
-                    <span class="pokedex-title-txt">Mypage</span>
+                    <span class="pokedex-title-txt">Login</span>
                     <img src="../img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
