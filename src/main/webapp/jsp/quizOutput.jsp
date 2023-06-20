@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="css/quiz.css" />
     <link rel="stylesheet" href="css/index.css" />
 	<link rel="stylesheet" href="css/pokedexFramegame.css" />
-<% Poketmon poketmon = (Poketmon) request.getAttribute("poketmon"); %>
     <script>
-    	var poketmon = `${poketmon.p_name}', '${poketmon.p_front_default_img}`;
+    	var poketmon = `${poketmon.name}', '${poketmon.frontDefault}`;
 
     	function correct() {
         var userInput = prompt("포켓몬 이름을 입력해주세요" + "");
