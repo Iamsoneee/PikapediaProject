@@ -1,1 +1,15 @@
 @charset "UTF-8";
+body {
+	background:linear-gradient(to bottom , #66A945, #735198 );
+	height:100vh;
+}
+#header{
+	background-color: #66A945;
+	display:flex;
+}
+#title{
+	color: white;
+}
+#mainpage{
+	
+}

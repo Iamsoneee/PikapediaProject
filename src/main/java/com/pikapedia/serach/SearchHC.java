@@ -17,7 +17,7 @@ public class SearchHC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Model.searchPoketmon(request);
 		request.setCharacterEncoding("utf-8");
-		request.getRequestDispatcher("output.jsp").forward(request, response);
+		request.getRequestDispatcher("jsp/pokemonDetail.jsp").forward(request, response);
 	}
 
 }
