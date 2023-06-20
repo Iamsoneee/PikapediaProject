@@ -26,7 +26,6 @@ public class SearchDAO {
 			String no2 = "";
 			if (no > 0) {
 			no2 = String.format("%03d", no);
-				System.out.println(no2);
 			}
 			String name = rs.getString("p_name");
 			Double height = rs.getDouble("p_height");
