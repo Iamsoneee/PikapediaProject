@@ -12,7 +12,7 @@ import com.pikapedia.account.AccountDAO;
 
 @WebServlet("/MyRewardC")
 public class MyRewardC extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
 		SearchDAO.getAllPokemon(request);
 		request.setAttribute("contentPage", "myRewards.jsp");
