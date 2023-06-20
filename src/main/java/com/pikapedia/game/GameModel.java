@@ -3,7 +3,6 @@ package com.pikapedia.game;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ public class GameModel {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM pokemon WHERE p_no = ?";
+        String sql = "SELECT * FROM POKEMON_KO WHERE P_NO = ?";
         Random random = new Random();
         int randomNumber = random.nextInt(151) + 1; 
 
@@ -31,7 +30,7 @@ public class GameModel {
             if (rs.next()) {
                 int p_no = rs.getInt("p_no");
                 String p_name = rs.getString("p_name");
-                String p_frontDefault = rs.getString("p_front_default_img");
+                String p_frontDefault = rs.getString("p_front_default");
 
                 Poketmon poketmon = new Poketmon(p_no, p_name, 0, 0, "", "", "", p_frontDefault, "", "", "");
 
