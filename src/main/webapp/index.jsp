@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>index</title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/index.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
