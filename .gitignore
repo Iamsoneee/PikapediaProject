@@ -1,4 +1,11 @@
+# 컴파일 된 파일(배포 파일)
 /build/
-*.class
-.idea
 classes/
+*.class
+
+# IntelliJ 관련 파일
+*.idea
+*.iml
+
+# 개인 설정 파일
+DBManager.java

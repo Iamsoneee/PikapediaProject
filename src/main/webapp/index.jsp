@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>index</title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/index.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,8 +26,8 @@
 				<ul class="header-icons">
 					<li><a href=""><img src="img/icon/sun-icon.png"
 							alt="bright-mode" class="header-icons" /></a></li>
-					<li><a href=""><img src="img/icon/moon-icon.png"
-							alt="dark-mode" class="header-icons" /></a></li>
+					<li><a href="#"><img src="img/icon/moon-icon.svg"
+							alt="dark-mode" class="header-icons" id="dark-mode-toggle" /></a></li>
 					<li><a href=""><img src="img/icon/korea-icon.png"
 							alt="korean-button" class="header-icons" /></a></li>
 					<li><a href=""><img src="img/icon/japan-icon.png"
@@ -57,5 +57,8 @@
 
 	<!-- Footer Area -->
 	<footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
+	<script type="text/javascript" src="js/index.js">
+	
+	</script>
 </body>
 </html>
