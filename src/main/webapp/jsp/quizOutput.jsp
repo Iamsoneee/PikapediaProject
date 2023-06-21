@@ -78,7 +78,7 @@
                 alert("정답입니다.");
                 document.getElementById("imgshaddow").style.filter = "none";
                 setTimeout(function() {
-                    location.reload();
+                location.reload();
                 }, 1500); 
             } else if (userInput == null) {
                 alert("다시 입력해주세요");
@@ -86,9 +86,8 @@
             	alert("오답입니다")
             }
         }
-
+		
         function showHint() {
-        	
             var halfLength = Math.ceil(languageDex.length / 2);
             var hint = languageDex.slice(0, halfLength);
             alert("힌트: " + hint);
