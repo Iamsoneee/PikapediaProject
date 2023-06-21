@@ -43,6 +43,7 @@ pageEncoding="UTF-8"%>
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
+                  s
                   class="header-icons"
                   id="dark-mode-toggle"
               /></a>
@@ -88,7 +89,6 @@ pageEncoding="UTF-8"%>
 
     <!-- Footer Area -->
     <footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
