@@ -1,20 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   var body = document.body;
-//   var moonIcon = document.getElementById("dark-mode-toggle");
-//   var sunIcon = document.getElementById("bright-mode-toggle");
-
-//   moonIcon.addEventListener("click", function () {
-//     body.classList.add("dark-mode");
-//     moonIcon.setAttribute("src", "img/icon/moon-icon-active.png");
-//     sunIcon.setAttribute("src", "img/icon/sun-icon.png");
-//   });
-
-//   sunIcon.addEventListener("click", function () {
-//     body.classList.remove("dark-mode");
-//     moonIcon.setAttribute("src", "img/icon/moon-icon.svg");
-//     sunIcon.setAttribute("src", "img/icon/sun-icon-active.png");
-//   });
-// });
+// ************ DARK MODE JS ************
 
 document.addEventListener("DOMContentLoaded", function () {
   var body = document.body;
@@ -42,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sunIcon.addEventListener("click", function () {
     // 다크 모드 설정을 로컬 스토리지에서 제거합니다.
+    event.preventDefault(); // 클릭 이벤트의 기본 동작 중지
     localStorage.removeItem("darkMode");
 
     body.classList.remove("dark-mode");
