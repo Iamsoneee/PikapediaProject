@@ -65,9 +65,11 @@
 </div>
 </body>
  <script>
+ 		var languageDex;
+ 		
         function checkPokemonName() {
             var userInput = prompt("포켓몬 이름을 입력해주세요:");
-            var languageDex = '${poketmon.p_name}';
+            languageDex = '${poketmon.p_name}';
 			
             console.log("userInput :" + userInput);
              console.log("languageDex :" + languageDex);
@@ -85,7 +87,7 @@
 
         function showHint() {
             var halfLength = Math.ceil(languageDex.length / 2);
-            var hint = pokemonName.slice(0, halfLength);
+            var hint = languageDex.slice(0, halfLength);
             alert("힌트: " + hint);
         }
 
