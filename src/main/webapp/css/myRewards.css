@@ -1,11 +1,16 @@
 @charset "UTF-8";
-#r-account{
+#r-accounts{
 	display: flex;
 	text-align: center;
 	color: black;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
 }
 
-#r-account-img{ 
+.r-account:nth-child(1){
 	width: 153px;
 	height: 168.68px;
 	left: 823px;
@@ -15,6 +20,38 @@
 	margin-top: 50px;
 	margin-left: 50px;
 }
+
+#r-account-img{
+	margin-top: 3px;
+	margin-left: -3px;
+	width: 100%;
+}
+
+.r-account-name{
+	display: flex;
+	margin-top: 120px;
+}
+
+.r-account:nth-child(2){
+	margin-left: 60px;
+	margin-top: 110px;
+	color: #C54431;
+}
+
+.r-account:nth-child(3){
+	margin-top: 110px;
+}
+
+.r-account:nth-child(4){
+	margin-top: 140px;
+	margin-left: -140px;
+}
+.r-account:nth-child(5){
+	margin-top: 140px;
+}
+
+
+
 #r-pokemons{
 	height: 150px;
 	width: 110px;
@@ -30,26 +67,17 @@
 }
 
 #r-pokemon{
-	/* Group 135 */
-width: 100px;
-height: 128px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+	width: 100px;
+	height: 128px;
+	order: 0;
 }
 
 #r-pokemon-no {
-	/* Rectangle 49 */
 	position: absolute;
 	width: 36px;
 	height: 15px;
 	margin-left: calc(50% - 32px/2 - 34px);
 	top: calc(50% - 13px/2 - 56.5px);
-	
 	background: #000000;
 	border-radius: 10px;
 }
@@ -65,13 +93,10 @@ flex-grow: 0;
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 12px;
-	
 	color: #FFFFFF;	
 }
 
 #r-pokemon-name {
-	/* Rectangle 49 */
-	
 	width: 91px;
 	height: 15px;
 	left: calc(50% - 91px/2 + 0.5px);
@@ -92,10 +117,7 @@ flex-grow: 0;
 	font-weight: 800;
 	font-size: 10px;
 	line-height: 14px;
-	/* identical to box height */
-	
 	text-align: center;
-	
 	color: #FFFFFF;
 }
 #r-pokemon-bottom{
@@ -107,8 +129,7 @@ flex-grow: 0;
 	width: 10px;
 	height: 10px;
 	margin-left: 14px;
-	justify-content: center;
-	margin-top: -5px;
+	margin-top: -8px;
 }
 
 .r-pokemon-maker{
@@ -116,15 +137,12 @@ flex-grow: 0;
 	height: 14px;
 	left: 37px;
 	top: 125px;
-
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 800;
 	font-size: 10px;
 	line-height: 14px;
 	margin-left: 5px;
-	/* identical to box height */
 	text-align: center;
-	
 	color: #000000;
 }
