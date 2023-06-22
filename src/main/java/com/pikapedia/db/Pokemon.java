@@ -1,4 +1,4 @@
-package com.pikapedia.search;
+package com.pikapedia.db;
 
 public class Pokemon {
 	private String no;

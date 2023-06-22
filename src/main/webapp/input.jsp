@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="SearchHC" method="post">
+<form action="DetailC" method="post">
 <input name="search">이름 입력<br>
 <button>제출</button>
 </form>

@@ -7,8 +7,9 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.pikapedia.search.DBManager;
-import com.pikapedia.serach.Poketmon;
+import com.pikapedia.db.DBManager;
+import com.pikapedia.db.Pokemon;
+import com.pikapedia.detail.DetailPokeBean;
 
 public class GameDAO {
 
@@ -31,9 +32,9 @@ public class GameDAO {
 				String p_name = rs.getString("p_name");
 				String p_frontDefault = rs.getString("p_front_default");
 				
-				Poketmon poketmon = new Poketmon(p_no, p_name, 0, 0, "", "", "", p_frontDefault, "", "", "");
+				DetailPokeBean pokemon = new DetailPokeBean(p_no, p_name, 0, 0, "", "", "", p_frontDefault, "", "", "");
 				
-				request.setAttribute("poketmon", poketmon);
+				request.setAttribute("poketmon", pokemon);
 			}
 			
 			
