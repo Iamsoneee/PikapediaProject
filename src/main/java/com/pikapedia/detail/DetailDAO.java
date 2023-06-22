@@ -11,14 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 
 
 
-<<<<<<< HEAD:src/main/java/com/pikapedia/detail/DetailDAO.java
+
 public class DetailDAO {
 
-=======
-public class Model {
-	private static Connection con = DBManager.connect();
-	
->>>>>>> 5e3428926618472e2136fe3616f5c5500c2dc160:src/main/java/com/pikapedia/serach/Model.java
+
+
+
 	public static void searchPoketmon(HttpServletRequest request) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
