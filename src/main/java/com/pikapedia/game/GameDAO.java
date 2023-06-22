@@ -3,7 +3,6 @@ package com.pikapedia.game;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.pikapedia.search.DBManager;
 import com.pikapedia.serach.Poketmon;
 
-public class GameModel {
+public class GameDAO {
 
 	public static void random(HttpServletRequest request) {
 		Connection con = null;
