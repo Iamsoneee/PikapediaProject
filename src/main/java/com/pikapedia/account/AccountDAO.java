@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.pikapedia.search.DBManager;
+import com.pikapedia.db.DBManager;
 
 public class AccountDAO {
 

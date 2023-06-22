@@ -1,4 +1,4 @@
-package com.pikapedia.search;
+package com.pikapedia.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class SearchDAO {
+public class DBDAO {
 
 	public static void getAllPokemon(HttpServletRequest request) {
 		

@@ -8,7 +8,7 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.pikapedia.search.DBManager;
+import com.pikapedia.db.DBManager;
 import com.pikapedia.serach.Poketmon;
 
 public class GameModel {

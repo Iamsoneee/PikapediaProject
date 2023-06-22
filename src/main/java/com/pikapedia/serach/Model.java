@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.pikapedia.search.DBManager;
+import com.pikapedia.db.DBManager;
 
 
 

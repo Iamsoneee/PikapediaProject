@@ -14,7 +14,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.pikapedia.search.DBManager;
+import com.pikapedia.db.DBManager;
 	
 public class ParsingApi {
 	public static Poketmon poketmon;
