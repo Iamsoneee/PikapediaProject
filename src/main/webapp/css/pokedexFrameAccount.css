@@ -49,11 +49,8 @@
   width: 98%;
   height: 68vh;
   padding: 1.5vw;
-  background: #c1daff;
-  background-image: url(../img/pokedex-bg.png);
-  background-position: center;
   background-size: contain;
-  background-repeat: no-repeat;
+  background: #c1daff url(../img/pokedex-bg.png) no-repeat center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
 }
@@ -72,6 +69,7 @@
   font-size: 3vw;
   font-weight: 800;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
 }
 
 #poke-spot-icon {

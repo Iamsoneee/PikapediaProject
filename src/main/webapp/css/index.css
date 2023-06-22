@@ -11,14 +11,28 @@ body {
   color: white;
 }
 
+/* 다크 모드 스타일 */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255,0.5); /*스크롤바의 색상*/
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0); /*스크롤바 트랙 색상*/
+}
+
 article {
-  border: 1px solid blue;
+  /*   border: 1px solid blue; */
   width: 100%;
-  height: 100vh;
+  height: 100vh;, 0.5
 }
 
 .pokemon-main {
-  border: 1px solid red;
+  /*   border: 1px solid red; */
   width: 80%;
   height: 100vh;
 }
@@ -107,5 +121,5 @@ article {
   height: 9.375em;
   font-size: 1.5em;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
 }

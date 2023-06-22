@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ page import="java.util.List"%> <%@ page
 import="java.util.Map"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <title>pokemonMain</title>
     <link rel="stylesheet" href="css/pokemonMain.css" />
   </head>
   <body>
@@ -133,32 +134,34 @@ import="java.util.Map"%>
           type="text"
           id="search-input"
           placeholder="포켓몬의 이름 또는 도감 번호를 입력하세요"
+          maxlength="10"
         />
-        <img
-          src="img/icon/magnifier-icon.png"
-          alt="magnifier-icon"
-          id="magnifier-icon"
-        />
+          <img
+            src="img/icon/magnifier-icon.png"
+            alt="magnifier-icon"
+            id="magnifier-icon"
+          />
       </div>
 
       <!-- Pokemon Cards Gallery -->
       <div class="scrollable">
-        <% int repeatCount = 20; // 반복 횟수 설정합니다. 
+<%--         <% int repeatCount = 20; // 반복 횟수 설정합니다. 
         for (int i = 0; i <
-        repeatCount; i++) { %>
-        <!-- 단일 속성 포켓몬 카드 -->
+        repeatCount; i++) { %> --%>
+        
+        <c:forEach var="pokemon" items="${Pokemons }">
         <a href="">
           <div class="pokemon-card">
             <div class="card-white-bg">
               <div class="card-contents">
-                <p>#4</p>
+                <p>#${pokemon.no }</p>
                 <img
-                  src="img/charmander.png"
-                  alt="charmander"
+                  src="${pokemon.frontDefault }"
+                  alt="${pokemon.name }"
                   class="card-pokemon-img"
                 />
                 <hr class="horizontal-line" />
-                <p>파이리</p>
+                <p>${pokemon.name }</p>
                 <div class="type-icons-area">
                   <img
                     src="img/pokemon-type/circle-type/fire.png"
@@ -170,36 +173,8 @@ import="java.util.Map"%>
             </div>
           </div>
         </a>
-        <!-- 이중 속성 포켓몬 카드 -->
-        <a href="">
-          <div class="pokemon-card">
-            <div class="card-white-bg">
-              <div class="card-contents">
-                <p>#4</p>
-                <img
-                  src="img/bulbasaur.png"
-                  alt="bulbasaur"
-                  class="card-pokemon-img"
-                />
-                <hr class="horizontal-line" />
-                <p>이상해씨</p>
-                <div class="type-icons-area">
-                  <img
-                    src="img/pokemon-type/circle-type/grass.png"
-                    alt="grass-type"
-                    class="card-type-icon"
-                  />
-                  <img
-                    src="img/pokemon-type/circle-type/poison.png"
-                    alt="poison-type"
-                    class="card-type-icon"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <% } %>
+        </c:forEach>
+       
       </div>
     </div>
   </body>

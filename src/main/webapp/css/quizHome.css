@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.mainDescription {
+  font-family: "DungGeunMo";
+  font-size: 20pt;
+  text-align: center;
+  line-height: 30px;
+  color: black;
+}
+#followButton {
+  font-family: "DungGeunMo";
+  border: none;
+  background-color: transparent;
+  font-size: 20pt;
+  color: purple;
+  
+}
+#followButton:hover {
+  font-size: 25pt;
+  cursor: pointer;
+}

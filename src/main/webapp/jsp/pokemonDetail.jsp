@@ -6,8 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Insert title here</title>
 <link href="css/pokemonDetail.css" rel="stylesheet" type="text/css">
+=======
+<title>pokemonDetail</title>
+
+>>>>>>> 5e3428926618472e2136fe3616f5c5500c2dc160
 </head>
 <body>
 <div id="header">

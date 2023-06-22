@@ -52,19 +52,28 @@
   border-radius: 1.5vw;
   background-color: transparent;
   padding-left: 2vw;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8vw;
+}
+
+#search-input:focus {
+  outline: none;
+  border: 1px solid #ffc800;
+  box-shadow: 0 0 5px 2px #ffc800;
 }
 
 #search-input::placeholder {
   text-overflow: ellipsis;
   font-style: normal;
   font-weight: 400;
-  font-size: 1vw;
+  font-size: 0.8vw;
   color: rgba(255, 255, 255, 0.5);
 }
 
 #magnifier-icon {
   position: absolute;
-  width: 2vw;
+  width: 1vw;
   right: 1.5vw;
 }
 
@@ -83,6 +92,8 @@
   width: 5px; /*스크롤바의 너비*/
 }
 ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 10vh;
   background-color: rgba(0, 0, 0, 0.5); /*스크롤바의 색상*/
 }
 
