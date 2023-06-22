@@ -21,36 +21,38 @@
                     <img src="../img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    <div class="signup-container">
-                        <div>
+                    <form action="SignupC" method="post">
+                        <div class="btn-container">
                             <div>
-                                <img class="signup-input-img" src="../img/icon/account-icon/profile-user1.png">
-                                <input class="signup-input-btn" type="text" placeholder="Name">
+                                <img class="user-icon" src="../img/icon/account-icon/profile-user1.png">
+                                <input class="info-input-btn" type="text" placeholder="Name">
                             </div>
                             <div>
-                                <img class="signup-input-img" src="../img/icon/account-icon/profile-user2.png">
-                                <input class="signup-input-btn" type="text" placeholder="User Name">
+                                <img class="user-icon" src="../img/icon/account-icon/profile-user2.png">
+                                <input class="info-input-btn" type="text" placeholder="User Name">
                             </div>
                             <div>
-                                <img class="signup-input-img" src="../img/icon/account-icon/pw.png">
-                                <input class="signup-input-btn" type="text" placeholder="PW">
+                                <img class="user-icon" src="../img/icon/account-icon/pw.png">
+                                <input class="info-input-btn" type="text" placeholder="PW">
                             </div>
                             <div>
-                                <img class="signup-input-img" src="../img/icon/account-icon/pw-confirm.png">
-                                <input class="signup-input-btn" type="text" placeholder="PW Confirm">
+                                <img class="user-icon" src="../img/icon/account-icon/pw-confirm.png">
+                                <input class="info-input-btn" type="text" placeholder="PW Confirm">
                             </div>
                             <div>
-                                <img class="signup-input-img" src="../img/icon/account-icon/email.png">
-                                <input class="signup-input-btn" type="text" placeholder="Email">
+                                <img class="user-icon" src="../img/icon/account-icon/email.png">
+                                <input class="info-input-btn" type="text" placeholder="Email">
                             </div>
-                            <div class="signup-btn">Sign Up</div>
+                            <div class="confirm-btn">Sign Up</div>
+                            <br>
+                            <div class="or-signup">Or Sign Up With</div>
+                            <br>
                             <div>
-                                <div class="signup-des">Or Sign Up With</div>
-                                <img class="signup-google-logo" alt="구글 로고"
+                                <img class="google-logo" alt="구글 로고"
                                      src="../img/icon/account-icon/google-icon.png">
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

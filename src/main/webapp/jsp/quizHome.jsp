@@ -29,7 +29,7 @@
 
 
 <div>
-	<form action="ShadowC">
+	<form action="GameC">
 	 	<button>이동하기</button>
 	</form>
 </div>
