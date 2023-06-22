@@ -71,7 +71,7 @@ pageEncoding="UTF-8"%>
             <li><a href="MyRewardC">My Rewards</a></li>
             <li><a href="CommunityC">Community</a></li>
             <li><a href="LoginC">Login</a></li>
-            <li><a href="JoinAccountC">Sign Up</a></li>
+            <li><a href="SignupC">Join</a></li>
           </ul>
         </div>
       </div>

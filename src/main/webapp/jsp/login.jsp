@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>login</title>
     <link rel="stylesheet" href="../css/pokedexFrameAccount.css"/>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 <div id="pokedex-wrapper">
@@ -21,10 +22,27 @@
                 </div>
                 <div id="pokedex-white-bg">
                     <form action="LoginC" method="post">
-                        ID <input name="id">
-                        PW <input name="pw" type="password">
-                        <button>로그인</button>
-                        <button type="button" onclick="location.href='JoinAccountC'">회원가입</button>
+                        <div class="btn-container">
+                            <div>
+                                <img class="user-icon" src="../img/icon/account-icon/profile-user2.png">
+                                <input name="id" class="info-input-btn" type="text" placeholder="User Name">
+                            </div>
+                            <div>
+                                <img class="user-icon" src="../img/icon/account-icon/pw.png">
+                                <input name="pw" type="password" class="info-input-btn" placeholder="PW">
+                            </div>
+                            <div class="confirm-btn-container">
+                                <button class="confirm-btn">Login</button>
+                                <button type="button" onclick="location.href='JoinAccountC'" class="confirm-btn">Sign Up</button>
+                            </div>
+                            <br>
+                            <div class="or-signup">Or Sign Up With</div>
+                            <br>
+                            <div class="google-logo-container">
+                                <img class="google-logo" alt="구글 로고"
+                                     src="../img/icon/account-icon/google-icon.png">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
