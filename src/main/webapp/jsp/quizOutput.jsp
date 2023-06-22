@@ -22,6 +22,9 @@
                 <div class="quiz-Center">
                     <div class="center-Up">
                         <div class="myPoke">
+                        <div class="enemyPokeName">
+                        	${poketmon.p_name }
+                        </div>
                             <div class="myPoke-Up">
                             	<img id="enemyPokeHp" alt="적팀포켓몬 체력바" src="img/enemyPokeHpNew.png">
                             </div>
@@ -73,6 +76,13 @@
  <script>
  		var languageDex = '${poketmon.p_name}';
  		
+ 		var hiddenText ="";
+ 		for (var i = 0; i < languageDex.length; i++) {
+			hiddenText += "?";
+		}
+ 		
+ 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
+ 		
         function checkPokemonName() {
             var userInput = prompt("포켓몬 이름을 입력해주세요:");
 			
@@ -80,7 +90,9 @@
              console.log("languageDex :" + languageDex);
             if (userInput === languageDex) {
                 alert("정답입니다.");
+                document.getElementById("enemyPokeHp").src = "img/enemyNoHp.png";
                 document.getElementById("imgshaddow").style.filter = "none";
+                document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
                 setTimeout(function() {
                 location.reload();
                 }, 1500); 
@@ -91,6 +103,7 @@
             }
         }
 		
+        
         function showHint() {
             var halfLength = Math.ceil(languageDex.length / 2);
             var hint = languageDex.slice(0, halfLength);
