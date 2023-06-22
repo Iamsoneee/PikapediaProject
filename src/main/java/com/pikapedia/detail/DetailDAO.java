@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 
-
-
-
-
 public class DetailDAO {
 
 

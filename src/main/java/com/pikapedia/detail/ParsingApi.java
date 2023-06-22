@@ -14,6 +14,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+<<<<<<< HEAD:src/main/java/com/pikapedia/detail/ParsingApi.java
+=======
+import com.pikapedia.db.DBManager;
+>>>>>>> 945171e9a903f6b6b042195206051038e99c1359:src/main/java/com/pikapedia/serach/ParsingApi.java
 	
 public class ParsingApi {
 	public static DetailPokeBean poketmon;
