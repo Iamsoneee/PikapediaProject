@@ -1,4 +1,4 @@
-package com.pikapedia.serach;
+package com.pikapedia.detail;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/SearchHC")
-public class SearchHC extends HttpServlet {
+@WebServlet("/DetailC")
+public class DetailC extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher(".jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Model.searchPoketmon(request);
+		DetailDAO.searchPoketmon(request);
 		request.setCharacterEncoding("utf-8");
-		request.getRequestDispatcher("output.jsp").forward(request, response);
+		request.getRequestDispatcher("jsp/pokemonDetail.jsp").forward(request, response);
 	}
 
 }
