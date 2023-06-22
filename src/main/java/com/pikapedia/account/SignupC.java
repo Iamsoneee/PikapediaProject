@@ -1,4 +1,4 @@
-package com.pikapedia.game;
+package com.pikapedia.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ShadowC")
-public class ShadowC extends HttpServlet {
-
+@WebServlet("/SignupC")
+public class SignupC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		GameModel.random(request);
-		request.setAttribute("contentPage", "jsp/quizOutput.jsp");
+		AccountDAO.checkLogin(request);
+		request.setAttribute("contentPage", "jsp/signup.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		// 회원가입하는 일
+		AccountDAO.joinAccount(request);
+		// 어디로?
+		AccountDAO.checkLogin(request);
+		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }
