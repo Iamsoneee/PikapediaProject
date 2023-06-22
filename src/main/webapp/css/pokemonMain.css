@@ -92,6 +92,8 @@
   width: 5px; /*스크롤바의 너비*/
 }
 ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 10vh;
   background-color: rgba(0, 0, 0, 0.5); /*스크롤바의 색상*/
 }
 
