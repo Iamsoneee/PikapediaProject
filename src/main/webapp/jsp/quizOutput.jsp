@@ -22,7 +22,9 @@
                 <div class="quiz-Center">
                     <div class="center-Up">
                         <div class="myPoke">
-                            <div class="myPoke-Up"></div>
+                            <div class="myPoke-Up">
+                            	<img id="enemyPokeHp" alt="적팀포켓몬 체력바" src="img/enemyPokeHpNew.png">
+                            </div>
                             <div class="myPoke-Down">
                             	<img id="trainerImg" alt="트레이너 이미지" src="img/trainer.png">
                             </div>
@@ -31,7 +33,9 @@
                             <div class="enemyPoke-Up">
                            		<img id="imgshaddow" alt="포켓몬 이미지" src="${poketmon.p_frontDefault}">
                             </div>
-                            <div class="enemyPoke-Down"></div>
+                            <div class="enemyPoke-Down">
+                            	<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/myPokemonHp.png">
+                            </div>
                         </div>
                     </div>
                     <div class="cetner-Down">

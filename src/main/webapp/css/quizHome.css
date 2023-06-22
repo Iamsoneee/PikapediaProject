@@ -8,18 +8,20 @@
 }
 .mainDescription {
   font-family: "DungGeunMo";
-  font-size: 15pt;
-  line-height: 2.1;
+  font-size: 20pt;
   text-align: center;
+  line-height: 30px;
+  color: black;
 }
-#followOutput {
+#followButton {
+  font-family: "DungGeunMo";
   border: none;
   background-color: transparent;
-  font-family: "DungGeunMo";
-  font-size: 1.2em;
-  margin-top: 3%;
-  cursor: pointer;
+  font-size: 20pt;
+  color: purple;
+  
 }
-#followOutput:hover {
-  font-size: 1.5em;
+#followButton:hover {
+  font-size: 25pt;
+  cursor: pointer;
 }
