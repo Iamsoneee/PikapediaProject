@@ -18,7 +18,7 @@ body {
 }
 
 .dark-mode ::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255,0.5); /*스크롤바의 색상*/
+  background-color: rgb(255, 255, 255, 0.5); /*스크롤바의 색상*/
 }
 
 .dark-mode ::-webkit-scrollbar-track {
@@ -28,7 +28,7 @@ body {
 article {
   /*   border: 1px solid blue; */
   width: 100%;
-  height: 100vh;, 0.5
+  height: 100vh;
 }
 
 .pokemon-main {
@@ -52,6 +52,17 @@ article {
   height: 7.75em;
   padding: 0.5em 0.75em;
   font-size: 1em;
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+  }
+  .drop-menu {
+    flex-direction: column;
+    z-index: 1;
+    background-color: rgb(78, 108, 98);
+  }
 }
 
 #pikapedia-logo {
@@ -85,12 +96,6 @@ article {
 
 .drop-menu li a {
   color: white;
-}
-
-@media screen and (min-width: 768px) {
-  .header-wrapper {
-    display: flex;
-}
 }
 
 /* Main Area */
