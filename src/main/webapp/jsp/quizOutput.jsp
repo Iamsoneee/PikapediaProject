@@ -23,11 +23,13 @@
                     <div class="center-Up">
                         <div class="myPoke">
                             <div class="myPoke-Up"></div>
-                            <div class="myPoke-Down"></div>
+                            <div class="myPoke-Down">
+                            	<img id="trainerImg" alt="트레이너 이미지" src="img/trainer.png">
+                            </div>
                         </div>
                         <div class="enemyPoke">
                             <div class="enemyPoke-Up">
-                            <img id="imgshaddow" alt="포켓몬이미지" src="${poketmon.p_frontDefault}">
+                           		<img id="imgshaddow" alt="포켓몬 이미지" src="${poketmon.p_frontDefault}">
                             </div>
                             <div class="enemyPoke-Down"></div>
                         </div>
@@ -65,34 +67,31 @@
 </div>
 </body>
  <script>
- 		var languageDex;
+ 		var languageDex = '${poketmon.p_name}';
  		
         function checkPokemonName() {
             var userInput = prompt("포켓몬 이름을 입력해주세요:");
-            languageDex = '${poketmon.p_name}';
 			
             console.log("userInput :" + userInput);
              console.log("languageDex :" + languageDex);
             if (userInput === languageDex) {
                 alert("정답입니다.");
                 document.getElementById("imgshaddow").style.filter = "none";
+                setTimeout(function() {
                 location.reload();
-            
+                }, 1500); 
             } else if (userInput == null) {
                 alert("다시 입력해주세요");
             } else {
             	alert("오답입니다")
             }
         }
-
+		
         function showHint() {
             var halfLength = Math.ceil(languageDex.length / 2);
             var hint = languageDex.slice(0, halfLength);
             alert("힌트: " + hint);
         }
 
-        function showCorrectAnswer() {
-            alert("개발자 정답: " + languageDex);
-        }
     </script>
 </html>
