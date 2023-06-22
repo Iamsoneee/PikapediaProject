@@ -1,4 +1,4 @@
-package com.pikapedia.serach;
+package com.pikapedia.detail;
 
 
 import java.io.InputStream;
@@ -14,10 +14,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+<<<<<<< HEAD:src/main/java/com/pikapedia/detail/ParsingApi.java
+=======
 import com.pikapedia.db.DBManager;
+>>>>>>> 945171e9a903f6b6b042195206051038e99c1359:src/main/java/com/pikapedia/serach/ParsingApi.java
 	
 public class ParsingApi {
-	public static Poketmon poketmon;
+	public static DetailPokeBean poketmon;
 	public static void main(String[] args) {
 
 	
@@ -75,12 +78,12 @@ public class ParsingApi {
 					String languageName = (String) ((JSONObject) nameData.get("language")).get("name");
 					String name = (String) nameData.get("name");
 					if (languageName.equals("ko")) {
-						System.out.println("ï¿½Ì¸ï¿½: " + name);
+						System.out.println("ÀÌ¸§: " + name);
 						p_name = name;
 					}
 				}
 				
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + pokemonObject.get("weight"));
+				System.out.println("¹«°Ô : " + pokemonObject.get("weight"));
 				p_weight = Double.parseDouble(String.valueOf(pokemonObject.get("weight")))/10;
 				
 				
@@ -103,7 +106,7 @@ public class ParsingApi {
 						String languageName = (String) ((JSONObject) typeNameData.get("language")).get("name");
 						String typeName = (String) typeNameData.get("name");
 						if (languageName.equals("ko")) {
-							System.out.println("Å¸ï¿½ï¿½ : " + typeName);
+							System.out.println("Å¸ÀÔ : " + typeName);
 							if(typesArray.indexOf(typeObj)==0)
 							{
 								p_type1 = typeName;
@@ -124,7 +127,7 @@ public class ParsingApi {
 					String versionName = (String) ((JSONObject) nameData.get("version")).get("name");
 					String name = (String) nameData.get("flavor_text");
 					if (languageName.equals("ko")&&versionName.equals("alpha-sapphire")) {
-						System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + name);
+						System.out.println("¼³¸í : " + name);
 						p_des = name;
 						
 					}
@@ -137,10 +140,10 @@ public class ParsingApi {
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
 				
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + frontDefault);
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + backDefault);
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + frontShiny);
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + backShiny);
+				System.out.println("ÀÌ¹ÌÁö1 : " + frontDefault);
+				System.out.println("ÀÌ¹ÌÁö2 : " + backDefault);
+				System.out.println("ÀÌ¹ÌÁö3 : " + frontShiny);
+				System.out.println("ÀÌ¹ÌÁö4 : " + backShiny);
 				
 				System.out.println(p_name);
 				System.out.println(p_des);
@@ -148,7 +151,7 @@ public class ParsingApi {
 				System.out.println(p_type2);
 				System.out.println(p_height);
 				System.out.println(p_weight);
-				poketmon = new Poketmon(guide,p_name,p_height,p_weight,p_type1,p_type2,p_des,frontDefault,backDefault,frontShiny,backShiny);
+				poketmon = new DetailPokeBean(guide,p_name,p_height,p_weight,p_type1,p_type2,p_des,frontDefault,backDefault,frontShiny,backShiny);
 				
 				String sql = "insert into pokemon values (?,?,?,?,?,?,?,?,?,?,?)";
 				
@@ -168,7 +171,7 @@ public class ParsingApi {
 				pstmt.setString(10, frontShiny);
 				pstmt.setString(11, backShiny);
 				if(pstmt.executeUpdate() == 1) {
-					System.out.println("ï¿½ï¿½Ï¿Ï·ï¿½");
+					System.out.println("µî·Ï¿Ï·á");
 				}
 						
 			}

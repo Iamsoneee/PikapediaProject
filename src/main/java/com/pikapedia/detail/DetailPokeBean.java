@@ -1,6 +1,6 @@
-package com.pikapedia.serach;
+package com.pikapedia.detail;
 
-public class Poketmon {
+public class DetailPokeBean {
 	private int p_no;
 	private String p_name;
 	private double p_height;
@@ -13,7 +13,7 @@ public class Poketmon {
 	private String p_frontShiny;
 	private String p_backShiny;
 	
-	public Poketmon(int p_no, String p_name, double p_height, double p_weight, String p_type1, String p_type2, String p_des, 
+	public DetailPokeBean(int p_no, String p_name, double p_height, double p_weight, String p_type1, String p_type2, String p_des, 
 			String p_frontDefault, String p_backDefault,String p_frontShiny, String p_backShiny) {
 		super();
 		this.p_no = p_no;
