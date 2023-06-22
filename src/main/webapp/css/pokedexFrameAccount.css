@@ -42,7 +42,7 @@
 }
 
 #pokedex-blue-frame {
-  box-sizing: border-box;
+/*box-sizing: border-box;
   position: absolute;
   top: 0;
   right: 0;
@@ -51,6 +51,20 @@
   padding: 1.5vw;
   background-size: contain;
   background: #c1daff url(../img/pokedex-bg.png) no-repeat center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px; */
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 98%;
+  height: 68vh;
+  padding: 1.5vw;
+  background: #c1daff;
+  background-image: url(../img/pokedex-bg.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
 }

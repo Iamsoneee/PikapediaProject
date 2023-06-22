@@ -1,4 +1,4 @@
-package com.pikapedia.search;
+package com.pikapedia.db;
 
 
 import java.sql.Connection;
@@ -12,7 +12,7 @@ public class DBManager {
 	
 	
 	public static Connection connect(){
-		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=C:/jsw_sbt7/Wallet_J3ZTYAOVKH9AOAWJ";
+		String url = "jdbc:oracle:thin:@j3ztyaovkh9aoawj_high?TNS_ADMIN=/Users/sanghyunkim/Oracle_instantclient10_1/Wallet_J3ZTYAOVKH9AOAWJ";
 		Connection con = null;
 		try {
 			con = DriverManager.getConnection(url, "ADMIN", "Soldesk802!!");

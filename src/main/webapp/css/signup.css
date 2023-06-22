@@ -1,28 +1,42 @@
 @charset "UTF-8";
 
-/*.signup-container {*/
-/*    border: black 1px;*/
-/*}*/
-.signup-input-img {
-    height: 1rem;
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
 }
-.signup-input-btn{
+.btn-container > div{
+    position: relative;
+}
+.info-input-btn{
     width: 25vw;
-    height: 30px;
+    height: 40px;
     background-color: lightgray;
     border-radius: 1.5vw;
+    border: transparent;
     margin-bottom: 10px;
+    padding-left: 6vw;
 }
-.signup-btn{
+.user-icon {
+    position: absolute;
+    width: 20px;
+    left: 2vw;
+    margin-top: 10px;
+}
+.confirm-btn{
     width: 25vw;
-    height: 30px;
+    height: 40px;
+    line-height: 40px;
     background-color: gray;
     text-align: center;
     border-radius: 1.5vw;
-    line-height: 30px;
     border: transparent;
 }
-.signup-google-logo{
-    text-align: center;
-    width: 100px;
+.google-logo{
+    width: 25px;
+}
+.or-signup{
+    color: black;
 }

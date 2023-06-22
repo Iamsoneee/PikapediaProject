@@ -1,4 +1,4 @@
-package com.pikapedia.serach;
+package com.pikapedia.detail;
 
 
 import java.io.InputStream;
@@ -10,14 +10,13 @@ import java.sql.ResultSet;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import com.pikapedia.db.DBManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.pikapedia.search.DBManager;
-	
 public class ParsingApi {
-	public static Poketmon poketmon;
+	public static DetailPokeBean poketmon;
 	public static void main(String[] args) {
 
 	
@@ -137,10 +136,10 @@ public class ParsingApi {
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
 				
-				System.out.println("���� : " + frontDefault);
-				System.out.println("���� : " + backDefault);
-				System.out.println("���� : " + frontShiny);
-				System.out.println("���� : " + backShiny);
+				System.out.println("�̹���1 : " + frontDefault);
+				System.out.println("�̹���2 : " + backDefault);
+				System.out.println("�̹���3 : " + frontShiny);
+				System.out.println("�̹���4 : " + backShiny);
 				
 				System.out.println(p_name);
 				System.out.println(p_des);
@@ -148,7 +147,7 @@ public class ParsingApi {
 				System.out.println(p_type2);
 				System.out.println(p_height);
 				System.out.println(p_weight);
-				poketmon = new Poketmon(guide,p_name,p_height,p_weight,p_type1,p_type2,p_des,frontDefault,backDefault,frontShiny,backShiny);
+				poketmon = new DetailPokeBean(guide,p_name,p_height,p_weight,p_type1,p_type2,p_des,frontDefault,backDefault,frontShiny,backShiny);
 				
 				String sql = "insert into pokemon values (?,?,?,?,?,?,?,?,?,?,?)";
 				

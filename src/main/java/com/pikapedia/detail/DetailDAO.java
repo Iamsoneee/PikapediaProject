@@ -1,32 +1,31 @@
-package com.pikapedia.serach;
+package com.pikapedia.detail;
+
+import com.pikapedia.db.DBManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.pikapedia.search.DBManager;
 
-
-
-
-public class Model {
-	private static Connection con = DBManager.connect();
-	
+public class DetailDAO {
 	public static void searchPoketmon(HttpServletRequest request) {
+		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon where p_name = ?";
 		
 		try {
+			con = DBManager.connect();
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, search);
 			rs = pstmt.executeQuery();
-			ArrayList<Poketmon> scPokemons = new ArrayList<Poketmon>();
+			ArrayList<DetailPokeBean> scPokemons = new ArrayList<DetailPokeBean>();
 			while (rs.next()) {
 				int p_no = rs.getInt("p_no");
 				String p_name = rs.getString ("p_name");
@@ -44,7 +43,7 @@ public class Model {
 				String p_frontShiny = rs.getString("p_front_shiny_img");
 				String p_backShiny = rs.getString("p_back_shiny_img");
 				
-				scPokemons.add(new Poketmon(p_no,p_name,p_height,p_weight,p_type1,p_type2,p_des,p_frontDefault,p_backDefault,p_frontShiny,p_backShiny));
+				scPokemons.add(new DetailPokeBean(p_no,p_name,p_height,p_weight,p_type1,p_type2,p_des,p_frontDefault,p_backDefault,p_frontShiny,p_backShiny));
 			}
 			request.setAttribute("scPokemons", scPokemons);
 			
