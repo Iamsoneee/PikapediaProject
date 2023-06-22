@@ -1,5 +1,7 @@
 package com.pikapedia.account;
 
+import com.pikapedia.db.DBDAO;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MyRewardC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
-		SearchDAO.getAllPokemon(request);
+		DBDAO.getAllPokemon(request);
 		request.setAttribute("contentPage", "jsp/myRewards.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
