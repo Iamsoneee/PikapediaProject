@@ -49,6 +49,34 @@ public class DBDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
+	
+	public static void getPokemonTypes(HttpServletRequest request) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql = "select * from type";
+        try {
+            con = DBManager.connect();
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            ArrayList<Type> types = new ArrayList<Type>();
+            while (rs.next()) {
+                String typeNameKo = rs.getString("t_name_ko");
+                String typeNameJa = rs.getString("t_name_ja");
+                String typeNameEn = rs.getString("t_name_en");
+                String typeColor = rs.getString("t_color");
+                String typeImg = rs.getString("t_img");
+            
+                Type type = new Type(typeNameKo, typeNameJa, typeNameEn, typeColor, typeImg);
+                types.add(type);
+            }
+            request.setAttribute("Types", types);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(con, pstmt, rs);
+        }
+    }
 
 	
 
