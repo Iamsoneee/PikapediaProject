@@ -35,7 +35,7 @@
                     <b>도망간다(나가기)</b> <br/>
                     시작페이지로 이동합니다. <br/>
                     <br>
-                    <form action="ShadowC">
+                    <form action="GameC">
                         <button id="followButton">이동하기</button>
                     </form>
                 </div>
