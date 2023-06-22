@@ -28,26 +28,35 @@
 		<div class="p_info_column">HEIGHT</div>
 	</div>
 	<div id="content3">
-		<div class="p_info_column2">${pokemon.p_type1 }${pokemon.p_type2 }</div>
+		<div class="p_info_column2">${pokemon.p_type1 }, ${pokemon.p_type2 }</div>
 		<div class="p_info_column2">${pokemon.p_weight }kg</div>
 		<div class="p_info_column2">${pokemon.p_height }m</div>
 	</div>
 	<div id="content4">
-		<div class="p_des">${pokemon.p_des }</div>	
+		<div class="p_des"><span>${pokemon.p_des }</span></div>	
 	</div>
 	<div id="content5">
-		<div class="p_img">
-		<img alt="" src="${pokemon.p_frontDefault }" style="width:50px; height:50px;">
-		<img alt="" src="${pokemon.p_backDefault }" style="width:50px; height:50px;">
-		<img alt="" src="${pokemon.p_frontShiny }" style="width:50px; height:50px;">
-		<img alt="" src="${pokemon.p_backShiny }" style="width:50px; height:50px;">
+		
+	</div>
+	<div id="content5-2">
+		<div>
+			<img class="p_img" alt="" src="${pokemon.p_frontDefault }">
 		</div>
+		<div>
+			<img class="p_img" alt="" src="${pokemon.p_backDefault }">
+		</div>
+		<div>
+			<img class="p_img" alt="" src="${pokemon.p_frontShiny }">
+		</div>
+		<div>
+			<img class="p_img" alt="" src="${pokemon.p_backShiny }">
+		</div>	
 	</div>
 </div>
+</c:forEach>
 <div id="footer">
 <span>ⓒ 2023 Pikapedia. All rights reserved.</span>
 </div>
-</c:forEach>
 
 
 

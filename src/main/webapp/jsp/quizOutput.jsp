@@ -1,4 +1,4 @@
-<%@page import="com.pikapedia.serach.Poketmon"%>
+<%@page import="com.pikapedia.detail.DetailPokeBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/quiz.css" />
     <link rel="stylesheet" href="css/index.css" />
 	<link rel="stylesheet" href="css/pokedexFramegame.css" />
-<% Poketmon poketmon = (Poketmon) request.getAttribute("poketmon"); %>
+<%
+DetailPokeBean poketmon = (DetailPokeBean) request.getAttribute("poketmon");
+%>
     <script>
     	var poketmon = `${poketmon.p_name}', '${poketmon.p_front_default_img}`;
 

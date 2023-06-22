@@ -8,8 +8,8 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.pikapedia.detail.DetailPokeBean;
 import com.pikapedia.search.DBManager;
-import com.pikapedia.serach.Poketmon;
 
 public class GameModel {
 
@@ -33,7 +33,7 @@ public class GameModel {
                 String p_name = rs.getString("p_name");
                 String p_frontDefault = rs.getString("p_front_default_img");
 
-                Poketmon poketmon = new Poketmon(p_no, p_name, 0, 0, "", "", "", p_frontDefault, "", "", "");
+                DetailPokeBean poketmon = new DetailPokeBean(p_no, p_name, 0, 0, "", "", "", p_frontDefault, "", "", "");
 
                 request.setAttribute("poketmon", poketmon);
             }
