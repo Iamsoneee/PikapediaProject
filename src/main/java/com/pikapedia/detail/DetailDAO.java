@@ -14,11 +14,13 @@ public class DetailDAO {
 
 
 	public static void searchPoketmon(HttpServletRequest request) {
+		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon where p_name = ?";
 		
 		try {
+			con = DBManager.connect();
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
 			pstmt = con.prepareStatement(sql);
