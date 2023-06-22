@@ -87,6 +87,12 @@ article {
   color: white;
 }
 
+@media screen and (min-width: 768px) {
+  .header-wrapper {
+    display: flex;
+}
+}
+
 /* Main Area */
 #contents-area /* Include Area */ {
   background-color: rgb(172, 215, 215, 0.8);
