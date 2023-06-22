@@ -3,6 +3,7 @@ package com.pikapedia.serach;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +14,16 @@ import com.pikapedia.search.DBManager;
 
 
 public class Model {
-	private static Connection con = DBManager.connect();
-	
+	private static Connection con;
+
+	static {
+		try {
+			con = DBManager.connect();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public static void searchPoketmon(HttpServletRequest request) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
