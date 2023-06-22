@@ -1,24 +1,25 @@
 package com.pikapedia.detail;
 
+import com.pikapedia.db.DBManager;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
 
 public class DetailDAO {
-
-
-
-
 	public static void searchPoketmon(HttpServletRequest request) {
+		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon where p_name = ?";
 		
 		try {
+			con = DBManager.connect();
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
 			pstmt = con.prepareStatement(sql);

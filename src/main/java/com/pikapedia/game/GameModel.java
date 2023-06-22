@@ -8,8 +8,8 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.pikapedia.db.DBManager;
 import com.pikapedia.detail.DetailPokeBean;
-import com.pikapedia.search.DBManager;
 
 public class GameModel {
 
