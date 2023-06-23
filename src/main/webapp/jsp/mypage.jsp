@@ -21,6 +21,7 @@
                 </div>
                 <div id="pokedex-white-bg">
                     컨텐츠를 입력하세요.
+
                 </div>
             </div>
         </div>
