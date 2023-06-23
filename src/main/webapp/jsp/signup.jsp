@@ -33,17 +33,19 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="text" placeholder="PW">
+                                <input class="info-input-btn" type="password" placeholder="PW" pattern="[a-zA-Z].+[0-9]">
+<%--                                [a-zA-Z].+[0-9] 뜻 : 알파벳으로 시작 후.+(1개 이상)아무거나 오고 알파벳으로 끝나야 한다.(정규표현식으로 가능)--%>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="text" placeholder="PW Confirm">
+                                <input class="info-input-btn" type="password" placeholder="PW Confirm">
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/email.png">
-                                <input class="info-input-btn" type="text" placeholder="Email">
+                                <input class="info-input-btn" type="email" placeholder="Email">
+                                <!--유효성검사1:HTML5의 새로운 input type인 email로 가능-->
                             </div>
-                            <button type="button" onclick="location.href='SignupC'" class="confirm-btn">Sign Up</button>
+                            <button class="confirm-btn">Sign Up</button>
                             <br>
                             <div class="or-signup">Or Sign Up With</div>
                             <br>

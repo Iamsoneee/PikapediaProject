@@ -21,11 +21,36 @@
                     <img src="/img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    마이 페이지 작업 후 복붙 예정
+                    <div class="profile-container">
+                        <img class="profile-icon" src="/img/icon/account-icon/profile-user3.png">
+                    </div>
+                    <div class="btn-container">
+                        <div>
+                            <img class="user-icon" src="/img/icon/account-icon/profile-user1.png">
+                            <div class="info-input-btn">이름</div>
+                        </div>
+                        <div>
+                            <img class="user-icon" src="/img/icon/account-icon/profile-user2.png">
+                            <div class="info-input-btn">닉네임</div>
+                        </div>
+                        <div>
+                            <img class="user-icon" src="/img/icon/account-icon/email.png">
+                            <div class="info-input-btn">이메일</div>
+                        </div>
+                        <div class="confirm-btn-container">
+                            <div>
+                                <button class="confirm-btn" onclick="location.href='#C'">Confirm</button>
+                            </div>
+                            <div>
+                                <button class="confirm-btn" type="button" onclick="location.href='/jsp/mypageEdit.jsp'">Edit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>

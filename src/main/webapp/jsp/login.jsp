@@ -32,8 +32,8 @@
                                 <input name="pw" type="password" class="info-input-btn" placeholder="PW">
                             </div>
                             <div class="confirm-btn-container">
-                                <button class="confirm-btn">Login</button>
-                                <button type="button" onclick="location.href='SignupC'" class="confirm-btn">Sign Up</button>
+                                <div><button class="confirm-btn">Login</button></div>
+                                <div><button type="button" onclick="location.href='SignupC'" class="confirm-btn">Sign Up</button></div>
                             </div>
                             <br>
                             <div class="or-signup">Or Sign Up With</div>

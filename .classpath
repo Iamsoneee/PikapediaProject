@@ -18,6 +18,5 @@
 			<attribute name="owner.project.facets" value="jst.web;#system#"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/79677/Downloads/ojdbc8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

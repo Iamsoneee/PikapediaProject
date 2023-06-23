@@ -17,33 +17,38 @@
         <div id="pokedex-blue-shadow">
             <div id="pokedex-blue-frame">
                 <div id="pokedex-title-area">
-                    <span class="pokedex-title-txt">Mypage</span>
+                    <span class="pokedex-title-txt">Mypage Edit</span>
                     <img src="/img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    <div class="btn-container">
-                        <div>
-                            <img class="user-icon" src="/img/icon/account-icon/profile-user1.png">
-                            <input class="info-input-btn" type="text" placeholder="Name">
-                        </div>
-                        <div>
-                            <img class="user-icon" src="/img/icon/account-icon/profile-user2.png">
-                            <input class="info-input-btn" type="text" placeholder="User Name">
-                        </div>
-                        <div>
-                            <img class="user-icon" src="/img/icon/account-icon/pw.png">
-                            <input class="info-input-btn" type="text" placeholder="PW">
-                        </div>
-                        <div>
-                            <img class="user-icon" src="/img/icon/account-icon/pw-confirm.png">
-                            <input class="info-input-btn" type="text" placeholder="PW Confirm">
-                        </div>
-                        <div>
-                            <img class="user-icon" src="/img/icon/account-icon/email.png">
-                            <input class="info-input-btn" type="text" placeholder="Email">
-                        </div>
-                        <button type="button" onclick="location.href='#C:컨트롤러 입력해주세요'"  class="confirm-btn">Confirm</button>
+                    <div class="profile-container">
+                        <img class="profile-icon" src="/img/icon/account-icon/profile-user3.png">
                     </div>
+                    <form action="#C" method="post">
+                        <div class="btn-container">
+                            <div>
+                                <img class="user-icon" src="/img/icon/account-icon/profile-user1.png">
+                                <input class="info-input-btn" type="text" placeholder="Name">
+                            </div>
+                            <div>
+                                <img class="user-icon" src="/img/icon/account-icon/profile-user2.png">
+                                <input class="info-input-btn" type="text" placeholder="User Name">
+                            </div>
+                            <div>
+                                <img class="user-icon" src="/img/icon/account-icon/pw.png">
+                                <input class="info-input-btn" type="password" placeholder="PW">
+                            </div>
+                            <div>
+                                <img class="user-icon" src="/img/icon/account-icon/pw-confirm.png">
+                                <input class="info-input-btn" type="password" placeholder="PW Confirm">
+                            </div>
+                            <div>
+                                <img class="user-icon" src="/img/icon/account-icon/email.png">
+                                <input class="info-input-btn" type="email" placeholder="Email">
+                            </div>
+                            <button class="confirm-btn">Confirm</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

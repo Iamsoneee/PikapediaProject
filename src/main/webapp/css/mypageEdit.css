@@ -2,20 +2,36 @@
 
 #pokedex-white-bg{
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
+
+.profile-container{
+    background-color: lightgray;
+    height: 210px;
+    width: 200px;
+    border-radius: 45%;
+    margin-right: 50px;
+}
+.profile-icon{
+    position: relative;
+    width: 100px;
+    top: 50px;
+    left: 50px;
+}
+
 .btn-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10vh;
+    /*margin-top: 10vh;*/
 }
 .btn-container > div{
     position: relative;
 }
 .info-input-btn{
-    width: 20vw;
+    width: 25vw;
     height: 40px;
     background-color: lightgray;
     border-radius: 1.5vw;
@@ -30,7 +46,7 @@
     margin-top: 10px;
 }
 .confirm-btn{
-    width: 25vw;
+    width: 31vw;
     height: 40px;
     line-height: 40px;
     background-color: gray;
