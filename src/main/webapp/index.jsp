@@ -73,6 +73,9 @@ pageEncoding="UTF-8"%>
             <li><a href="LoginC">Login</a></li>
             <li><a href="SignupC">Join</a></li>
           </ul>
+          <a href="" class="drop-icon-area"
+            ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
+          /></a>
         </div>
       </div>
     </header>
