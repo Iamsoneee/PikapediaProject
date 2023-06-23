@@ -16,8 +16,6 @@ public class HC extends HttpServlet {
 		AccountDAO.checkLogin(request);
 		DBDAO.getAllPokemon(request);
 		DBDAO.getPokemonTypes(request);
-//		String pokemonNo = request.getParameter("pokemonNo");
-//		DBDAO.getTypesByNo(request, pokemonNo);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

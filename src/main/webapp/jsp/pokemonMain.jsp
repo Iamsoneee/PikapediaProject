@@ -107,7 +107,6 @@
 
 		<!-- Pokemon Cards Gallery -->
 		<div class="scrollable">
-
 			<c:forEach var="pokemon" items="${Pokemons }">
 				<a href="">
 					<div class="pokemon-card">
@@ -119,18 +118,21 @@
 								<hr class="horizontal-line" />
 								<p>${pokemon.name }</p>
 								<div class="type-icons-area">
-									<img src="img/pokemon-type/circle-type/${pokemon.type1}.png"
-										alt="${pokemon.type1}" class="card-type-icon" />
-									<c:if test="${not empty pokemon.type2}">
-										<img src="img/pokemon-type/circle-type/${pokemon.type2}.png"
-											alt="${pokemon.type2}" class="card-type-icon" />
-									</c:if>
+									  <c:forEach var="type" items="${Types}">
+                                        <c:if test="${type.typeNameKo eq pokemon.type1}">
+                                            <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        </c:if>
+                                       <c:if test="${type.typeNameKo eq pokemon.type2}">
+                                            <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        </c:if>
+                                    </c:forEach>
 								</div>
 							</div>
 						</div>
 					</div>
 				</a>
 			</c:forEach>
+
 
 		</div>
 	</div>

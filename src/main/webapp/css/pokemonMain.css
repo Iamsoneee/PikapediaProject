@@ -101,6 +101,9 @@
   background-color: rgba(0, 0, 0, 0); /*스크롤바 트랙 색상*/
 }
 
+
+
+
 .pokemon-card {
   box-sizing: border-box;
   overflow: hidden;
