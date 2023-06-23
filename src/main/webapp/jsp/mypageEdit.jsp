@@ -5,54 +5,44 @@
 <head>
     <meta charset="UTF-8">
     <title>mypageEdit</title>
-    <link rel="stylesheet" href="../css/pokedexFrameAccount.css"/>
-    <link rel="stylesheet" href="../css/mypageEdit.css">
+    <link rel="stylesheet" href="/css/pokedexFrameAccount.css"/>
+    <link rel="stylesheet" href="/css/mypageEdit.css">
 </head>
 <body>
 <div id="pokedex-wrapper">
     <div id="pokedex-red-frame">
         <div id="pokedex-circles">
-            <img src="../img/pokedex-circles.png" alt=""/>
+            <img src="/img/pokedex-circles.png" alt=""/>
         </div>
         <div id="pokedex-blue-shadow">
             <div id="pokedex-blue-frame">
                 <div id="pokedex-title-area">
-                    <span class="pokedex-title-txt">
-                        Mypage<br>
-                        Edit
-                    </span>
-                    <img src="../img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
+                    <span class="pokedex-title-txt">Mypage</span>
+                    <img src="/img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
                     <div class="btn-container">
                         <div>
-                            <img class="user-icon" src="../img/icon/account-icon/profile-user1.png">
+                            <img class="user-icon" src="/img/icon/account-icon/profile-user1.png">
                             <input class="info-input-btn" type="text" placeholder="Name">
                         </div>
                         <div>
-                            <img class="user-icon" src="../img/icon/account-icon/profile-user2.png">
+                            <img class="user-icon" src="/img/icon/account-icon/profile-user2.png">
                             <input class="info-input-btn" type="text" placeholder="User Name">
                         </div>
                         <div>
-                            <img class="user-icon" src="../img/icon/account-icon/pw.png">
+                            <img class="user-icon" src="/img/icon/account-icon/pw.png">
                             <input class="info-input-btn" type="text" placeholder="PW">
                         </div>
                         <div>
-                            <img class="user-icon" src="../img/icon/account-icon/pw-confirm.png">
+                            <img class="user-icon" src="/img/icon/account-icon/pw-confirm.png">
                             <input class="info-input-btn" type="text" placeholder="PW Confirm">
                         </div>
                         <div>
-                            <img class="user-icon" src="../img/icon/account-icon/email.png">
+                            <img class="user-icon" src="/img/icon/account-icon/email.png">
                             <input class="info-input-btn" type="text" placeholder="Email">
                         </div>
-                        <div class="confirm-btn">Sign Up</div>
-                        <br>
-                        <div class="or-signup">Or Sign Up With</div>
-                        <br>
-                        <div>
-                            <img class="google-logo" alt="구글 로고"
-                                 src="../img/icon/account-icon/google-icon.png">
-                        </div>
+                        <button type="button" onclick="location.href='#C:컨트롤러 입력해주세요'"  class="confirm-btn">Confirm</button>
                     </div>
                 </div>
             </div>

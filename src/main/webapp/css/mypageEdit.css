@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#pokedex-white-bg{
+    display: flex;
+
+}
 .btn-container{
     display: flex;
     flex-direction: column;
@@ -11,7 +15,7 @@
     position: relative;
 }
 .info-input-btn{
-    width: 25vw;
+    width: 20vw;
     height: 40px;
     background-color: lightgray;
     border-radius: 1.5vw;
@@ -33,10 +37,5 @@
     text-align: center;
     border-radius: 1.5vw;
     border: transparent;
-}
-.google-logo{
-    width: 25px;
-}
-.or-signup{
-    color: black;
+    color: white;
 }
