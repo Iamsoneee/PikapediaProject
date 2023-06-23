@@ -15,7 +15,7 @@ public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
 		DBDAO.getAllPokemon(request);
-		DBDAO.getPokemonTypes(request);
+		/* DBDAO.getPokemonTypes(request); */
 //		String pokemonNo = request.getParameter("pokemonNo");
 //		DBDAO.getTypesByNo(request, pokemonNo);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");

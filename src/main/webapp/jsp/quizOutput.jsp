@@ -76,6 +76,18 @@
 </body>
 <script>
 	var languageDex = '${poketmon.p_name}';
+	var trainerImg = document.getElementById('trainerImg');
+	var startPositionX = 0;
+	var startPositionY = 0;
+	var endPositionX = 180;
+	var endPositionY = -180;
+	var currentPositionX = startPositionX;
+	var currentPositionY = startPositionY;
+	var speed = 15;
+	var directionX = 1;
+	var directionY = -1;
+	var isReturning = false; // 돌아오는 중인지 여부
+	var animationId; // 애니메이션 식별자
 
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
@@ -84,25 +96,13 @@
 
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
 
-	function checkPokemonName() {
-		// 		var userInput = prompt("포켓몬 이름을 입력해주세요:");
+function checkPokemonName() {
+var userInput = prompt("포켓몬 이름을 입력해주세요:");
 
-		// 		console.log("userInput :" + userInput);
+console.log("userInput :" + userInput);
 		console.log("languageDex :" + languageDex);
-		// 		if (userInput === languageDex) {
+if (userInput === languageDex) {
 
-var trainerImg = document.getElementById('trainerImg');
-var startPositionX = 0;
-var startPositionY = 0;
-var endPositionX = 180;
-var endPositionY = -180;
-var currentPositionX = startPositionX;
-var currentPositionY = startPositionY;
-var speed = 15;
-var directionX = 1;
-var directionY = -1;
-var isReturning = false; // 돌아오는 중인지 여부
-var animationId; // 애니메이션 식별자
 
 function moveImage() {
   if (!isReturning) {
@@ -128,57 +128,23 @@ function moveImage() {
   }
 }
 
-moveImage();
 
 
 
 
-
-
-
-/*		var startPositionX = 0;
-		var endPositionX = 200;
-		var startPositionY = 0;
-		var endPositionY = -200;
-		var currentPositionX = startPositionX;
-		var currentPositionY = startPositionY;
-		var speed = 2;
-		var direction = 1;
-		var isReturning = false;
-		currentPositionX += speed * direction;
-		currentPositionY += speed * direction;
-		image.style.transform = 'translate(' + currentPositionX + 'px, '
-				+ currentPositionY + 'px)';
-
-		if (currentPositionX >= endPositionX) {
-			isReturning = true;
-			direction = -1; // 이동 방향을 반대로 변경
-		} else if (currentPositionX <= startPositionX && isReturning) {
-			isReturning = false;
-			direction = 1; // 이동 방향을 원래대로 변경
-		}
-
-		if (!isReturning) {
-			requestAnimationFrame(moveImage);
-		}
-
-		moveImage(); */
-
-		/*
+		
 		document.getElementById("enemyPokeHp").src = "img/enemyNoHp.png";
 		document.getElementById("imgshaddow").style.filter = "none";
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
-		 */
 
-		/*
 		setTimeout(function() {
 		location.reload();
-		}, 1000);*/
-		//             } else if (userInput == null) {
-		//                 alert("다시 입력해주세요");
-		//             } else {
-		//             	alert("오답입니다")
-		//             }
+		}, 1000);
+		             } else if (userInput == null) {
+		                 alert("다시 입력해주세요");
+		             } else {
+		             	alert("오답입니다")
+		             }
 	}
 
 	function showHint() {
