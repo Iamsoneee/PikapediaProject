@@ -88,12 +88,19 @@
 	var directionY = -1;
 	var isReturning = false; // 돌아오는 중인지 여부
 	var animationId; // 애니메이션 식별자
+	var halfLength = Math.floor(languageDex.length / 2);
+	var hint = languageDex.slice(0, halfLength);
 
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
 	}
 
+	var halfHiddenText = hint;
+	for (var i = 0; i < languageDex.length - Math.floor(languageDex.length / 2); i++) {
+		halfHiddenText += "?";
+	}
+	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
 
 function checkPokemonName() {
@@ -120,7 +127,7 @@ console.log("userInput :" + userInput);
 		location.reload();
 		}, 3500);
 		             } else if (userInput == null) {
-		                 alert("다시 입력해주세요");
+		                return;
 		             } else {
 		             	moveImage();
 		             	setTimeout(function() {
@@ -197,8 +204,8 @@ function movePokemon() {
 	    }
 	  }
 
-animate();
-	}
+	animate();
+		}
 
 function moveTrainer() {
 	  var startPositionX = 0; // 시작 X 좌표
@@ -229,14 +236,11 @@ function moveTrainer() {
 	      animationId = requestAnimationFrame(animateTrainer); // 다음 프레임 요청
 	    }
 	  }
-
 	  // 이미 실행 중인 애니메이션이 없을 때에만 애니메이션 실행
 	  if (!isAnimating) {
 	    isAnimating = true;
 	    animateTrainer();
-	    
 	  }
-
 	  // 애니메이션 완료 후 초기화
 	  setTimeout(function() {
 	    cancelAnimationFrame(animationId);
@@ -247,9 +251,9 @@ function moveTrainer() {
 	}
 
 	function showHint() {
-		var halfLength = Math.ceil(languageDex.length / 2);
-		var hint = languageDex.slice(0, halfLength);
-		alert("힌트: " + hint);
+
+		document.getElementsByClassName("enemyPokeName")[0].innerHTML = halfHiddenText;
+		
 	}
 	</script>
 </body>
