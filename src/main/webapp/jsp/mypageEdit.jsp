@@ -32,15 +32,15 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="/img/icon/account-icon/profile-user2.png">
-                                <input class="info-input-btn" type="text" placeholder="User Name">
+                                <input class="info-input-btn" type="text" placeholder="User Name" pattern="[A-Za-z][A-Za-z0-9]{4,}">
                             </div>
                             <div>
                                 <img class="user-icon" src="/img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="password" placeholder="PW">
+                                <input class="info-input-btn" type="password" placeholder="PW" pattern="^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$">
                             </div>
                             <div>
                                 <img class="user-icon" src="/img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="password" placeholder="PW Confirm">
+                                <input class="info-input-btn" type="password" placeholder="PW Confirm" pattern="^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$">
                             </div>
                             <div>
                                 <img class="user-icon" src="/img/icon/account-icon/email.png">
