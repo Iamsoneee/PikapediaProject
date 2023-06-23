@@ -98,6 +98,10 @@ article {
   color: white;
 }
 
+.drop-icon-img {
+  width: 1em;
+}
+
 /* Main Area */
 #contents-area /* Include Area */ {
   background-color: rgb(172, 215, 215, 0.8);
