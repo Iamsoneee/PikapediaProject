@@ -50,15 +50,39 @@
 	margin-top: 140px;
 }
 
+/* 스크롤 */
+.scrollable {
+  height: 22vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  margin-top: 7vh;
+}
 
+::-webkit-scrollbar {
+  width: 5px; /*스크롤바의 너비*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 10vh;
+  background-color: rgba(0, 0, 0, 0.5); /*스크롤바의 색상*/
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0); /*스크롤바 트랙 색상*/
+}
+
+/* 띠부씰 */
 
 #r-pokemons{
 	height: 150px;
 	width: 110px;
 	left: 0px;
 	top: 0px;
-	margin-top: 100px;
-	margin-left: 70px;
+	margin-top: 20px;
+	margin-left: 38px;
 	border-radius: 20px;
 	padding: 11px 5px 11px 5px;
 	border: 1px solid #787878;
@@ -146,4 +170,3 @@
 	text-align: center;
 	color: #000000;
 }
-
