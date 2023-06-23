@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>mypageEdit</title>
     <link rel="stylesheet" href="../css/pokedexFrameAccount.css"/>
+    <link rel="stylesheet" href="../css/mypageEdit.css">
 </head>
 <body>
 <div id="pokedex-wrapper">
@@ -23,7 +24,36 @@
                     <img src="../img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    컨텐츠를 입력하세요.
+                    <div class="btn-container">
+                        <div>
+                            <img class="user-icon" src="../img/icon/account-icon/profile-user1.png">
+                            <input class="info-input-btn" type="text" placeholder="Name">
+                        </div>
+                        <div>
+                            <img class="user-icon" src="../img/icon/account-icon/profile-user2.png">
+                            <input class="info-input-btn" type="text" placeholder="User Name">
+                        </div>
+                        <div>
+                            <img class="user-icon" src="../img/icon/account-icon/pw.png">
+                            <input class="info-input-btn" type="text" placeholder="PW">
+                        </div>
+                        <div>
+                            <img class="user-icon" src="../img/icon/account-icon/pw-confirm.png">
+                            <input class="info-input-btn" type="text" placeholder="PW Confirm">
+                        </div>
+                        <div>
+                            <img class="user-icon" src="../img/icon/account-icon/email.png">
+                            <input class="info-input-btn" type="text" placeholder="Email">
+                        </div>
+                        <div class="confirm-btn">Sign Up</div>
+                        <br>
+                        <div class="or-signup">Or Sign Up With</div>
+                        <br>
+                        <div>
+                            <img class="google-logo" alt="구글 로고"
+                                 src="../img/icon/account-icon/google-icon.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
