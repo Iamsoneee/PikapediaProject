@@ -43,12 +43,14 @@ public class DBDAO {
 				pokemons.add(pokemon);
 			}
 			request.setAttribute("Pokemons", pokemons);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		
 	}
 
 	public static void getPokemonTypes(HttpServletRequest request) {
@@ -84,7 +86,7 @@ public class DBDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from pokemon_en where p_no = ?";
+		String sql = "select * from pokemon_ko join type on p_type = t_name_ko where p_no = ?";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
