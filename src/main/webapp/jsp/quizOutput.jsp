@@ -91,6 +91,7 @@
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
 
+	console.log(languageDex);
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
@@ -102,16 +103,11 @@
 	}
 	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
-
 function checkPokemonName() {
+	isReturning = false;
 var userInput = prompt("포켓몬 이름을 입력해주세요:");
-
-console.log("userInput :" + userInput);
-		console.log("languageDex :" + languageDex);
 		if (userInput === languageDex) {
 		moveImage();
-
-
 		setTimeout(function() {
 			movePokemon()
 			moveUpAndDown() 
@@ -126,13 +122,13 @@ console.log("userInput :" + userInput);
 		setTimeout(function() {
 		location.reload();
 		}, 3500);
-		             } else if (userInput == null) {
-		                return;
-		             } else {
-		             	moveImage();
-		             	setTimeout(function() {
-		             		moveTrainer();
-		        		}, 1000);
+		} else if (userInput == '' || userInput == null) {
+			return;
+		} else {
+			moveImage();
+			setTimeout(function() {
+				moveTrainer();
+			}, 1000);
 		     
 		             }
 	}
@@ -210,12 +206,8 @@ function movePokemon() {
 function moveTrainer() {
 	  var startPositionX = 0; // 시작 X 좌표
 	  var endPositionX = 30; // 목표 X 좌표
-	  var startPositionY = 0; // 시작 Y 좌표
-	  var endPositionY = 50; // 목표 Y 좌표
 	  var currentPositionX = startPositionX;
-	  var currentPositionY = startPositionY;
 	  var directionX = 1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
-	  var directionY = 1; // 이동 방향 (1: 위쪽, -1: 아래쪽)
 	  var speed = 7; // 이동 속도 (조정 가능)
 	  var moveCount = 0; // 움직인 횟수를 저장하는 변수
 	  var isAnimating = false; // 애니메이션 실행 상태를 나타내는 변수
@@ -231,17 +223,17 @@ function moveTrainer() {
 	    }
 
 	    if (moveCount >= 6) {
-	      moveUpAndDown();
+	    	  cancelAnimationFrame(animationId);
 	    } else {
 	      animationId = requestAnimationFrame(animateTrainer); // 다음 프레임 요청
 	    }
 	  }
-	  // 이미 실행 중인 애니메이션이 없을 때에만 애니메이션 실행
+
 	  if (!isAnimating) {
 	    isAnimating = true;
 	    animateTrainer();
 	  }
-	  // 애니메이션 완료 후 초기화
+
 	  setTimeout(function() {
 	    cancelAnimationFrame(animationId);
 	    isAnimating = false;
@@ -250,10 +242,21 @@ function moveTrainer() {
 	  }, 1000);
 	}
 
-	function showHint() {
+function executeAnimation() {
+    moveImage();
 
+    setTimeout(function() {
+        moveTrainer();
+    }, 1000);
+}
+
+
+
+
+
+
+	function showHint() {
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = halfHiddenText;
-		
 	}
 	</script>
 </body>
