@@ -29,7 +29,14 @@ pageEncoding="UTF-8"%>
             <div id="pokedex-white-bg">
 				<div id="r-accounts">
 					<div class="r-account">
-						<div id="r-account-img"><img alt="프로필 이미지" src="img/profile/${account.img }" ></div>
+					<c:choose>
+						<c:when test="${empty account.img }">
+						<div id="r-account-img"><img alt="프로필 이미지" src="img/icon/account-icon/profile-user1.png" style="width: 100px; margin-top: 35px; margin-left: 1vh;"></div>						
+						</c:when>
+						<c:otherwise>
+						<div id="r-account-img"><img alt="프로필 이미지" src="img/profile/${account.img }"></div>
+						</c:otherwise>
+					</c:choose>
 					</div>
 					<div class="r-account">${account.name }</div>
 					<div class="r-account">님의 리워드</div>
