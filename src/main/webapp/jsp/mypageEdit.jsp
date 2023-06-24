@@ -23,6 +23,7 @@
                 <div id="pokedex-white-bg">
                     <div class="profile-container">
                         <img class="profile-icon" src="/img/icon/account-icon/profile-user3.png">
+                        <img class="profile-gear-icon" src="/img/icon/account-icon/gear.png">   <%--이걸 누르면 프로필 사진 수정기능 넣어야함--%>
                     </div>
                     <form action="#C" method="post">
                         <div class="btn-container">
