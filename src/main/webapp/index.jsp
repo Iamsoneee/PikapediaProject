@@ -43,7 +43,6 @@ pageEncoding="UTF-8"%>
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
-                  s
                   class="header-icons"
                   id="dark-mode-toggle"
               /></a>

@@ -14,10 +14,9 @@ import com.pikapedia.db.DBDAO;
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.checkLogin(request);
+		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
-		/* DBDAO.getPokemonTypes(request); */
-//		String pokemonNo = request.getParameter("pokemonNo");
-//		DBDAO.getTypesByNo(request, pokemonNo);
+		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
