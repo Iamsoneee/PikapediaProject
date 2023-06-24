@@ -47,9 +47,9 @@
 						<div class="cetner-Down">
 							<div class="blank-Space">
 								<div class="blank-SpaceIn">
-									<img id="poketball" alt="몬스터볼" src="img/game/poketballNew.png">
-										<div class="inputName"><!-- <input type="text" id="userInputName"> -->
-										</div>
+							<!-- 		<img id="poketball" alt="몬스터볼" src="img/game/poketballNew.png">
+										<div class="inputName"> <input type="text" id="userInputName">
+										</div> -->
 								</div>
 							</div>
 							<div class="btn-Four">

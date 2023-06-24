@@ -96,7 +96,6 @@
 button {
   font-family: "DungGeunMo";
   font-size : 2.3rem;
-  font-weight : bold;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -176,7 +175,6 @@ button:hover {
 	font-size: 40pt;
 	letter-spacing: 30px;
 	font-family: "DungGeunMo";
-	font-weight: bold;
 }
 .myPoke-Up {
   height: 11.5vh;
@@ -219,13 +217,12 @@ width: 22vw;
 .enemyPoke-name{
     font-family: "DungGeunMo";
     font-size : 33px;
-    font-weight : bold;
 	height : 8vh;
 	text-align : center;
 	color: black;
-	padding-top: 40px;
+	padding-top: 30px;
 	padding-left: 170px;
-	letter-spacing: 6px;
+	letter-spacing: 10px;
 }
 #myPokeHp{
 	width: 20vw;
