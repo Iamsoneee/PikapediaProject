@@ -26,6 +26,8 @@ public class DBDAO {
 			request.setAttribute("colors", colors);
 		}catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
 		}
 	}	
 	public static void getAllPokemon(HttpServletRequest request) {
@@ -68,6 +70,8 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
 		}
 		
 	}
@@ -94,7 +98,9 @@ public class DBDAO {
 			request.setAttribute("Types", types);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
 	}
 
 	
