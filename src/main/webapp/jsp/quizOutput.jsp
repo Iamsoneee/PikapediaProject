@@ -73,118 +73,191 @@
 			</div>
 		</div>
 	</div>
-</body>
 <script>
 	var languageDex = '${poketmon.p_name}';
+	var trainerImg = document.getElementById('trainerImg');
+	var pokemonImg = document.getElementById('imgshaddow');
+	var startPositionX = 0;
+	var startPositionY = 0;
+	var endPositionX = 180;
+	var endPositionY = -180;
+	var currentPositionX = startPositionX;
+	var currentPositionY = startPositionY;
+	var speed = 15;
+	var directionX = 1;
+	var directionY = -1;
+	var isReturning = false; // 돌아오는 중인지 여부
+	var animationId; // 애니메이션 식별자
+	var halfLength = Math.floor(languageDex.length / 2);
+	var hint = languageDex.slice(0, halfLength);
 
+	console.log(languageDex);
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
 	}
 
+	var halfHiddenText = hint;
+	for (var i = 0; i < languageDex.length - Math.floor(languageDex.length / 2); i++) {
+		halfHiddenText += "?";
+	}
+	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
-
-	function checkPokemonName() {
-		// 		var userInput = prompt("포켓몬 이름을 입력해주세요:");
-
-		// 		console.log("userInput :" + userInput);
-		console.log("languageDex :" + languageDex);
-		// 		if (userInput === languageDex) {
-
-var trainerImg = document.getElementById('trainerImg');
-var startPositionX = 0;
-var startPositionY = 0;
-var endPositionX = 180;
-var endPositionY = -180;
-var currentPositionX = startPositionX;
-var currentPositionY = startPositionY;
-var speed = 15;
-var directionX = 1;
-var directionY = -1;
-var isReturning = false; // 돌아오는 중인지 여부
-var animationId; // 애니메이션 식별자
-
-function moveImage() {
-  if (!isReturning) {
-    currentPositionX += speed * directionX;
-    currentPositionY += speed * directionY;
-    console.log(currentPositionX);
-    console.log(currentPositionY);
-    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
-  } else {
-    currentPositionX -= speed * directionX;
-    currentPositionY -= speed * directionY;
-    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
-  }
-
-  if (currentPositionY <= endPositionY && !isReturning) {
-    isReturning = true; // 돌아오는 상태로 전환
-  }
-
-  if (currentPositionY >= startPositionY && currentPositionX >= startPositionX && isReturning) {
-    cancelAnimationFrame(animationId); // 애니메이션 정지
-  } else {
-    animationId = requestAnimationFrame(moveImage); // 다음 프레임 요청
-  }
-}
-
-moveImage();
-
-
-
-
-
-
-
-/*		var startPositionX = 0;
-		var endPositionX = 200;
-		var startPositionY = 0;
-		var endPositionY = -200;
-		var currentPositionX = startPositionX;
-		var currentPositionY = startPositionY;
-		var speed = 2;
-		var direction = 1;
-		var isReturning = false;
-		currentPositionX += speed * direction;
-		currentPositionY += speed * direction;
-		image.style.transform = 'translate(' + currentPositionX + 'px, '
-				+ currentPositionY + 'px)';
-
-		if (currentPositionX >= endPositionX) {
-			isReturning = true;
-			direction = -1; // 이동 방향을 반대로 변경
-		} else if (currentPositionX <= startPositionX && isReturning) {
-			isReturning = false;
-			direction = 1; // 이동 방향을 원래대로 변경
-		}
-
-		if (!isReturning) {
-			requestAnimationFrame(moveImage);
-		}
-
-		moveImage(); */
-
-		/*
+function checkPokemonName() {
+	isReturning = false;
+var userInput = prompt("포켓몬 이름을 입력해주세요:");
+		if (userInput === languageDex) {
+		moveImage();
+		setTimeout(function() {
+			movePokemon()
+			moveUpAndDown() 
+		}, 1000);
+		
+		setTimeout(function() {
 		document.getElementById("enemyPokeHp").src = "img/enemyNoHp.png";
 		document.getElementById("imgshaddow").style.filter = "none";
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
-		 */
+		}, 2500);
 
-		/*
 		setTimeout(function() {
 		location.reload();
-		}, 1000);*/
-		//             } else if (userInput == null) {
-		//                 alert("다시 입력해주세요");
-		//             } else {
-		//             	alert("오답입니다")
-		//             }
+		}, 3500);
+		} else if (userInput == '' || userInput == null) {
+			return;
+		} else {
+			moveImage();
+			setTimeout(function() {
+				moveTrainer();
+			}, 1000);
+		     
+		             }
+	}
+function moveImage() {
+	  if (!isReturning) {
+	    currentPositionX += speed * directionX;
+	    currentPositionY += speed * directionY;
+	    console.log(currentPositionX);
+	    console.log(currentPositionY);
+	    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
+	  } else {
+	    currentPositionX -= speed * directionX;
+	    currentPositionY -= speed * directionY;
+	    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
+	  }
+
+	  if (currentPositionY <= endPositionY && !isReturning) {
+	    isReturning = true; // 돌아오는 상태로 전환
+	  }
+
+	  if (currentPositionY >= startPositionY && currentPositionX >= startPositionX && isReturning) {
+	    cancelAnimationFrame(animationId); // 애니메이션 정지
+	  } else {
+	    animationId = requestAnimationFrame(moveImage); // 다음 프레임 요청
+	  }
 	}
 
-	function showHint() {
-		var halfLength = Math.ceil(languageDex.length / 2);
-		var hint = languageDex.slice(0, halfLength);
-		alert("힌트: " + hint);
+function movePokemon() {
+	  var startPositionX = 0; // 시작 X 좌표
+	  var endPositionX = 30; // 목표 X 좌표
+	  var startPositionY = 0; // 시작 Y 좌표
+	  var endPositionY = 50; // 목표 Y 좌표
+	  var currentPositionX = startPositionX;
+	  var currentPositionY = startPositionY;
+	  var directionX = 1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
+	  var directionY = 1; // 이동 방향 (1: 위쪽, -1: 아래쪽)
+	  var speed = 7; // 이동 속도 (조정 가능)
+	  var moveCount = 0; // 움직인 횟수를 저장하는 변수
+
+	  function animate() {
+	    currentPositionX += speed * directionX;
+	    pokemonImg.style.transform = 'translateX(' + currentPositionX + 'px)';
+
+	    if (currentPositionX >= endPositionX || currentPositionX <= startPositionX) {
+	      directionX *= -1; // 이동 방향을 반대로 변경
+	      moveCount++; // 움직인 횟수 증가
+	    }
+
+	    if (moveCount >= 6) {
+	      moveUpAndDown();
+	    } else {
+	      animationId = requestAnimationFrame(animate); // 다음 프레임 요청
+	    }
+	  }
+	  
+	  function moveUpAndDown() {
+	    currentPositionY += speed * directionY;
+	    pokemonImg.style.transform = 'translateX(' + currentPositionX + 'px) translateY(' + -currentPositionY + 'px)';
+
+	    if (currentPositionY >= endPositionY || currentPositionY <= startPositionY) {
+	      directionY *= -1; // 이동 방향을 반대로 변경
+	      moveCount++; // 움직인 횟수 증가
+	    }
+
+	    if (moveCount >= 10) {
+	      cancelAnimationFrame(animationId); // 애니메이션 정지
+	    } else {
+	      animationId = requestAnimationFrame(moveUpAndDown); // 다음 프레임 요청
+	    }
+	  }
+
+	animate();
+		}
+
+function moveTrainer() {
+	  var startPositionX = 0; // 시작 X 좌표
+	  var endPositionX = 30; // 목표 X 좌표
+	  var currentPositionX = startPositionX;
+	  var directionX = 1; // 이동 방향 (1: 오른쪽, -1: 왼쪽)
+	  var speed = 7; // 이동 속도 (조정 가능)
+	  var moveCount = 0; // 움직인 횟수를 저장하는 변수
+	  var isAnimating = false; // 애니메이션 실행 상태를 나타내는 변수
+	  var animationId; // 애니메이션 식별자
+
+	  function animateTrainer() {
+	    currentPositionX += speed * directionX;
+	    trainerImg.style.transform = 'translateX(' + currentPositionX + 'px)';
+
+	    if (currentPositionX >= endPositionX || currentPositionX <= startPositionX) {
+	      directionX *= -1; // 이동 방향을 반대로 변경
+	      moveCount++; // 움직인 횟수 증가
+	    }
+
+	    if (moveCount >= 6) {
+	    	  cancelAnimationFrame(animationId);
+	    } else {
+	      animationId = requestAnimationFrame(animateTrainer); // 다음 프레임 요청
+	    }
+	  }
+
+	  if (!isAnimating) {
+	    isAnimating = true;
+	    animateTrainer();
+	  }
+
+	  setTimeout(function() {
+	    cancelAnimationFrame(animationId);
+	    isAnimating = false;
+	    currentPositionX = startPositionX;
+	    trainerImg.style.transform = 'translateX(' + currentPositionX + 'px)';
+	  }, 1000);
 	}
-</script>
+
+function executeAnimation() {
+    moveImage();
+
+    setTimeout(function() {
+        moveTrainer();
+    }, 1000);
+}
+
+
+
+
+
+
+	function showHint() {
+		document.getElementsByClassName("enemyPokeName")[0].innerHTML = halfHiddenText;
+	}
+	</script>
+</body>
 </html>
