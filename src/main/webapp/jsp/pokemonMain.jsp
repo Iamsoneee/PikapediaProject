@@ -10,6 +10,12 @@
 <meta charset="UTF-8" />
 <title>pokemonMain</title>
 <link rel="stylesheet" href="css/pokemonMain.css" />
+<script src="js/pokemonMain.js"></script>
+<style type="text/css">
+.single-type-border{
+
+}
+</style>
 </head>
 <body>
 	<div id="main-page-wrapper">
@@ -109,7 +115,7 @@
 		<div class="scrollable">
 			<c:forEach var="pokemon" items="${Pokemons }">
 				<a href="">
-					<div class="pokemon-card">
+				<div class="pokemon-card">
 						<div class="card-white-bg">
 							<div class="card-contents">
 								<p>#${pokemon.no }</p>
@@ -121,9 +127,11 @@
 									  <c:forEach var="type" items="${Types}">
                                         <c:if test="${type.typeNameKo eq pokemon.type1}">
                                             <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        	<input type="hidden" value="${colors[pokemon.type1]}">
                                         </c:if>
                                        <c:if test="${type.typeNameKo eq pokemon.type2}">
                                             <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        	<input type="hidden" value="${colors[pokemon.type2]}">
                                         </c:if>
                                     </c:forEach>
 								</div>
@@ -136,5 +144,7 @@
 
 		</div>
 	</div>
+	${colors["물"]}
+	${colors}
 </body>
 </html>

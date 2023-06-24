@@ -4,19 +4,36 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class DBDAO {
+	private static Connection  con = DBManager.connect();
+	private static HashMap<String, String> colors;
 
+	public static void getAllColor(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from type";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			colors = new HashMap <String,String>();
+			while (rs.next()) {
+				colors.put(rs.getString("t_name_ko"), rs.getString("t_color"));
+			}
+			request.setAttribute("colors", colors);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
 	public static void getAllPokemon(HttpServletRequest request) {
 
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon_ko order by p_no";
 		try {
-			con = DBManager.connect();
 			System.out.println("HC get All");
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -33,6 +50,9 @@ public class DBDAO {
 				Double weight = rs.getDouble("p_weight");
 				String type1 = rs.getString("p_type");
 				String type2 = rs.getString("p_type2");
+				
+				
+				
 				String des = rs.getString("p_des");
 				String frontDefault = rs.getString("p_front_default");
 				String backDefault = rs.getString("p_back_default");
@@ -48,19 +68,15 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
 		}
 		
 	}
 
 	public static void getPokemonTypes(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from type";
 		try {
-			con = DBManager.connect();
 			System.out.println(1111);
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -78,9 +94,7 @@ public class DBDAO {
 			request.setAttribute("Types", types);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
+		} 
 	}
 
 	
