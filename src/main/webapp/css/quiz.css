@@ -96,6 +96,7 @@
 button {
   font-family: "DungGeunMo";
   font-size : 2.3rem;
+  font-weight : bold;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -163,7 +164,7 @@ button:hover {
 }
 .myPoke {
   height: 46.5vh;
-  width: 24vw;
+  width: 22vw;
 /*   border: 4px solid purple;  */
 }
 .enemyPokeName{
@@ -175,6 +176,7 @@ button:hover {
 	font-size: 40pt;
 	letter-spacing: 30px;
 	font-family: "DungGeunMo";
+	font-weight: bold;
 }
 .myPoke-Up {
   height: 11.5vh;
@@ -204,20 +206,31 @@ width: 22vw;
   width: 27vw;
 }
 .enemyPoke-Up {
-  height: 30vh;
+  height: 28vh;
   width: 24.5vw;
   position: relative;
 }
 .enemyPoke-Down {
-  height: 16.5vh;
+  height: 18.5vh;
   width: 24.5vw;
   position: relative;
 /*   border: 5px solid black; */
 }
+.enemyPoke-name{
+    font-family: "DungGeunMo";
+    font-size : 33px;
+    font-weight : bold;
+	height : 8vh;
+	text-align : center;
+	color: black;
+	padding-top: 40px;
+	padding-left: 170px;
+	letter-spacing: 6px;
+}
 #myPokeHp{
-	width: 24.5vw;
+	width: 20vw;
 	position: absolute;
-	bottom: 0;
+	bottom: 5px;
 	right: 0;
 }
 #imgshaddow{

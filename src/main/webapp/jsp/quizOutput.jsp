@@ -39,6 +39,7 @@
 										src="${poketmon.p_frontDefault}">
 								</div>
 								<div class="enemyPoke-Down">
+								<div class="enemyPoke-name">이재강 Lv1</div>
 									<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/game/myPokemonHp.png">
 								</div>
 							</div>
@@ -47,7 +48,7 @@
 							<div class="blank-Space">
 								<div class="blank-SpaceIn">
 									<img id="poketball" alt="몬스터볼" src="img/game/poketballNew.png">
-										<div class="inputName"><input type="text" id="userInputName">
+										<div class="inputName"><!-- <input type="text" id="userInputName"> -->
 										</div>
 								</div>
 							</div>

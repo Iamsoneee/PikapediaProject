@@ -16,7 +16,6 @@ public class DBDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from type";
-		System.out.println("1111");
 		try {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -37,7 +36,6 @@ public class DBDAO {
 		ResultSet rs = null;
 		String sql = "select * from pokemon_ko order by p_no";
 		try {
-			System.out.println("HC get All");
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Pokemon pokemon = null;
@@ -82,7 +80,6 @@ public class DBDAO {
 		ResultSet rs = null;
 		String sql = "select * from type";
 		try {
-			System.out.println(1111);
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			ArrayList<Type> types = new ArrayList<Type>();
