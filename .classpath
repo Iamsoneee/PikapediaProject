@@ -39,6 +39,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
-	<classpathentry kind="lib" path="C:/Users/79677/Downloads/ojdbc11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
