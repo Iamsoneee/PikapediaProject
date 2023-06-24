@@ -19,17 +19,18 @@
 			</div>
 			<div id="pokedex-blue-shadow">
 				<div class="quiz-Container">
-					<div class="quiz-LeftBlank"></div>
+					<div class="quiz-LeftBlank">
+					</div>
 					<div class="quiz-Center">
 						<div class="center-Up">
 							<div class="myPoke">
 								<div class="enemyPokeName">${poketmon.p_name }</div>
 								<div class="myPoke-Up">
 									<img id="enemyPokeHp" alt="적팀포켓몬 체력바"
-										src="img/enemyPokeHpNew.png">
+										src="img/game/enemyPokeHpNew.png">
 								</div>
 								<div class="myPoke-Down">
-									<img id="trainerImg" alt="트레이너 이미지" src="img/trainer.png">
+									<img id="trainerImg" alt="트레이너 이미지" src="img/game/trainer.png">
 								</div>
 							</div>
 							<div class="enemyPoke">
@@ -38,13 +39,17 @@
 										src="${poketmon.p_frontDefault}">
 								</div>
 								<div class="enemyPoke-Down">
-									<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/myPokemonHp.png">
+									<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/game/myPokemonHp.png">
 								</div>
 							</div>
 						</div>
 						<div class="cetner-Down">
 							<div class="blank-Space">
-								<div class="blank-SpaceIn"></div>
+								<div class="blank-SpaceIn">
+									<img id="poketball" alt="몬스터볼" src="img/game/poketballNew.png">
+										<div class="inputName"><input type="text" id="userInputName">
+										</div>
+								</div>
 							</div>
 							<div class="btn-Four">
 								<div class="btn-Four-In">
@@ -114,7 +119,7 @@ var userInput = prompt("포켓몬 이름을 입력해주세요:");
 		}, 1000);
 		
 		setTimeout(function() {
-		document.getElementById("enemyPokeHp").src = "img/enemyNoHp.png";
+		document.getElementById("enemyPokeHp").src = "img/game/enemyNoHp.png";
 		document.getElementById("imgshaddow").style.filter = "none";
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
 		}, 2500);

@@ -17,6 +17,7 @@
   height: 71vh;
   width: 20vw;
 }
+
 .quiz-RightBlank{
   height: 71vh;
   width: 20vw;
@@ -59,8 +60,27 @@
   border-left: 4px solid black;
   border-bottom: 4px solid black;
   border-radius: 5%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+#poketball{
+	width: 10vw;
+	background-color: transparent;
+}
+.inputName{
+	width: 5vw;
+	position: absolute;
+	top: 44%;
+	left: 30%;
+	transform : translate (-50% ,-50%);
+}
+#userInputName{
+	border-radius: 5%;
+	width: 163%;
+	}
 .btn-Four {
   height: 23.6vh;
   width: 25vw;
