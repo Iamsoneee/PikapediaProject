@@ -66,21 +66,38 @@
   justify-content: center;
   align-items: center;
 }
-#poketball{
-	width: 10vw;
-	background-color: transparent;
+.spaceInTwo{
+  height: 21vh;
+  width: 21vw;
+  position: relative;
 }
-.inputName{
-	width: 5vw;
+#userInputSpace{
+	height: 24.5vh;
+	width: 21vw;
+	display :none;
 	position: absolute;
-	top: 44%;
-	left: 30%;
-	transform : translate (-50% ,-50%);
 }
+
 #userInputName{
 	border-radius: 5%;
-	width: 163%;
-	}
+	width: 9vw;
+/* 	border: none; */
+	position: absolute;
+	transform : translate(65%, 450%);
+}
+#attackBtn{
+	display : none;
+	font-size: 20pt;
+	position: absolute;
+	transform : translate(100%, 500%);
+}
+#cancelBtn{
+	display : none;
+	font-size: 20pt;
+	position: absolute;
+	transform : translate(450%, 500%);
+}
+	
 .btn-Four {
   height: 23.6vh;
   width: 25vw;
@@ -175,6 +192,7 @@ button:hover {
 	font-size: 40pt;
 	letter-spacing: 30px;
 	font-family: "DungGeunMo";
+
 }
 .myPoke-Up {
   height: 11.5vh;
@@ -223,6 +241,7 @@ width: 22vw;
 	padding-top: 30px;
 	padding-left: 170px;
 	letter-spacing: 10px;
+	white-space: nowrap;
 }
 #myPokeHp{
 	width: 20vw;

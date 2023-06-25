@@ -47,9 +47,12 @@
 						<div class="cetner-Down">
 							<div class="blank-Space">
 								<div class="blank-SpaceIn">
-							<!-- 		<img id="poketball" alt="몬스터볼" src="img/game/poketballNew.png">
-										<div class="inputName"> <input type="text" id="userInputName">
-										</div> -->
+									<div class="spaceInTwo">
+							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
+										<input type="hidden" id="userInputName"> 
+										<button id="attackBtn">공격하기</button>
+										<button id="cancelBtn">취소</button>
+									</div>
 								</div>
 							</div>
 							<div class="btn-Four">
@@ -97,7 +100,6 @@
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
 
-	console.log(languageDex);
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
@@ -109,41 +111,56 @@
 	}
 	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
-function checkPokemonName() {
-	isReturning = false;
-var userInput = prompt("포켓몬 이름을 입력해주세요:");
-		if (userInput === languageDex) {
-		moveImage();
-		setTimeout(function() {
-			movePokemon()
-			moveUpAndDown() 
-		}, 1000);
-		
-		setTimeout(function() {
-		document.getElementById("enemyPokeHp").src = "img/game/enemyNoHp.png";
-		document.getElementById("imgshaddow").style.filter = "none";
-		document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
-		}, 2500);
+	function checkPokemonName() {
+		  isReturning = false;
+		  var attackBtn = document.getElementById("attackBtn");
+		  var userInputName = document.getElementById("userInputName");
+		  var inputValue; // inputValue 변수를 함수 범위로 이동
 
-		setTimeout(function() {
-		location.reload();
-		}, 3500);
-		} else if (userInput == '' || userInput == null) {
-			return;
-		} else {
-			moveImage();
-			setTimeout(function() {
-				moveTrainer();
-			}, 1000);
-		     
-		             }
-	}
+		  attackBtn.addEventListener("click", function() {
+		  isReturning = false;
+		    inputValue = userInputName.value; // inputValue에 값을 할당
+		    console.log("사용자 입력 값:", inputValue);
+		    console.log("포켓몬 입력 값:", languageDex);
+
+		    if (inputValue === languageDex) {
+		      moveImage();
+		      setTimeout(function() {
+		        movePokemon();
+		        moveUpAndDown();
+		      }, 1000);
+
+		      setTimeout(function() {
+		        document.getElementById("enemyPokeHp").src = "img/game/enemyNoHp.png";
+		        document.getElementById("imgshaddow").style.filter = "none";
+		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
+		      }, 2500);
+
+		      setTimeout(function() {
+		        location.reload();
+		      }, 3500);
+		    } else if (inputValue === "" || inputValue === null) {
+		      return;
+		    } else {
+		      moveImage();
+		      setTimeout(function() {
+		        moveTrainer();
+		      }, 1000);
+		    }
+		  });
+
+		  document.getElementById("userInputSpace").style.display = "block";
+		  document.getElementById("userInputName").type = "text";
+		  document.querySelector('.blank-Space').classList.remove('blank-Space');
+		  document.querySelector('.blank-SpaceIn').classList.remove('blank-SpaceIn');
+		  document.getElementById("attackBtn").style.display = "block";
+		  document.getElementById("cancelBtn").style.display = "block";
+		}
+
 function moveImage() {
 	  if (!isReturning) {
 	    currentPositionX += speed * directionX;
 	    currentPositionY += speed * directionY;
-	    console.log(currentPositionX);
-	    console.log(currentPositionY);
 	    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
 	  } else {
 	    currentPositionX -= speed * directionX;
