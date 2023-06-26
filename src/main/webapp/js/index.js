@@ -33,4 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
     moonIcon.setAttribute("src", "img/icon/moon-icon.svg");
     sunIcon.setAttribute("src", "img/icon/sun-icon-active.png");
   });
+  
+  const dropIcon = document.querySelector('.drop-icon-img');
+  const dropMenu = document.querySelector('.drop-menu');
+  dropIcon.addEventListener('click', () => {
+	dropMenu.classList.toggle('active');
+});
+  
 });
