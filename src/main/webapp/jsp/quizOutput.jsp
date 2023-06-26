@@ -19,17 +19,18 @@
 			</div>
 			<div id="pokedex-blue-shadow">
 				<div class="quiz-Container">
-					<div class="quiz-LeftBlank"></div>
+					<div class="quiz-LeftBlank">
+					</div>
 					<div class="quiz-Center">
 						<div class="center-Up">
 							<div class="myPoke">
 								<div class="enemyPokeName">${poketmon.p_name }</div>
 								<div class="myPoke-Up">
 									<img id="enemyPokeHp" alt="적팀포켓몬 체력바"
-										src="img/enemyPokeHpNew.png">
+										src="img/game/enemyPokeHpNew.png">
 								</div>
 								<div class="myPoke-Down">
-									<img id="trainerImg" alt="트레이너 이미지" src="img/trainer.png">
+									<img id="trainerImg" alt="트레이너 이미지" src="img/game/trainer.png">
 								</div>
 							</div>
 							<div class="enemyPoke">
@@ -38,13 +39,21 @@
 										src="${poketmon.p_frontDefault}">
 								</div>
 								<div class="enemyPoke-Down">
-									<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/myPokemonHp.png">
+								<div class="enemyPoke-name">이재강 Lv1</div>
+									<img id="myPokeHp" alt="우리포켓몬 체력바" src="img/game/myPokemonHp.png">
 								</div>
 							</div>
 						</div>
 						<div class="cetner-Down">
 							<div class="blank-Space">
-								<div class="blank-SpaceIn"></div>
+								<div class="blank-SpaceIn">
+									<div class="spaceInTwo">
+							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
+										<input type="hidden" id="userInputName"> 
+										<button id="attackBtn">공격하기</button>
+										<button id="cancelBtn">취소</button>
+									</div>
+								</div>
 							</div>
 							<div class="btn-Four">
 								<div class="btn-Four-In">
@@ -91,7 +100,6 @@
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
 
-	console.log(languageDex);
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
@@ -103,41 +111,56 @@
 	}
 	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
-function checkPokemonName() {
-	isReturning = false;
-var userInput = prompt("포켓몬 이름을 입력해주세요:");
-		if (userInput === languageDex) {
-		moveImage();
-		setTimeout(function() {
-			movePokemon()
-			moveUpAndDown() 
-		}, 1000);
-		
-		setTimeout(function() {
-		document.getElementById("enemyPokeHp").src = "img/enemyNoHp.png";
-		document.getElementById("imgshaddow").style.filter = "none";
-		document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
-		}, 2500);
+	function checkPokemonName() {
+		  isReturning = false;
+		  var attackBtn = document.getElementById("attackBtn");
+		  var userInputName = document.getElementById("userInputName");
+		  var inputValue; // inputValue 변수를 함수 범위로 이동
 
-		setTimeout(function() {
-		location.reload();
-		}, 3500);
-		} else if (userInput == '' || userInput == null) {
-			return;
-		} else {
-			moveImage();
-			setTimeout(function() {
-				moveTrainer();
-			}, 1000);
-		     
-		             }
-	}
+		  attackBtn.addEventListener("click", function() {
+		  isReturning = false;
+		    inputValue = userInputName.value; // inputValue에 값을 할당
+		    console.log("사용자 입력 값:", inputValue);
+		    console.log("포켓몬 입력 값:", languageDex);
+
+		    if (inputValue === languageDex) {
+		      moveImage();
+		      setTimeout(function() {
+		        movePokemon();
+		        moveUpAndDown();
+		      }, 1000);
+
+		      setTimeout(function() {
+		        document.getElementById("enemyPokeHp").src = "img/game/enemyNoHp.png";
+		        document.getElementById("imgshaddow").style.filter = "none";
+		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
+		      }, 2500);
+
+		      setTimeout(function() {
+		        location.reload();
+		      }, 3500);
+		    } else if (inputValue === "" || inputValue === null) {
+		      return;
+		    } else {
+		      moveImage();
+		      setTimeout(function() {
+		        moveTrainer();
+		      }, 1000);
+		    }
+		  });
+
+		  document.getElementById("userInputSpace").style.display = "block";
+		  document.getElementById("userInputName").type = "text";
+		  document.querySelector('.blank-Space').classList.remove('blank-Space');
+		  document.querySelector('.blank-SpaceIn').classList.remove('blank-SpaceIn');
+		  document.getElementById("attackBtn").style.display = "block";
+		  document.getElementById("cancelBtn").style.display = "block";
+		}
+
 function moveImage() {
 	  if (!isReturning) {
 	    currentPositionX += speed * directionX;
 	    currentPositionY += speed * directionY;
-	    console.log(currentPositionX);
-	    console.log(currentPositionY);
 	    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
 	  } else {
 	    currentPositionX -= speed * directionX;
