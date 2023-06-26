@@ -73,15 +73,10 @@ pageEncoding="UTF-8"%>
             <li><a href="CommunityC">Community</a></li>
             <li><a href="LoginC">Login</a></li>
             <li><a href="SignupC">SignupC</a></li>
-<<<<<<< HEAD
             <li><a href="MyPageC">Mypage</a></li>
             <li> <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
           /></a></li>
-=======
-            <li><a href="jsp/mypage.jsp">Mypage</a></li>
->>>>>>> 84802cf324717c77be195fb4fdb6c18042eece83
-<%--            mypage 링크 컨트롤러 만들면 바꿔주세요--%>
           </ul>
             <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
