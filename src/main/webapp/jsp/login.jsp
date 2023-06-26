@@ -25,11 +25,11 @@
                         <div class="btn-container">
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user2.png">
-                                <input name="id" class="info-input-btn" type="text" placeholder="User Name" pattern="[A-Za-z][A-Za-z0-9]{4,}" required>
+                                <input name="id" class="info-input-btn" type="text" placeholder="User Name">
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input name="pw" type="password" class="info-input-btn" placeholder="PW" pattern="^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$" required>
+                                <input name="pw" type="password" class="info-input-btn" >
                             </div>
                             <div class="confirm-btn-container">
                                 <div><button class="confirm-btn">Login</button></div>
