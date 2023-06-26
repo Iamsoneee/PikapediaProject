@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/pokedexFramegame.css" />
 
 </head>
-<body>
+<body onkeydown="handleKeyDown(event)">
 	<div id="pokedex-wrapper">
 		<div id="pokedex-red-frame">
 			<div id="pokedex-circles">
@@ -56,7 +56,7 @@
 							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
 										<input type="hidden" id="userInputName" onkeydown="handleEnterKey(event)"> 
 										<button id="attackBtn">공격하기</button>
-										<button id="cancelBtn">취소</button>
+									<!-- 	<button id="cancelBtn">취소</button> -->
 									</div>
 								</div>
 							</div>
@@ -103,6 +103,7 @@
 	var directionY = -1;
 	var isReturning = false; // 돌아오는 중인지 여부
 	var animationId; // 애니메이션 식별자
+	var selectedOption = 0; // 선택지의 초기 위치
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
 	let pkno = document.getElementById('pk_no').value;
@@ -192,7 +193,7 @@
 		  document.querySelector('.blank-Space').classList.remove('blank-Space');
 		  document.querySelector('.blank-SpaceIn').classList.remove('blank-SpaceIn');
 		  document.getElementById("attackBtn").style.display = "block";
-		  document.getElementById("cancelBtn").style.display = "block";
+		/*   document.getElementById("cancelBtn").style.display = "block"; */
 		  setFocus();
 		}
 
@@ -319,8 +320,11 @@ function handleEnterKey(event) {
 	  if (event.keyCode === 13) {
 	    event.preventDefault();
 	    document.getElementById("attackBtn").click(); // "공격하기" 버튼 클릭
+	    
 	  }
 	}
+	
+
 
 
 	function showHint() {
