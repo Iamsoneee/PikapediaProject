@@ -89,14 +89,14 @@
 	display : none;
 	font-size: 20pt;
 	position: absolute;
-	transform : translate(100%, 500%);
+	transform : translate(137%, 500%);
 }
-#cancelBtn{
+/* #cancelBtn{
 	display : none;
 	font-size: 20pt;
 	position: absolute;
 	transform : translate(450%, 500%);
-}
+} */
 	
 .btn-Four {
   height: 23.6vh;

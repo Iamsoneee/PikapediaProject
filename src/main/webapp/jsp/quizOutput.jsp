@@ -1,3 +1,7 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="com.pikapedia.db.DBManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="com.pikapedia.db.Pokemon"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -11,7 +15,7 @@
 <link rel="stylesheet" href="css/pokedexFramegame.css" />
 
 </head>
-<body>
+<body onkeydown="handleKeyDown(event)">
 	<div id="pokedex-wrapper">
 		<div id="pokedex-red-frame">
 			<div id="pokedex-circles">
@@ -25,6 +29,7 @@
 						<div class="center-Up">
 							<div class="myPoke">
 								<div class="enemyPokeName">${poketmon.p_name }</div>
+								<input type="hidden" id="pk_no" value="${poketmon.p_no }">
 								<div class="myPoke-Up">
 									<img id="enemyPokeHp" alt="적팀포켓몬 체력바"
 										src="img/game/enemyPokeHpNew.png">
@@ -49,9 +54,9 @@
 								<div class="blank-SpaceIn">
 									<div class="spaceInTwo">
 							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
-										<input type="hidden" id="userInputName"> 
+										<input type="hidden" id="userInputName" onkeydown="handleEnterKey(event)"> 
 										<button id="attackBtn">공격하기</button>
-										<button id="cancelBtn">취소</button>
+									<!-- 	<button id="cancelBtn">취소</button> -->
 									</div>
 								</div>
 							</div>
@@ -84,6 +89,7 @@
 	</div>
 <script>
 	var languageDex = '${poketmon.p_name}';
+	console.log(languageDex)
 	var trainerImg = document.getElementById('trainerImg');
 	var pokemonImg = document.getElementById('imgshaddow');
 	var startPositionX = 0;
@@ -97,9 +103,10 @@
 	var directionY = -1;
 	var isReturning = false; // 돌아오는 중인지 여부
 	var animationId; // 애니메이션 식별자
+	var selectedOption = 0; // 선택지의 초기 위치
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
-
+	let pkno = document.getElementById('pk_no').value;
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
@@ -112,17 +119,17 @@
 	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
 	function checkPokemonName() {
+		
 		  isReturning = false;
 		  var attackBtn = document.getElementById("attackBtn");
 		  var userInputName = document.getElementById("userInputName");
 		  var inputValue; // inputValue 변수를 함수 범위로 이동
-
 		  attackBtn.addEventListener("click", function() {
 		  isReturning = false;
 		    inputValue = userInputName.value; // inputValue에 값을 할당
 		    console.log("사용자 입력 값:", inputValue);
 		    console.log("포켓몬 입력 값:", languageDex);
-
+		    
 		    if (inputValue === languageDex) {
 		      moveImage();
 		      setTimeout(function() {
@@ -135,12 +142,44 @@
 		        document.getElementById("imgshaddow").style.filter = "none";
 		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
 		      }, 2500);
+		      
+		      // 포켓몬 고유번호, 아이디
+/* 		        if(account.id != null){
+ 		   	    let id = ${account.id}; 
+ 		   	    
+		        } else {
+		        	console.log("아이디 에러"); */
+		      let id = "jp";
+		/*         } */
+		      // AJAX 객체 생성
+		      var xhr = new XMLHttpRequest();
 
+		     let url = "InsertDDiBu?id="  + id + "&pkno=" + pkno;
+		     console.log(url);
+		      // POST 요청 설정
+		      xhr.open("POST", url, true);
+		      xhr.setRequestHeader("Content-type", "text");
+
+		      // 응답 처리
+		      xhr.onreadystatechange = function() {
+		        if (xhr.readyState === 4 && xhr.status === 200) {
+		          var response = xhr.responseText;
+		          // 응답 처리 로직 작성
+		          console.log(response);
+		          
+		        }
+		      };
+
+		      // 요청 전송
+		      xhr.send();
+		      
 		      setTimeout(function() {
-		        location.reload();
+	          location.reload();
 		      }, 3500);
+		      
 		    } else if (inputValue === "" || inputValue === null) {
 		      return;
+		      
 		    } else {
 		      moveImage();
 		      setTimeout(function() {
@@ -154,7 +193,8 @@
 		  document.querySelector('.blank-Space').classList.remove('blank-Space');
 		  document.querySelector('.blank-SpaceIn').classList.remove('blank-SpaceIn');
 		  document.getElementById("attackBtn").style.display = "block";
-		  document.getElementById("cancelBtn").style.display = "block";
+		/*   document.getElementById("cancelBtn").style.display = "block"; */
+		  setFocus();
 		}
 
 function moveImage() {
@@ -272,9 +312,18 @@ function executeAnimation() {
         moveTrainer();
     }, 1000);
 }
+function setFocus() {
+	  document.getElementById("userInputName").focus();
+	}
 
-
-
+function handleEnterKey(event) {
+	  if (event.keyCode === 13) {
+	    event.preventDefault();
+	    document.getElementById("attackBtn").click(); // "공격하기" 버튼 클릭
+	    
+	  }
+	}
+	
 
 
 
@@ -282,5 +331,6 @@ function executeAnimation() {
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = halfHiddenText;
 	}
 	</script>
+
 </body>
 </html>
