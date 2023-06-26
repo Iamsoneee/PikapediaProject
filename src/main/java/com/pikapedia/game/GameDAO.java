@@ -45,4 +45,35 @@ public class GameDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
+
+	public static int insertDDibu(HttpServletRequest request) {
+	    
+	      Connection con = null;
+	      PreparedStatement pstmt = null;
+
+	      String id = request.getParameter("id");
+	      String pkno = request.getParameter("pkno");
+		  String sql = "insert into reward values(?,?)";
+	      try {
+	    	con = DBManager.connect();
+	    	
+	    		pstmt = con.prepareStatement(sql);
+	    		
+	    		pstmt.setString(1, pkno);
+	    		pstmt.setString(2, id);
+
+			if(pstmt.executeUpdate()==1) {
+				System.out.println("등록 성공");
+				return 1;
+			}
+	        	
+	      } catch (Exception e) {
+				System.out.println("db 실패");
+				e.printStackTrace();
+				return 0;
+	      } finally {
+	      	DBManager.close(con, pstmt, null);
+	      }
+		return 0;
+	}
 }

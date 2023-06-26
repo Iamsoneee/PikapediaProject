@@ -1,3 +1,7 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="com.pikapedia.db.DBManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="com.pikapedia.db.Pokemon"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,6 +29,7 @@
 						<div class="center-Up">
 							<div class="myPoke">
 								<div class="enemyPokeName">${poketmon.p_name }</div>
+								<input type="hidden" id="pk_no" value="${poketmon.p_no }">
 								<div class="myPoke-Up">
 									<img id="enemyPokeHp" alt="적팀포켓몬 체력바"
 										src="img/game/enemyPokeHpNew.png">
@@ -84,6 +89,7 @@
 	</div>
 <script>
 	var languageDex = '${poketmon.p_name}';
+	console.log(languageDex)
 	var trainerImg = document.getElementById('trainerImg');
 	var pokemonImg = document.getElementById('imgshaddow');
 	var startPositionX = 0;
@@ -99,7 +105,7 @@
 	var animationId; // 애니메이션 식별자
 	var halfLength = Math.floor(languageDex.length / 2);
 	var hint = languageDex.slice(0, halfLength);
-
+	let pkno = document.getElementById('pk_no').value;
 	var hiddenText = "";
 	for (var i = 0; i < languageDex.length; i++) {
 		hiddenText += "?";
@@ -112,6 +118,7 @@
 	
 	document.getElementsByClassName("enemyPokeName")[0].innerHTML = hiddenText;
 	function checkPokemonName() {
+		
 		  isReturning = false;
 		  var attackBtn = document.getElementById("attackBtn");
 		  var userInputName = document.getElementById("userInputName");
@@ -135,12 +142,44 @@
 		        document.getElementById("imgshaddow").style.filter = "none";
 		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = languageDex;
 		      }, 2500);
+		      
+		      // 포켓몬 고유번호, 아이디
+/* 		        if(account.id != null){
+ 		   	    let id = ${account.id}; 
+ 		   	    
+		        } else {
+		        	console.log("아이디 에러"); */
+		      let id = "jp";
+		/*         } */
+		      // AJAX 객체 생성
+		      var xhr = new XMLHttpRequest();
 
+		     let url = "InsertDDiBu?id="  + id + "&pkno=" + pkno;
+		     console.log(url);
+		      // POST 요청 설정
+		      xhr.open("POST", url, true);
+		      xhr.setRequestHeader("Content-type", "text");
+
+		      // 응답 처리
+		      xhr.onreadystatechange = function() {
+		        if (xhr.readyState === 4 && xhr.status === 200) {
+		          var response = xhr.responseText;
+		          // 응답 처리 로직 작성
+		          console.log(response);
+		          
+		        }
+		      };
+
+		      // 요청 전송
+		      xhr.send();
+		      
 		      setTimeout(function() {
-		        location.reload();
+	//	        location.reload();
 		      }, 3500);
+		      
 		    } else if (inputValue === "" || inputValue === null) {
 		      return;
+		      
 		    } else {
 		      moveImage();
 		      setTimeout(function() {
@@ -274,13 +313,10 @@ function executeAnimation() {
 }
 
 
-
-
-
-
 	function showHint() {
 		document.getElementsByClassName("enemyPokeName")[0].innerHTML = halfHiddenText;
 	}
 	</script>
+
 </body>
 </html>
