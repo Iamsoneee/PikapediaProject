@@ -93,10 +93,10 @@ article {
 
 /* Hamburger Icon for Drop-down Menu */
 .drop-icon-img {
-/* 	display: none;  */
+    display: none;
 	width : 1em;
 	position: absolute;
-	top: 45%;
+	top: 50%;
 	right: 0;
 	width: 1em;
 }
@@ -138,16 +138,21 @@ article {
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
+
+/* Media Query for Responsive Website */
 @media screen and (max-width : 768px) {
-	.header-wrapper {
-		flex-direction: column;
-	}
+
 	.drop-menu {
+		display: none;
 		flex-direction: column;
 		z-index: 1;
 		background-color: rgb(78, 108, 98);
 	}
 	.drop-icon-img {
-		display: block;
+		display: flex;
+	}
+	
+	.drop-menu.active {
+	display: flex;
 	}
 }

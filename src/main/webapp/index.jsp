@@ -15,6 +15,7 @@ pageEncoding="UTF-8"%>
     />
   </head>
   <body>
+
     <!-- Header Area -->
     <header class="header">
       <div class="header-wrapper">
@@ -96,4 +97,5 @@ pageEncoding="UTF-8"%>
     <footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
+
 </html>
