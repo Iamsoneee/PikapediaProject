@@ -74,9 +74,6 @@ pageEncoding="UTF-8"%>
             <li><a href="LoginC">Login</a></li>
             <li><a href="SignupC">SignupC</a></li>
             <li><a href="MyPageC">Mypage</a></li>
-            <li> <a href="" class="drop-icon-area"
-            ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
-          /></a></li>
           </ul>
             <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
