@@ -43,7 +43,6 @@ pageEncoding="UTF-8"%>
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
-                  s
                   class="header-icons"
                   id="dark-mode-toggle"
               /></a>
@@ -68,10 +67,12 @@ pageEncoding="UTF-8"%>
           <!-- Dropdown Menu -->
           <ul class="drop-menu">
             <li><a href="GameHomeC">Quiz</a></li>
-            <li><a href="MyRewardC">My Rewards</a></li>
+            <li><a href="MyRewardC">MyRewards</a></li>
             <li><a href="CommunityC">Community</a></li>
             <li><a href="LoginC">Login</a></li>
-            <li><a href="SignupC">Join</a></li>
+            <li><a href="SignupC">SignupC</a></li>
+            <li><a href="jsp/mypage.jsp">Mypage</a></li>
+<%--            mypage 링크 컨트롤러 만들면 바꿔주세요--%>
           </ul>
           <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""

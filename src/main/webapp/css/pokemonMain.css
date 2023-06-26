@@ -112,7 +112,7 @@
 
   height: 185px;
   background: rgba(255, 255, 255, 0.6);
-  border: 0.3vw solid #e56c3e;
+
   border-radius: 15px;
 
   /* text css */
@@ -144,12 +144,12 @@
 }
 
 .card-contents p {
-  line-height: 30px;
+  line-height: 25px;
 }
 
 .card-pokemon-img {
-  width: 60px;
-  margin-bottom: 20px;
+  width: 100px;
+  z-index: 5;
 }
 
 .card-type-icon {

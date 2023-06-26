@@ -4,19 +4,40 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class DBDAO {
+	private static Connection  con = DBManager.connect();
+	private static HashMap<String, String> colors;
 
+	public static void getAllColor(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from type";
+		System.out.println("1111");
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			colors = new HashMap <String,String>();
+			while (rs.next()) {
+				colors.put(rs.getString("t_name_ko"), rs.getString("t_color"));
+			}
+			request.setAttribute("colors", colors);
+		}catch (Exception e) {
+			e.printStackTrace();
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
+	}	
 	public static void getAllPokemon(HttpServletRequest request) {
 
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon_ko order by p_no";
 		try {
-			con = DBManager.connect();
+			System.out.println("HC get All");
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Pokemon pokemon = null;
@@ -32,6 +53,9 @@ public class DBDAO {
 				Double weight = rs.getDouble("p_weight");
 				String type1 = rs.getString("p_type");
 				String type2 = rs.getString("p_type2");
+				
+				
+				
 				String des = rs.getString("p_des");
 				String frontDefault = rs.getString("p_front_default");
 				String backDefault = rs.getString("p_back_default");
@@ -47,19 +71,18 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
 		
 	}
 
 	public static void getPokemonTypes(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from type";
 		try {
-			con = DBManager.connect();
+			System.out.println(1111);
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			ArrayList<Type> types = new ArrayList<Type>();
@@ -76,33 +99,10 @@ public class DBDAO {
 			request.setAttribute("Types", types);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
 	}
 
-	// 특정 포켓몬의 타입 정보 가져오기
-	public static void getTypesByNo(HttpServletRequest request, String pokemonNo) {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "select * from pokemon_ko join type on p_type = t_name_ko where p_no = ?";
-		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, pokemonNo);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				String type1 = rs.getString("p_type");
-				String type2 = rs.getString("p_type2");
-				request.setAttribute("Type1", type1);
-				request.setAttribute("Type2", type2);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-	}
-
+	
 }

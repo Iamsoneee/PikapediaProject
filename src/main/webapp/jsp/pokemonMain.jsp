@@ -10,6 +10,7 @@
 <meta charset="UTF-8" />
 <title>pokemonMain</title>
 <link rel="stylesheet" href="css/pokemonMain.css" />
+
 </head>
 <body>
 	<div id="main-page-wrapper">
@@ -107,10 +108,9 @@
 
 		<!-- Pokemon Cards Gallery -->
 		<div class="scrollable">
-
 			<c:forEach var="pokemon" items="${Pokemons }">
 				<a href="">
-					<div class="pokemon-card">
+				    <div class="pokemon-card" id="pokemon-card-${pokemon.no}">
 						<div class="card-white-bg">
 							<div class="card-contents">
 								<p>#${pokemon.no }</p>
@@ -119,12 +119,16 @@
 								<hr class="horizontal-line" />
 								<p>${pokemon.name }</p>
 								<div class="type-icons-area">
-									<img src="img/pokemon-type/circle-type/${pokemon.type1}.png"
-										alt="${pokemon.type1}" class="card-type-icon" />
-									<c:if test="${not empty pokemon.type2}">
-										<img src="img/pokemon-type/circle-type/${pokemon.type2}.png"
-											alt="${pokemon.type2}" class="card-type-icon" />
-									</c:if>
+									  <c:forEach var="type" items="${Types}">
+                                        <c:if test="${type.typeNameKo eq pokemon.type1}">
+                                            <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        	<input type="hidden" id="type1Color-${pokemon.no}" value="${colors[pokemon.type1]}" />
+                                        </c:if>
+                                       <c:if test="${type.typeNameKo eq pokemon.type2}">
+                                            <img src="img/pokemon-type/circle-type/${type.typeImg}" alt="${type.typeNameKo}" class="card-type-icon" />
+                                        	<input type="hidden" id="type2Color-${pokemon.no}" value="${colors[pokemon.type2]}" />
+                                        </c:if>
+                                    </c:forEach>
 								</div>
 							</div>
 						</div>
@@ -132,7 +136,35 @@
 				</a>
 			</c:forEach>
 
+
 		</div>
 	</div>
+	
+	${colors["물"]}
+	${colors}
+	
+	<script>
+	// JSP 내에서 JavaScript로 타입별 보더 색상을 처리
+    var pokemonCards = document.querySelectorAll('.pokemon-card');
+    pokemonCards.forEach(function(card) {
+        var cardId = card.id.split('-')[2];
+        var type1Color = document.getElementById('type1Color-' + cardId).value;
+        var type2Color = document.getElementById('type2Color-' + cardId).value;
+        var gradient = 'none';
+        console.log(cardId);
+        console.log(type1Color);
+        console.log(type2Color);
+        console.log(gradient);
+
+        if (type1Color && type2Color) {
+            gradient = 'linear-gradient(to right, ' + type1Color + ', ' + type2Color + ')';
+        } else if (type1Color) {
+            gradient = type1Color;
+        }
+
+        card.style.border = gradient;
+    });
+	</script>
+	<script src="js/pokemonMain.js"></script>
 </body>
 </html>

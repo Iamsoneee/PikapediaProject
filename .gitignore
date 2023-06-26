@@ -9,3 +9,6 @@ classes/
 
 # 개인 설정 파일
 DBManager.java
+/target/
+.classpath
+.project
