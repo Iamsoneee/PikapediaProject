@@ -29,13 +29,13 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user2.png">
-                                <input class="info-input-btn" type="text" placeholder="User Name"  pattern="[A-Za-z][A-Za-z0-9]{4,}" required>
+                                <input class="info-input-btn" type="text" placeholder="User Name" >
                                <%-- [A-Za-z]: 알파벳 대문자로 시작해야 함
                                 [A-Za-z0-9]{4,}: 알파벳 대소문자와 숫자의 조합으로 최소 5자 이상이어야 함--%>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="password" placeholder="PW" pattern="^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$" required>
+                                <input class="info-input-btn" type="password" placeholder="PW">
                                 <%--(?=.*[A-Z]): 대문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*[a-z]): 소문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*\d): 숫자를 최소한 한 글자 이상 포함해야 함
@@ -44,7 +44,7 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="password" placeholder="PW Confirm" pattern="^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$" required>
+                                <input class="info-input-btn" type="password" placeholder="PW Confirm">
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/email.png">
