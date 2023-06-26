@@ -13,12 +13,42 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<!-- Border-color by each pokemon's type -->
+<script type="text/javascript">
+	/* $(function(){
+	 $('.pokemon-card').each(function(){
+	 var type1 = $(this).data('type1');
+	 var type2 = $(this).data('type2');
+	 var type1Color = getColorByType(type1);
+	 var type2Color = getColorByType(type2);
+	
+	 if (type2Color === undefined || type2Color === "") {
+	 $(this).css({'border-color': type1Color});
+	 } else {
+	 $(this).css({
+	 'border-image': 'linear-gradient(to bottom, ' + type1Color + ', ' + type2Color + ') 1',
+	 'border-radius': '15px'
+	 });
+	 }
+	 });
+	 }); */
+</script>
+
 <style>
 .pokemon-card {
 	border: 5px solid transparent;
 }
 </style>
-
+<script>
+let color = $('body').css('background-color');
+	$.ajax({
+		url : 'Color',
+		data : {color},
+		success : function(data) {
+			$("<div></div>");
+		}
+	})
+</script>
 </head>
 <body>
 
@@ -111,22 +141,35 @@
 		<!-- Search Bar -->
 		<div class="search-bar-area">
 			<input type="text" id="search-input" maxlength="10"
-				placeholder="Search Pokémon" /> 
+				placeholder="Enter the name or number of the Pokémon" /> <img
+				src="img/icon/magnifier-icon.png" alt="magnifier-icon"
+				id="magnifier-icon" />
 		</div>
 		<!-- Pokemon Cards Gallery -->
 		<div class="scrollable">
 			<c:forEach var="pokemon" items="${Pokemons }">
 				<a href=""> 
-				<!-- Border-color by each pokemon's type -->
- 				 		<div class="pokemon-card"
+				 		<div class="pokemon-card"
 						style="border-color: ${colors[pokemon.type1]};
 						<c:if test='${not empty pokemon.type2}'>
-						background-image: linear-gradient(rgba(255, 255, 255, 0.6) ,rgba(255, 255, 255, 0.6)), linear-gradient(to bottom, ${colors[pokemon.type1]}, ${colors[pokemon.type2]});
+						background-image: linear-gradient(${color2 } ,rgba(255, 255, 255, 0.6)), linear-gradient(to bottom, ${colors[pokemon.type1]}, ${colors[pokemon.type2]});
 						background-origin: border-box; 
 						background-clip: content-box, border-box; 
 						border-radius: 15px;
 						border: 5px solid transparent;
-						</c:if>"> 
+						</c:if>">
+<%-- 				 		<div class="pokemon-card"
+						style="border-color: ${colors[pokemon.type1]};
+						<c:if test='${not empty pokemon.type2}'>
+						background-image: linear-gradient(${color2 } ,rgba(255, 255, 255, 0.6)), linear-gradient(to bottom, ${colors[pokemon.type1]}, ${colors[pokemon.type2]});
+						background-origin: border-box; 
+						background-clip: content-box, border-box; 
+						border-radius: 15px;
+						border: 5px solid transparent;
+						</c:if>"> --%>
+						
+					
+				
 						<div class="card-white-bg">
 							<div class="card-contents">
 								<p>#${pokemon.no }</p>
@@ -159,7 +202,15 @@
 			</c:forEach>
 		</div>
 	</div>
-
+	<script type="text/javascript">
+		/*
+		let bgc = $('body').css("background-color");
+		$(".pokemon-card").css("background-image", "linear-gradient("+bgc+",rgba(255, 255, 255, 0.6)), linear-gradient(to bottom, ${colors[pokemon.type1]}, ${colors[pokemon.type2]})");
+		$(".pokemon-card").css("background-origin", "border-box");
+		$(".pokemon-card").css("background-clip", "content-box, border-box");
+		$(".pokemon-card").css("border-radius", "15px");
+		$(".pokemon-card").css("border", "5px solid transparent"); */
+	</script>
 	<!-- <div
 		style="width: 200px; 
 		height: 100px; 
@@ -172,6 +223,10 @@
 	</div> -->
 
 	<%-- 	${colors["물"]} ${colors} --%>
+
+
+${color }
+
 </body>
 
 </html>

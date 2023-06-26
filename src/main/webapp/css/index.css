@@ -26,13 +26,11 @@ body {
 }
 
 article {
-	/*   border: 1px solid blue; */
 	width: 100%;
 	height: 100vh;
 }
 
 .pokemon-main {
-	/*   border: 1px solid red; */
 	width: 80%;
 	height: 100vh;
 }
@@ -54,9 +52,8 @@ article {
 	padding: 0.5em 0.75em;
 	font-size: 1em;
 	justify-content: space-between;
+	overflow: visible;
 }
-
-
 
 #pikapedia-logo {
 	width: 11.25em;
@@ -93,10 +90,10 @@ article {
 
 /* Hamburger Icon for Drop-down Menu */
 .drop-icon-img {
-/* 	display: none;  */
-	width : 1em;
+	display: none;
+	width: 1em;
 	position: absolute;
-	top: 45%;
+	top: 50%;
 	right: 0;
 	width: 1em;
 }
@@ -138,16 +135,38 @@ article {
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media screen and (max-width : 768px) {
+/* Media Query for Responsive Website */
+@media screen and (max-width : 1024px) {
 	.header-wrapper {
-		flex-direction: column;
+		align-items: center;
+		position: relative;
 	}
 	.drop-menu {
+		display: none;
 		flex-direction: column;
-		z-index: 1;
-		background-color: rgb(78, 108, 98);
+		align-items: center;
+		position: absolute;
+		top: 55%;
+		right: -35px;
+		background-color: rgba(0, 0, 0, 0.7);
+		transition: max-height 0.8s ease;
+		max-height: 0;
+		overflow: hidden;
+	}
+	.drop-menu li {
+		text-align: center;
+	}
+	.drop-menu li a:hover {
+		color: #ecc22e;
 	}
 	.drop-icon-img {
-		display: block;
+		display: flex;
+		position: absolute;
+		top:43%;
+		right: -5%;
+	}
+	.drop-menu.active {
+		display: flex;
+		max-height: 500px;
 	}
 }
