@@ -9,7 +9,7 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 
 public class DBDAO {
-	private static Connection  con = DBManager.connect();
+	private static Connection con = DBManager.connect();
 	private static HashMap<String, String> colors;
 
 	public static void getAllColor(HttpServletRequest request) {
