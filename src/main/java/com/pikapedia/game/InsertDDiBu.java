@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.connector.Response;
 
 @WebServlet("/InsertDDiBu")
 public class InsertDDiBu extends HttpServlet {
@@ -19,9 +18,10 @@ public class InsertDDiBu extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println(11);
-		response.setCharacterEncoding("utf-8");
-		response.getWriter().write(GameDAO.insertDDibu(request));
+		/*
+		 * System.out.println(11); response.setCharacterEncoding("utf-8");
+		 * response.getWriter().write(GameDAO.insertDDibu(request));
+		 */
 	}
 
 }

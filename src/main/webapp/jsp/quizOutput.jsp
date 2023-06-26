@@ -54,7 +54,7 @@
 								<div class="blank-SpaceIn">
 									<div class="spaceInTwo">
 							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
-										<input type="hidden" id="userInputName"> 
+										<input type="hidden" id="userInputName" onkeydown="handleEnterKey(event)"> 
 										<button id="attackBtn">공격하기</button>
 										<button id="cancelBtn">취소</button>
 									</div>
@@ -123,13 +123,12 @@
 		  var attackBtn = document.getElementById("attackBtn");
 		  var userInputName = document.getElementById("userInputName");
 		  var inputValue; // inputValue 변수를 함수 범위로 이동
-
 		  attackBtn.addEventListener("click", function() {
 		  isReturning = false;
 		    inputValue = userInputName.value; // inputValue에 값을 할당
 		    console.log("사용자 입력 값:", inputValue);
 		    console.log("포켓몬 입력 값:", languageDex);
-
+		    
 		    if (inputValue === languageDex) {
 		      moveImage();
 		      setTimeout(function() {
@@ -174,7 +173,7 @@
 		      xhr.send();
 		      
 		      setTimeout(function() {
-	//	        location.reload();
+	          location.reload();
 		      }, 3500);
 		      
 		    } else if (inputValue === "" || inputValue === null) {
@@ -194,6 +193,7 @@
 		  document.querySelector('.blank-SpaceIn').classList.remove('blank-SpaceIn');
 		  document.getElementById("attackBtn").style.display = "block";
 		  document.getElementById("cancelBtn").style.display = "block";
+		  setFocus();
 		}
 
 function moveImage() {
@@ -311,6 +311,16 @@ function executeAnimation() {
         moveTrainer();
     }, 1000);
 }
+function setFocus() {
+	  document.getElementById("userInputName").focus();
+	}
+
+function handleEnterKey(event) {
+	  if (event.keyCode === 13) {
+	    event.preventDefault();
+	    document.getElementById("attackBtn").click(); // "공격하기" 버튼 클릭
+	  }
+	}
 
 
 	function showHint() {
