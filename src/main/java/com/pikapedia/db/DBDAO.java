@@ -28,7 +28,25 @@ public class DBDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		} 
-	}	
+	}
+	
+	public static void getAllColoJp(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from type";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			colors = new HashMap <String,String>();
+			while (rs.next()) {
+				colors.put(rs.getString("t_name_ja"), rs.getString("t_color"));
+			}
+			request.setAttribute("colors", colors);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
 	
 	public static void getAllPokemon(HttpServletRequest request) {
 
@@ -101,7 +119,7 @@ public class DBDAO {
 						frontShiny, backShiny);
 				pokemons.add(pokemon);
 			}
-			request.setAttribute("PokemonsJP", pokemons);
+			request.setAttribute("Pokemons", pokemons);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

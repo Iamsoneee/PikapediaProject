@@ -7,12 +7,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pikapedia.account.AccountDAO;
+import com.pikapedia.db.DBDAO;
+
 @WebServlet("/TranslationC")
 public class TranslationC extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("contentPage", "/jsp/원하는페이지.jsp");
+		AccountDAO.checkLogin(request);
+		
+		DBDAO.getPokemonTypes(request);
+		
+		String lang = request.getParameter("lang");
+		if(lang.equals("kr")) {
+			DBDAO.getAllColor(request);
+			DBDAO.getAllPokemon(request);
+		}
+		else { 
+			DBDAO.getAllColoJp(request);
+			DBDAO.getAllPokemnJP(request);
+		}
+		request.setAttribute("contentPage", "/jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

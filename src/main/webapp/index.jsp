@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href=""
+              <a href="TranslationC?lang=kr"
                 ><img
                   src="img/icon/korea-icon.png"
                   alt="korean-button"
@@ -57,7 +57,7 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href="" onclick="changeJP()">
+              <a href="TranslationC?lang=jp">
                 <img
                   src="img/icon/japan-icon.png"
                   alt="japanese-button"
