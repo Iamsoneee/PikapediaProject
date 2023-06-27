@@ -7,13 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.pikapedia.account.AccountDAO;
 import com.pikapedia.db.DBDAO;
 
 @WebServlet("/HC")
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
 		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
 		DBDAO.getPokemonTypes(request);

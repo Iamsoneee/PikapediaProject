@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MyPageEditC")
-public class MyPageEditC extends HttpServlet {
+import com.pikapedia.db.DBDAO;
+
+@WebServlet("/LogoutC")
+public class LogoutC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("contentPage", "/jsp/mypageEdit.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		AccountDAO.Logout(request);
+		DBDAO.getAllColor(request);
+		DBDAO.getAllPokemon(request);
+		DBDAO.getPokemonTypes(request);
+		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.editAccount(request);
-		request.setAttribute("contentPage", "/jsp/mypage.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }
