@@ -100,6 +100,98 @@ public class DBDAO {
 			 * finally { DBManager.close(con, pstmt, rs); }
 			 */
 	}
-
 	
+	public static void getRewardPokemon(HttpServletRequest request) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from pokemon_ko where p_no in (select r_no from reward where r_id = ?)";
+		String id = request.getParameter("id");
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			Pokemon pokemon = null;
+			ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
+			while (rs.next()) {
+				int no = rs.getInt("p_no");
+				String no2 = "";
+				if (no > 0) {
+					no2 = String.format("%03d", no);
+				}
+				String name = rs.getString("p_name");
+				Double height = rs.getDouble("p_height");
+				Double weight = rs.getDouble("p_weight");
+				String type1 = rs.getString("p_type");
+				String type2 = rs.getString("p_type2");
+				
+				
+				
+				String des = rs.getString("p_des");
+				String frontDefault = rs.getString("p_front_default");
+				String backDefault = rs.getString("p_back_default");
+				String frontShiny = rs.getString("p_front_shiny");
+				String backShiny = rs.getString("p_back_shiny");
+
+				pokemon = new Pokemon(no2, name, height, weight, type1, type2, des, frontDefault, backDefault,
+						frontShiny, backShiny);
+				pokemons.add(pokemon);
+			}
+			request.setAttribute("Pokemons", pokemons);
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
+	}
+	
+	public static void getRewardCount(HttpServletRequest request) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from reward where r_id = ?";
+		String id = request.getParameter("id");
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1); 
+				System.out.println(count);
+			}
+			
+			request.setAttribute("RewardCount", count);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
+	}
+	
+	public static void getAllPokemonCount(HttpServletRequest request) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from pokemon";
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1); 
+				System.out.println(count);
+			}
+			
+			request.setAttribute("AllPokemonCount", count);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} /*
+			 * finally { DBManager.close(con, pstmt, rs); }
+			 */
+	}
 }

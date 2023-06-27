@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -69,11 +70,18 @@ pageEncoding="UTF-8"%>
           <div>
           <ul class="drop-menu">
             <li><a href="GameHomeC">Quiz</a></li>
-            <li><a href="MyRewardC">MyRewards</a></li>
+            <li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
             <li><a href="CommunityC">Community</a></li>
-            <li><a href="LoginC">Login</a></li>
-            <li><a href="SignupC">SignupC</a></li>
-            <li><a href="MyPageC">Mypage</a></li>
+          		<c:choose>
+          		<c:when test="${empty account.id }">
+            		<li><a href="LoginC">Login</a></li>
+            		<li><a href="SignupC">Signup</a></li>
+          		</c:when>
+          		<c:otherwise>
+            		<li><a href="LogoutC">Logout</a></li>
+            		<li><a href="MyPageC">Mypage</a></li>
+          		</c:otherwise>
+          	</c:choose>
           </ul>
             <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""

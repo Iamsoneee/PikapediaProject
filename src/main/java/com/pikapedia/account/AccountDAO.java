@@ -106,7 +106,7 @@ public class AccountDAO {
 		pstmt.setString(4, email);
 				
 		if (pstmt.executeUpdate() == 1) {
-			System.out.println("�벑濡� �꽦怨�!");
+			System.out.println("등록 성공!");
 		}
 				
 		} catch (Exception e) {
@@ -121,24 +121,23 @@ public class AccountDAO {
 		String sql = "update account set a_name = ?, a_pw = ?, a_email = ? where a_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String id = request.getParameter("id");
 		
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			request.setCharacterEncoding("utf-8");
 			String name = request.getParameter("UserName");
-			String pw = request.getParameter("PW");
+			String pw = request.getParameter("pw");
 			String email = request.getParameter("Email");
 			String img = request.getParameter("Img");
 			System.out.println(name);
-			System.out.println(id);
+			System.out.println(request.getParameter("id"));
 			System.out.println(pw);
 			System.out.println(email);
 			pstmt.setString(1, name);
 			pstmt.setString(2, pw);
 			pstmt.setString(3, email);
-			pstmt.setString(4, id);
+			pstmt.setString(4, request.getParameter("id"));
 			if (pstmt.executeUpdate() == 1 ) {
 				System.out.println("수정 성공!");
 				request.setAttribute("r", "수정 성공!");

@@ -41,7 +41,8 @@ pageEncoding="UTF-8"%>
 					<div class="r-account">${account.name }</div>
 					<div class="r-account">님의 리워드</div>
 					<div class="r-account">획득 띠부띠부씰 개수:</div>
-					<div class="r-account">n개</div>
+					<div class="r-account">${RewardCount }</div>
+					<div class="r-account">개</div>
 				</div>	
 				<div class="scrollable">
 				 	<c:forEach var="pokemon" items="${Pokemons }">
