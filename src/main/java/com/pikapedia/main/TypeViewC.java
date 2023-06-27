@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pikapedia.db.DBDAO;
 
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+@WebServlet("/TypeViewC")
+public class TypeViewC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DBDAO.getAllColor(request);
-		DBDAO.getAllPokemon(request);
+		DBDAO.getTypePokemon(request);
 		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

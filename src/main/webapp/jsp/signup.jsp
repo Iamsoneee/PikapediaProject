@@ -21,7 +21,7 @@
                     <img src="img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    <form action="SignupC" method="post">
+                    <form action="SignupC" method="post" onsubmit="return call();">
                         <div class="btn-container">
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user1.png">
@@ -29,13 +29,13 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user2.png">
-                                <input class="info-input-btn" type="text" name="User Name" placeholder="User Name">
+                                <input class="info-input-btn" type="text" name="UserName" placeholder="User Name">
                                <%-- [A-Za-z]: 알파벳 대문자로 시작해야 함
                                 [A-Za-z0-9]{4,}: 알파벳 대소문자와 숫자의 조합으로 최소 5자 이상이어야 함--%>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="password" name="PW" placeholder="PW">
+                                <input class="info-input-btn" type="password" name="pw" placeholder="PW" >
                                 <%--(?=.*[A-Z]): 대문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*[a-z]): 소문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*\d): 숫자를 최소한 한 글자 이상 포함해야 함
@@ -44,7 +44,7 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="password" name="PW Confirm" placeholder="PW Confirm">
+                                <input class="info-input-btn" type="password" name="PWConfirm" placeholder="PW Confirm">
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/email.png">

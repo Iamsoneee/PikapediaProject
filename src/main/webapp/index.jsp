@@ -104,6 +104,9 @@ pageEncoding="UTF-8"%>
     <!-- Footer Area -->
     <footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/validCheck.js"></script>
+	<script type="text/javascript" src="js/valueCheck.js"></script>
+	<script type="text/javascript" src="js/mypage.js"></script>
   </body>
 
 </html>

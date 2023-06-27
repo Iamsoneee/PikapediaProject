@@ -7,8 +7,6 @@
     <title>mypageEdit</title>
     <link rel="stylesheet" href="css/pokedexFrameAccount.css"/>
     <link rel="stylesheet" href="css/mypageEdit.css">
-    <script type="text/javascript" src="js/validCheck.js"></script>
-	<script type="text/javascript" src="js/valueCheck.js"></script>
 </head>
 <body>
 <div id="pokedex-wrapper">
