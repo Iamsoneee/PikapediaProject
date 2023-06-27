@@ -67,8 +67,8 @@ pageEncoding="UTF-8"%>
             </li>
           </ul>
           <!-- Dropdown Menu -->
-          <div>
-          <ul class="drop-menu">
+          <div class="drop-menu-wrapper">
+          <ul class="drop-menu" style="max-height: 0px">
             <li><a href="GameHomeC">Quiz</a></li>
             <li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
             <li><a href="CommunityC">Community</a></li>
