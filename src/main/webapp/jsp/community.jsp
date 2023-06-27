@@ -16,7 +16,9 @@
         </div>
         <div id="pokedex-blue-shadow">
             <div id="pokedex-blue-frame">
-                <h1>Community Page</h1>
+                <h1 align="center">
+                  </h1>
+                 <iframe src="https://d0b9-121-160-41-223.ngrok-free.app/" width="100%" height="550"></iframe>
             </div>
         </div>
     </div>
