@@ -57,8 +57,8 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href=""
-                ><img
+              <a href="" onclick="changeJP()">
+                <img
                   src="img/icon/japan-icon.png"
                   alt="japanese-button"
                   class="header-icons"

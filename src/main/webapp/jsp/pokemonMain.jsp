@@ -148,7 +148,6 @@
 											<input type="hidden" id="type2Color"
 												value="${colors[pokemon.type2]}" />
 										</c:if>
-
 									</c:forEach>
 								</div>
 							</div>

@@ -1,5 +1,4 @@
 // ************ DARK MODE JS ************
-
 document.addEventListener("DOMContentLoaded", function() {
 	var body = document.body;
 	var moonIcon = document.getElementById("dark-mode-toggle");
@@ -34,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		sunIcon.setAttribute("src", "img/icon/sun-icon-active.png");
 	});
 
-	/* Drop Down Menu JS */
 
+	/* Drop Down Menu JS */
 	const dropIcon = document.querySelector('.drop-icon-img');
 	const dropMenu = document.querySelector('.drop-menu');
 	dropIcon.addEventListener('click', () => {
@@ -52,5 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		dropMenu.classList.remove('active');
 		dropMenu.style.maxHeight = '0';
 	});
-
+	
+	/*
+	// 일본어 전환(pokemon attribute를 받아서 뽑던 내용을 pokemonJP를 사용하게 바꿈)
+	  function changeJP() {
+	    var elements = document.querySelectorAll('[id^="pokemon"]');
+	    elements.forEach(function(element) {
+	      var originalAttribute = element.getAttribute("id");
+	      var updatedAttribute = originalAttribute.replace("pokemon", "pokemonJP");
+	      element.setAttribute("id", updatedAttribute);
+	    });
+	  }
+ */
 });
