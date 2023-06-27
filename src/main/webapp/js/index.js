@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	/* Drop Down Menu JS */
 	const dropIcon = document.querySelector('.drop-icon-img');
 	const dropMenu = document.querySelector('.drop-menu');
-	dropIcon.addEventListener('click', () => {
+	dropIcon.addEventListener('click', (event) => {
 		event.preventDefault(); // 새로고침 방지
 		dropMenu.classList.toggle('active');
 		if (dropMenu.classList.contains('active')) {

@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/MyPageC")
 public class MyPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
 		request.setAttribute("contentPage", "/jsp/mypage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

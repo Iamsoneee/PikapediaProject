@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/MyRewardC")
 public class MyRewardC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
-		DBDAO.getAllPokemon(request);
+		DBDAO.getRewardPokemon(request);
+		DBDAO.getRewardCount(request);
 		request.setAttribute("contentPage", "jsp/myRewards.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

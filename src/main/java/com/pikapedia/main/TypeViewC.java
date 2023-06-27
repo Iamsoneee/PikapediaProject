@@ -1,4 +1,4 @@
-package com.pikapedia.account;
+package com.pikapedia.main;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MyPageEditC")
-public class MyPageEditC extends HttpServlet {
+import com.pikapedia.db.DBDAO;
+
+@WebServlet("/TypeViewC")
+public class TypeViewC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("contentPage", "/jsp/mypageEdit.jsp");
+		DBDAO.getAllColor(request);
+		DBDAO.getTypePokemon(request);
+		DBDAO.getPokemonTypes(request);
+		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.editAccount(request);
-		request.setAttribute("contentPage", "/jsp/mypage.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

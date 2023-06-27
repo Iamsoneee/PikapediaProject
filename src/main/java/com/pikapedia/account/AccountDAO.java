@@ -89,9 +89,9 @@ public class AccountDAO {
 				
 		try {
 		request.setCharacterEncoding("utf-8");
-		String name = request.getParameter("User Name");
+		String name = request.getParameter("UserName");
 		String id = request.getParameter("Name");
-		String pw = request.getParameter("PW");
+		String pw = request.getParameter("pw");
 		String email = request.getParameter("Email");
 		System.out.println(name);
 		System.out.println(id);
@@ -106,7 +106,7 @@ public class AccountDAO {
 		pstmt.setString(4, email);
 				
 		if (pstmt.executeUpdate() == 1) {
-			System.out.println("�벑濡� �꽦怨�!");
+			System.out.println("등록 성공!");
 		}
 				
 		} catch (Exception e) {
@@ -121,16 +121,18 @@ public class AccountDAO {
 		String sql = "update account set a_name = ?, a_pw = ?, a_email = ? where a_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String id = request.getParameter("id");
+		Account a = (Account) request.getSession().getAttribute("account");
+		String id = a.getId();
+		String img = a.getImg();
 		
 		try {
+			request.setCharacterEncoding("utf-8");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			request.setCharacterEncoding("utf-8");
 			String name = request.getParameter("UserName");
-			String pw = request.getParameter("PW");
+			String pw = request.getParameter("pw");
 			String email = request.getParameter("Email");
-			String img = request.getParameter("Img");
 			System.out.println(name);
 			System.out.println(id);
 			System.out.println(pw);
@@ -142,6 +144,14 @@ public class AccountDAO {
 			if (pstmt.executeUpdate() == 1 ) {
 				System.out.println("수정 성공!");
 				request.setAttribute("r", "수정 성공!");
+				Account account = new Account();
+				account.setName(name);
+				account.setId(id);
+				account.setPw(pw);
+				account.setEmail(email);
+				account.setImg(img);
+				HttpSession hs = request.getSession();
+				hs.setAttribute("account", account);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -151,4 +161,28 @@ public class AccountDAO {
 		}
 	}
 	
+	public static void Signout(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from account where a_id = ?";
+		Account a = (Account) request.getSession().getAttribute("account");
+		String id = a.getId();
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제 성공!");
+				AccountDAO.Logout(request);
+				request.setAttribute("r", "삭제 성공!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("db server error");
+			request.setAttribute("r", "db server error");
+		}finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 }

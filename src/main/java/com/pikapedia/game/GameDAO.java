@@ -22,6 +22,7 @@ public class GameDAO {
 		int randomNumber = random.nextInt(151) + 1;
 		
 		try {
+			request.setCharacterEncoding("utf-8");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, randomNumber);
