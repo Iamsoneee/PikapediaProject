@@ -128,7 +128,7 @@
 						border: 5px solid transparent;
 						</c:if>"> 
 						<div class="card-white-bg">
-							<div class="card-contents">
+							<div class="card-contents"> 
 								<p>#${pokemon.no }</p>
 								<img src="${pokemon.frontDefault }" alt="${pokemon.name }"
 									class="card-pokemon-img" />
@@ -136,19 +136,18 @@
 								<p>${pokemon.name }</p>
 								<div class="type-icons-area">
 									<c:forEach var="type" items="${Types}">
-										<c:if test="${type.typeNameKo eq pokemon.type1}">
+										<c:if test="${type.typeNameKo eq pokemon.type1 || type.typeNameJa eq pokemon.type1}">
 											<img src="img/pokemon-type/circle-type/${type.typeImg}"
 												alt="${type.typeNameKo}" class="card-type-icon" />
 											<input type="hidden" id="type1Color"
 												value="${colors[pokemon.type1]}" />
 										</c:if>
-										<c:if test="${type.typeNameKo eq pokemon.type2}">
+										<c:if test="${type.typeNameKo eq pokemon.type2 || type.typeNameJa eq pokemon.type2}">
 											<img src="img/pokemon-type/circle-type/${type.typeImg}"
 												alt="${type.typeNameKo}" class="card-type-icon" />
 											<input type="hidden" id="type2Color"
 												value="${colors[pokemon.type2]}" />
 										</c:if>
-
 									</c:forEach>
 								</div>
 							</div>

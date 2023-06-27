@@ -24,12 +24,30 @@ public class DBDAO {
 				colors.put(rs.getString("t_name_ko"), rs.getString("t_color"));
 			}
 			request.setAttribute("colors", colors);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
-	}	
+		} 
+	}
+	
+	public static void getAllColoJp(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from type";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			colors = new HashMap <String,String>();
+			while (rs.next()) {
+				colors.put(rs.getString("t_name_ja"), rs.getString("t_color"));
+			}
+			request.setAttribute("colors", colors);
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+	
 	public static void getAllPokemon(HttpServletRequest request) {
 
 		PreparedStatement pstmt = null;
@@ -52,7 +70,44 @@ public class DBDAO {
 				String type1 = rs.getString("p_type");
 				String type2 = rs.getString("p_type2");
 				
-				
+				String des = rs.getString("p_des");
+				String frontDefault = rs.getString("p_front_default");
+				String backDefault = rs.getString("p_back_default");
+				String frontShiny = rs.getString("p_front_shiny");
+				String backShiny = rs.getString("p_back_shiny");
+
+				pokemon = new Pokemon(no2, name, height, weight, type1, type2, des, frontDefault, backDefault,
+						frontShiny, backShiny);
+				pokemons.add(pokemon);
+			}
+			request.setAttribute("Pokemons", pokemons);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	public static void getAllPokemnJP(HttpServletRequest request) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from pokemon_ja order by p_no";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			Pokemon pokemon = null;
+			ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
+			while (rs.next()) {
+				int no = rs.getInt("p_no");
+				String no2 = "";
+				if (no > 0) {
+					no2 = String.format("%03d", no);
+				}
+				String name = rs.getString("p_name");
+				Double height = rs.getDouble("p_height");
+				Double weight = rs.getDouble("p_weight");
+				String type1 = rs.getString("p_type");
+				String type2 = rs.getString("p_type2");
 				
 				String des = rs.getString("p_des");
 				String frontDefault = rs.getString("p_front_default");
@@ -66,13 +121,9 @@ public class DBDAO {
 			}
 			request.setAttribute("Pokemons", pokemons);
 			
-
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
-		
+		} 
 	}
 
 	public static void getPokemonTypes(HttpServletRequest request) {
@@ -94,12 +145,12 @@ public class DBDAO {
 				types.add(type);
 			}
 			request.setAttribute("Types", types);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
+		}
 	}
+
 	
 	public static void getRewardPokemon(HttpServletRequest request) {
 
