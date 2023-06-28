@@ -121,8 +121,10 @@ public class AccountDAO {
 	}
 	
 	public static void editAccount(HttpServletRequest request) {
+		
 		String path = request.getServletContext().getRealPath("img/profile");
-		String sql = "update account set a_name = ?, a_pw = ?, a_email = ? a_img = ? where a_id = ?";
+		System.out.println(path);
+		String sql = "update account set a_name = ?, a_pw = ?, a_email = ?, a_img = ? where a_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		Account a = (Account) request.getSession().getAttribute("account");
@@ -138,24 +140,24 @@ public class AccountDAO {
 			String name = mr.getParameter("UserName");
 			String pw = mr.getParameter("pw");
 			String email = mr.getParameter("Email");
-			String newImg = mr.getFilesystemName("newImg");
+			String img = mr.getFilesystemName("img");
 			System.out.println(id); 
 			System.out.println(name);
 			System.out.println(pw);
 			System.out.println(email);
 			System.out.println(oldImg);
-			System.out.println(newImg);
+			System.out.println(img);
 			pstmt.setString(1, name);
 			pstmt.setString(2, pw);
 			pstmt.setString(3, email);
-			if (newImg == null) {
+			if (img == null) {
 				pstmt.setString(4, oldImg);
 			} else {
-				pstmt.setString(4, newImg);
+				pstmt.setString(4, img);
 			}
 			pstmt.setString(5, id);
 			
-			if (pstmt.executeUpdate() == 1 ) {
+			if (pstmt.executeUpdate() >= 1 ) {
 				System.out.println("수정 성공!");
 				request.setAttribute("r", "수정 성공!");
 				
@@ -166,10 +168,10 @@ public class AccountDAO {
 				account.setEmail(email);
 				account.setImg(oldImg);
 				
-				if (newImg != null) {
+				if (img != null) {
 					File f = new File(path + "/" + oldImg);
 					f.delete();
-					account.setImg(newImg);
+					account.setImg(img);
 				}
 			
 				HttpSession hs = request.getSession();
