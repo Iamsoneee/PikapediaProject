@@ -21,21 +21,21 @@
                     <img src="img/icon/account-icon/poke-spot.png" alt="poke-spot-icon" id="poke-spot-icon"/>
                 </div>
                 <div id="pokedex-white-bg">
-                    <form action="SignupC" method="post" onsubmit="return call();">
+                    <form action="SignupC" method="post">
                         <div class="btn-container">
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user1.png">
-                                <input class="info-input-btn" type="text" name="Name" placeholder="Name">
+                                <input class="info-input-btn" type="text" name="Name" placeholder="Name" minlength="3" required>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user2.png">
-                                <input class="info-input-btn" type="text" name="UserName" placeholder="User Name">
+                                <input class="info-input-btn" type="text" name="UserName" placeholder="User Name" minlength="3" required>
                                <%-- [A-Za-z]: 알파벳 대문자로 시작해야 함
                                 [A-Za-z0-9]{4,}: 알파벳 대소문자와 숫자의 조합으로 최소 5자 이상이어야 함--%>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="password" name="pw" placeholder="PW" >
+                                <input class="info-input-btn" type="password" name="pw" id="pw" placeholder="PW" minlength="3" required>
                                 <%--(?=.*[A-Z]): 대문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*[a-z]): 소문자를 최소한 한 글자 이상 포함해야 함
                                 (?=.*\d): 숫자를 최소한 한 글자 이상 포함해야 함
@@ -44,11 +44,11 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="password" name="PWConfirm" placeholder="PW Confirm">
+                                <input class="info-input-btn" type="password" name="PWConfirm" id="PWConfirm" placeholder="PW Confirm" minlength="3" required>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/email.png">
-                                <input class="info-input-btn" type="email" name="Email" placeholder="Email">
+                                <input class="info-input-btn" type="email" name="Email" placeholder="Email" required>
                                 <!--유효성검사1:HTML5의 새로운 input type인 email로 가능-->
                             </div>
                             <button class="confirm-btn">Sign Up</button>
