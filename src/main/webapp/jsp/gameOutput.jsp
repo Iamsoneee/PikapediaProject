@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>quizOutput</title>
-<link rel="stylesheet" href="css/quiz.css" />
+<link rel="stylesheet" href="css/game.css" />
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/pokedexFramegame.css" />
 </head>
@@ -90,6 +90,6 @@
 			</div>
 		</div>
 	</div>
-	 <script type="text/javascript" src="js/quiz.js"></script>
+	 <script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>

@@ -228,7 +228,6 @@
 		      
 		    } else {
 			  movePokeImage();
-		
 		      result(); // result() 함수 호출 추가
 		      countGame();
 		      count--;
@@ -263,6 +262,7 @@
 		/*   document.getElementById("cancelBtn").style.display = "block"; */
 		  setFocus();
 		}
+		
 
 	function moveImage() {
 		  if (!isReturning) {
@@ -288,11 +288,12 @@
 		
 	var startPositionXX = 0;
 	var startPositionYY = 0;
-	var endPositionXX = -180;
+	var endPositionXX = -300;
 	var endPositionYY = 180;
 	var currentPositionXX = startPositionXX;
 	var currentPositionYY = startPositionYY;
-	var speed = 15;
+	var speedX = 15;
+	var speedY = 9;
 	var directionXX = 1;
 	var directionYY = -1;
 	var isReturningPoke = false; // 돌아오는 중인지 여부
@@ -301,12 +302,12 @@
 	function movePokeImage() {
 		
 		  if (!isReturningPoke) {
-		    currentPositionXX -= speed * directionXX; // ? = 0 - (15x1)   [-15,-30,-45]
-		    currentPositionYY -= speed * directionYY; // ? = 0 - (15x-1)  [15,30,45,60] ㅇㅋ수정굿
+		    currentPositionXX -= speedX * directionXX; // ? = 0 - (15x1)   [-15,-30,-45]
+		    currentPositionYY -= speedY * directionYY; // ? = 0 - (15x-1)  [15,30,45,60] ㅇㅋ수정굿
 		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
 		  } else {
-		    currentPositionXX += speed * directionXX; // ? = 0 + 15 30 45 60
-		    currentPositionYY += speed * directionYY; // ? = 0 + -(15,30,45,60)
+		    currentPositionXX += speedX * directionXX; // ? = 0 + 15 30 45 60
+		    currentPositionYY += speedY * directionYY; // ? = 0 + -(15,30,45,60)
 		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
 		  }
 			//	15 30                180
@@ -320,6 +321,8 @@
 		  } else {
 		    animationIdPoke = requestAnimationFrame(movePokeImage); // 다음 프레임 요청
 		  }
+		  console.log(currentPositionXX);
+		  console.log(currentPositionYY);
 		}
 
 

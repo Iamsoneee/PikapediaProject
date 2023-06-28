@@ -7,7 +7,7 @@
     <title>quizHome</title>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/pokedexFrame.css">
-    <link rel="stylesheet" href="css/quizHome.css">
+    <link rel="stylesheet" href="css/gameHome.css">
 </head>
 <body>
 <div id="pokedex-wrapper">
