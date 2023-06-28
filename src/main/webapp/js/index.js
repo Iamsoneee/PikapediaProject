@@ -52,14 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
 		dropMenu.style.maxHeight = '0';
 	});
 	
-	
-	// 일본어 전환(pokemon attribute를 받아서 뽑던 내용을 pokemonJP를 사용하게 바꿈)
-	  function changeJP() {
-	    var elements = document.querySelectorAll('[id^="pokemons"]');
-	    elements.forEach(function(element) {
-	      var originalAttribute = element.getAttribute("id");
-	      var updatedAttribute = originalAttribute.replace("${pokemon", "${pokemonJP");
-	      element.setAttribute("id", updatedAttribute);
-	    });
-	  }
 });
