@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	var body = document.body;
 	var moonIcon = document.getElementById("dark-mode-toggle");
 	var sunIcon = document.getElementById("bright-mode-toggle");
-
 	// 로컬 스토리지에서 다크 모드 설정을 가져옵니다.
 	var isDarkMode = localStorage.getItem("darkMode");
 
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		body.classList.add("dark-mode");
 		moonIcon.setAttribute("src", "img/icon/moon-icon-active.png");
 		sunIcon.setAttribute("src", "img/icon/sun-icon.png");
+		
 	}
 
 	moonIcon.addEventListener("click", function() {
@@ -52,14 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
 		dropMenu.style.maxHeight = '0';
 	});
 	
-	
-	// 일본어 전환(pokemon attribute를 받아서 뽑던 내용을 pokemonJP를 사용하게 바꿈)
-	  function changeJP() {
-	    var elements = document.querySelectorAll('[id^="pokemons"]');
-	    elements.forEach(function(element) {
-	      var originalAttribute = element.getAttribute("id");
-	      var updatedAttribute = originalAttribute.replace("${pokemon", "${pokemonJP");
-	      element.setAttribute("id", updatedAttribute);
-	    });
-	  }
 });
