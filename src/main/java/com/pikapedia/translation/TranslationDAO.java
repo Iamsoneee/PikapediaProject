@@ -29,7 +29,7 @@ public class TranslationDAO {
 			DBDAO.getTypePokemon(request);
 		} else {
 			DBDAO.getAllColorJp(request);
-			DBDAO.getAllPokemnJP(request);
+			DBDAO.getAllPokemonJP(request);
 			DBDAO.getTypePokemonJP(request);
 		}
 	}
