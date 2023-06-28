@@ -19,6 +19,7 @@
 		</c:if>
 	</c:forEach>
 </c:forEach>
+<c:if test ="${param.isDarkMode != true}">
 		<c:choose>
 		<c:when test="${color2 != null}">
 			<body style="background: linear-gradient( to bottom, <c:out value='${color1}'/>, <c:out value='${color2}'/> );">
@@ -27,6 +28,7 @@
 			<body style="background-color:<c:out value='${color1}'/>;">	
 		</c:otherwise>
 		</c:choose>
+</c:if>
 <c:forEach var="pokemon" items="${scPokemons}">
 <div id="detailimg">
 </div>

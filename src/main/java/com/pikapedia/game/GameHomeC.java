@@ -12,7 +12,7 @@ public class GameHomeC extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		request.setAttribute("contentPage", "jsp/quizHome.jsp");
+		request.setAttribute("contentPage", "jsp/gameHome.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
