@@ -16,18 +16,8 @@ public class TranslationC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.checkLogin(request);
-		
 		DBDAO.getPokemonTypes(request);
-		
-		String lang = request.getParameter("lang");
-		if(lang.equals("kr")) {
-			DBDAO.getAllColor(request);
-			DBDAO.getAllPokemon(request);
-		}
-		else { 
-			DBDAO.getAllColoJp(request);
-			DBDAO.getAllPokemnJP(request);
-		}
+		TranslationDAO.translationJP(request);
 		request.setAttribute("contentPage", "/jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
