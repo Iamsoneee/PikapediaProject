@@ -53,6 +53,7 @@ public class DBDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon_ko order by p_no";
+		
 		try {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -198,12 +199,16 @@ public class DBDAO {
 			 */
 	}
 	
-	public static void getTypePokemon(HttpServletRequest request) {
+	public static void TypeView(HttpServletRequest request) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from pokemon_ko where p_type = ? or p_type2 = ? order by p_no";
+		
+		String sqlKR = "select * from pokemon_ko where p_type = ? or p_type2 = ? order by p_no";
+		String sqlJP = "select * from pokemon_ja where p_type = ? or p_type2 = ? order by p_no";
+		
 		String type = request.getParameter("type");
 		System.out.println(type);
+		
 		
 		switch (type) {
 		case "normal":
@@ -266,7 +271,7 @@ public class DBDAO {
 		}
 		
 		try {
-			pstmt = con.prepareStatement(sql);																					
+			pstmt = con.prepareStatement(sqlKR);																					
 			pstmt.setString(1, type);
 			pstmt.setString(2, type);
 			rs = pstmt.executeQuery();
@@ -304,7 +309,7 @@ public class DBDAO {
 		 */
 	}
 	
-	public static void getTypePokemonJP(HttpServletRequest request) {
+	public static void TypeViewJP(HttpServletRequest request) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from pokemon_ja where p_type = ? or p_type2 = ? order by p_no";
