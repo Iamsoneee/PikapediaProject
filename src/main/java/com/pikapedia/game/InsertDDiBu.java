@@ -1,6 +1,4 @@
-package com.pikapedia.account;
-
-import com.pikapedia.db.DBDAO;
+package com.pikapedia.game;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,16 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/MyRewardC")
-public class MyRewardC extends HttpServlet {
+@WebServlet("/InsertDDiBu")
+public class InsertDDiBu extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DBDAO.getRewardPokemon(request);
-		DBDAO.getRewardCount(request);
-		request.setAttribute("contentPage", "jsp/myRewards.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+
+	
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		/*
+		 * System.out.println(11); response.setCharacterEncoding("utf-8");
+		 * response.getWriter().write(GameDAO.insertDDibu(request));
+		 */
 	}
 
 }

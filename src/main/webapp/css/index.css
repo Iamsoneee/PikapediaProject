@@ -1,140 +1,179 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
 }
 
 body {
-  background-color: #ecc22e;
-  color: white;
+	background-color: #ecc22e;
+	color: white;
 }
 
-/* 다크 모드 스타일 */
+/* Dark Mode Style */
 .dark-mode {
-  background-color: black;
-  color: white;
+	background-color: black;
+	color: white;
 }
 
 .dark-mode ::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255, 0.5); /*스크롤바의 색상*/
+	background-color: rgb(255, 255, 255, 0.5); /* Scroll Handle */
 }
 
 .dark-mode ::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0); /*스크롤바 트랙 색상*/
+	background-color: rgba(255, 255, 255, 0); /* Scroll Track */
 }
 
 article {
-  /*   border: 1px solid blue; */
-  width: 100%;
-  height: 100vh;
+	width: 100%;
+	height: 100vh;
 }
 
 .pokemon-main {
-  /*   border: 1px solid red; */
-  width: 80%;
-  height: 100vh;
+	width: 80%;
+	height: 100vh;
 }
 
 /* Header Area */
 .header {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  height: 7.75em;
-  padding: 0.5em 0.75em;
-  font-size: 1em;
-}
-
-@media (max-width: 768px) {
-  .header-wrapper {
-    flex-direction: column;
-  }
-  .drop-menu {
-    flex-direction: column;
-    z-index: 1;
-    background-color: rgb(78, 108, 98);
-  }
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	height: 7.75em;
+	padding: 0.5em 0.75em;
+	font-size: 1em;
+	justify-content: space-between;
+	overflow: visible;
 }
 
 #pikapedia-logo {
-  width: 11.25em;
-  height: 3em;
+	width: 11.25em;
+	height: 3em;
 }
 
 .menu-area {
-  display: flex;
+	display: flex;
 }
 
 .header-icons {
-  display: flex;
+	display: flex;
 }
 
 .header-icons li {
-  padding: 0.5em 0.75em;
+	padding: 0.5em 0.75em;
 }
 
 .header-icons img {
-  width: 1em;
+	width: 1em;
 }
 
 .drop-menu {
-  display: flex;
+	display: flex;
 }
 
 .drop-menu li {
-  padding: 0.5em 0.75em;
+	padding: 0.5em 0.75em;
 }
 
 .drop-menu li a {
-  color: white;
+	color: white;
 }
 
+/* Hamburger Icon for Drop-down Menu */
 .drop-icon-img {
-  width: 1em;
+	display: none;
+	width: 1em;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 1em;
 }
 
 /* Main Area */
 #contents-area /* Include Area */ {
-  background-color: rgb(172, 215, 215, 0.8);
-  height: 100vh;
+	background-color: rgb(172, 215, 215, 0.8);
+	height: 100vh;
 }
 
 .article {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .bg-text {
-  display: flex;
-  justify-content: center;
-  height: 0;
+	display: flex;
+	justify-content: center;
+	height: 0;
 }
 
 #pikapedia-bg-text {
-  position: absolute;
-  top: 45%;
-  color: rgba(255, 255, 255, 0.1);
-  font-size: 18vw;
-  font-weight: 800;
-  z-index: -9999;
+	position: absolute;
+	top: 45%;
+	color: rgba(255, 255, 255, 0.1);
+	font-size: 18vw;
+	font-weight: 800;
+	z-index: -9999;
 }
 
 /* Footer Area */
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 9.375em;
-  font-size: 1.5em;
-  font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 9.375em;
+	font-size: 1.5em;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Media Query for Responsive Website */
+@media screen and (max-width : 1024px) {
+	.header-wrapper {
+		align-items: center;
+		position: relative;
+	}
+	.drop-menu-wrapper {
+		display: flex;
+		position: relative;
+		width: 100%;
+	}
+	.drop-menu {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		top: 62%;
+		right: -18.5px;
+		background-color: rgba(0, 0, 0, 0.7);
+		transition: max-height 0.8s ease;
+		max-height: 0px;
+		overflow: hidden;
+		font-size: 0.8em;
+	}
+	.drop-menu li {
+		text-align: center;
+	}
+	.drop-menu li a:hover {
+		color: #ecc22e;
+	}
+	.drop-icon-img {
+		display: flex;
+		position: absolute;
+		top: 25%;
+		right: -20px;
+	}
+	.drop-menu.active {
+		display: flex;
+		max-height: 500px;
+		
+	}
 }

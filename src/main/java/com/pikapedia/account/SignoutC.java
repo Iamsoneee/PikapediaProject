@@ -9,22 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pikapedia.db.DBDAO;
 
-@WebServlet("/SignupC")
-public class SignupC extends HttpServlet {
+@WebServlet("/SignoutC")
+public class SignoutC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
-		request.setAttribute("contentPage", "jsp/signup.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
-		AccountDAO.SignUp(request);
+		AccountDAO.Signout(request);
 		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
 		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);	
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }

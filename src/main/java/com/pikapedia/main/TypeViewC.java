@@ -1,4 +1,4 @@
-package com.pikapedia.account;
+package com.pikapedia.main;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,22 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pikapedia.db.DBDAO;
 
-@WebServlet("/SignupC")
-public class SignupC extends HttpServlet {
+@WebServlet("/TypeViewC")
+public class TypeViewC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
-		request.setAttribute("contentPage", "jsp/signup.jsp");
+		DBDAO.getAllColor(request);
+		DBDAO.getTypePokemon(request);
+		DBDAO.getPokemonTypes(request);
+		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.checkLogin(request);
-		AccountDAO.SignUp(request);
-		DBDAO.getAllColor(request);
-		DBDAO.getAllPokemon(request);
-		DBDAO.getPokemonTypes(request);
-		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

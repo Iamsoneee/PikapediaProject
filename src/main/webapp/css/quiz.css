@@ -17,6 +17,7 @@
   height: 71vh;
   width: 20vw;
 }
+
 .quiz-RightBlank{
   height: 71vh;
   width: 20vw;
@@ -59,8 +60,44 @@
   border-left: 4px solid black;
   border-bottom: 4px solid black;
   border-radius: 5%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spaceInTwo{
+  height: 21vh;
+  width: 21vw;
+  position: relative;
+}
+#userInputSpace{
+	height: 24.5vh;
+	width: 21vw;
+	display :none;
+	position: absolute;
 }
 
+#userInputName{
+	border-radius: 5%;
+	width: 9vw;
+/* 	border: none; */
+	position: absolute;
+	transform : translate(65%, 450%);
+}
+#attackBtn{
+	display : none;
+	font-size: 20pt;
+	position: absolute;
+	transform : translate(137%, 500%);
+}
+/* #cancelBtn{
+	display : none;
+	font-size: 20pt;
+	position: absolute;
+	transform : translate(450%, 500%);
+} */
+	
 .btn-Four {
   height: 23.6vh;
   width: 25vw;
@@ -143,7 +180,7 @@ button:hover {
 }
 .myPoke {
   height: 46.5vh;
-  width: 24vw;
+  width: 22vw;
 /*   border: 4px solid purple;  */
 }
 .enemyPokeName{
@@ -155,6 +192,7 @@ button:hover {
 	font-size: 40pt;
 	letter-spacing: 30px;
 	font-family: "DungGeunMo";
+
 }
 .myPoke-Up {
   height: 11.5vh;
@@ -184,20 +222,31 @@ width: 22vw;
   width: 27vw;
 }
 .enemyPoke-Up {
-  height: 30vh;
+  height: 28vh;
   width: 24.5vw;
   position: relative;
 }
 .enemyPoke-Down {
-  height: 16.5vh;
+  height: 18.5vh;
   width: 24.5vw;
   position: relative;
 /*   border: 5px solid black; */
 }
+.enemyPoke-name{
+    font-family: "DungGeunMo";
+    font-size : 33px;
+	height : 8vh;
+	text-align : center;
+	color: black;
+	padding-top: 30px;
+	padding-left: 170px;
+	letter-spacing: 10px;
+	white-space: nowrap;
+}
 #myPokeHp{
-	width: 24.5vw;
+	width: 20vw;
 	position: absolute;
-	bottom: 0;
+	bottom: 5px;
 	right: 0;
 }
 #imgshaddow{
