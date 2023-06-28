@@ -1,7 +1,5 @@
 @charset "UTF-8";
 body {
-
-	height:100vh;
 	position:relative;
 }
 #detailimg{
@@ -10,15 +8,17 @@ body {
 	height:27vh;
 	width:27vh;
 	position:absolute;
-	left:55%;
-	top:12%;
+	left:50%;
+	top:50%;
+	transform: translate(25%,-150%);
 	background-color:rgb(255,255,255, 0.5);
 }
 #pokeimg{
 	position:absolute;
 	width: 26vh;
-	left:55.5%;
-	top:13.3%;
+	left:50%;
+	top:50%;
+	transform: translate(27%,-150%);
 	z-index:1;
 	
 }
@@ -74,7 +74,7 @@ body {
 	font-weight:bold;
 	font-size:11pt;
 	text-align:center;
-	padding-top:1.1%;
+	padding-top:1.5%;
 }
 #content3{
 	justify-content:space-between;
@@ -108,8 +108,8 @@ body {
 	font-size:11pt;
 	padding-left:0.5vw;
 	padding-right:0.5vw;
-	padding-top:3pt;
-	padding-bottom:3pt;
+	padding-top:4pt;
+	padding-bottom:4pt;
 	word-break:break-all;
 	font-weight:bold;
 }
