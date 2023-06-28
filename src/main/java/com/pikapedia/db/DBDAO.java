@@ -30,7 +30,7 @@ public class DBDAO {
 		} 
 	}
 	
-	public static void getAllColoJp(HttpServletRequest request) {
+	public static void getAllColorJp(HttpServletRequest request) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from type";

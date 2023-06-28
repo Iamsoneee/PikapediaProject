@@ -5,7 +5,8 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <title>Pikapedia</title>
+     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,7 +42,7 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href="#"
+              <a href=""
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
