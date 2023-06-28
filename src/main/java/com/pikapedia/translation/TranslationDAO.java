@@ -9,28 +9,54 @@ public class TranslationDAO {
 	public static void translationJP(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		String lang = "";
-
-		if (request.getAttribute("lang") == null) {
-			lang = request.getParameter("lang");
-
-			// 세션에 언어설정을 담아두고
-			session.setAttribute("lang", lang);
-		} else {
-			session = request.getSession();
-		}
+		String lang = request.getParameter("lang");
 		
+		if (lang == null || lang.equals("kr")) {
+			lang = "kr";
+		} else if (lang.equals("jp")) {
+			lang = "jp";
+		} 
+
+		// 세션에 언어설정을 담아두고
+		session.setAttribute("lang", lang);
+		session = request.getSession();
+	
 		//꺼내서 확인
 		String language = (String) session.getAttribute("lang");
 
 		if (language.equals("kr")) {
 			DBDAO.getAllColor(request);
 			DBDAO.getAllPokemon(request);
-			DBDAO.getTypePokemon(request);
-		} else {
+		} else if (language.equals("jp")){
 			DBDAO.getAllColorJp(request);
 			DBDAO.getAllPokemonJP(request);
-			DBDAO.getTypePokemonJP(request);
+
 		}
 	}
+	
+public static void translationTypeViewJP(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		String lang = request.getParameter("lang");
+		
+		
+		if (lang == null || lang.equals("kr")) {
+			lang = "kr";
+		} else if (lang.equals("jp")) {
+			lang = "jp";
+		} 
+
+		//꺼내서 확인
+		String language = (String) session.getAttribute("lang");
+
+		if (language.equals("kr")) {
+			DBDAO.getAllColor(request);
+			DBDAO.TypeView(request);
+		} else if (language.equals("jp")){
+			DBDAO.getAllColorJp(request);
+			DBDAO.TypeViewJP(request);
+		}
+	}
+	
+	
 }
