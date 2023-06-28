@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	var body = document.body;
 	var moonIcon = document.getElementById("dark-mode-toggle");
 	var sunIcon = document.getElementById("bright-mode-toggle");
-
 	// 로컬 스토리지에서 다크 모드 설정을 가져옵니다.
 	var isDarkMode = localStorage.getItem("darkMode");
 
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		body.classList.add("dark-mode");
 		moonIcon.setAttribute("src", "img/icon/moon-icon-active.png");
 		sunIcon.setAttribute("src", "img/icon/sun-icon.png");
+		
 	}
 
 	moonIcon.addEventListener("click", function() {
