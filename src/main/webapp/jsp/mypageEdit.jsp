@@ -23,9 +23,10 @@
                 <div id="pokedex-white-bg">
                     <div class="profile-container">
                         <img class="profile-icon" src="img/profile/${account.img }">
-                        <img class="profile-gear-icon" src="img/icon/account-icon/gear.png">   <%--이걸 누르면 프로필 사진 수정기능 넣어야함--%>
+                        <input type="file" name="newImg" id="file" style="display:none"/>
+                      	<img class="profile-gear-icon" src="img/icon/account-icon/gear.png" onclick="document.all.file.click()">   <%--이걸 누르면 프로필 사진 수정기능 넣어야함--%>
                     </div>
-                    <form action="MyPageEditC" method="post" name="EditAccount" onsubmit="return call();">
+                    <form action="MyPageEditC" method="post" enctype="multipart/form-data">
                         <div class="btn-container">
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user1.png">
@@ -33,19 +34,19 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/profile-user2.png">
-                                <input class="info-input-btn" type="text" name="UserName" placeholder="User Name">
+                                <input class="info-input-btn" value="${account.name }" type="text" name="UserName" placeholder="User Name" minlength="3" required>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input class="info-input-btn" type="text" name="pw" placeholder="PW">
+                                <input class="info-input-btn"  type="password" name="pw" id="pw" placeholder="PW" minlength="3" required>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw-confirm.png">
-                                <input class="info-input-btn" type="text" name="PWConfirm" placeholder="PW Confirm">
+                                <input class="info-input-btn" type="password" name="PWConfirm" id="PWConfirm" placeholder="PW Confirm" minlength="3" required>
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/email.png">
-                                <input class="info-input-btn" type="email" name="Email" placeholder="Email">
+                                <input class="info-input-btn" value="${account.email }" type="email" name="Email" placeholder="Email" required>
                             </div>
                             <button class="confirm-btn">Confirm</button>
                         </div>
