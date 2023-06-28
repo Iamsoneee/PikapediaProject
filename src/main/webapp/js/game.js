@@ -10,11 +10,12 @@
 	var pokemonImg = document.getElementById('imgshaddow');
 	var startPositionX = 0;
 	var startPositionY = 0;
-	var endPositionX = 180;
+	var endPositionX = 300;
 	var endPositionY = -180;
 	var currentPositionX = startPositionX;
 	var currentPositionY = startPositionY;
-	var speed = 15;
+	var speedX = 15;
+	var speedY=  9;
 	var directionX = 1;
 	var directionY = -1;
 	var isReturning = false; // 돌아오는 중인지 여부
@@ -266,12 +267,12 @@
 
 	function moveImage() {
 		  if (!isReturning) {
-		    currentPositionX += speed * directionX;
-		    currentPositionY += speed * directionY;
+		    currentPositionX += speedX * directionX;
+		    currentPositionY += speedY * directionY;
 		    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
 		  } else {
-		    currentPositionX -= speed * directionX;
-		    currentPositionY -= speed * directionY;
+		    currentPositionX -= speedX * directionX;
+		    currentPositionY -= speedY * directionY;
 		    trainerImg.style.transform = 'translate(' + currentPositionX + 'px, ' + currentPositionY + 'px)';
 		  }
 
@@ -284,6 +285,8 @@
 		  } else {
 		    animationId = requestAnimationFrame(moveImage); // 다음 프레임 요청
 		  }
+		  console.log(currentPositionX);
+		  console.log(currentPositionY);
 		}
 		
 	var startPositionXX = 0;
@@ -292,8 +295,8 @@
 	var endPositionYY = 180;
 	var currentPositionXX = startPositionXX;
 	var currentPositionYY = startPositionYY;
-	var speedX = 15;
-	var speedY = 9;
+	var speedXX = 15;
+	var speedYY = 9;
 	var directionXX = 1;
 	var directionYY = -1;
 	var isReturningPoke = false; // 돌아오는 중인지 여부
@@ -302,12 +305,12 @@
 	function movePokeImage() {
 		
 		  if (!isReturningPoke) {
-		    currentPositionXX -= speedX * directionXX; // ? = 0 - (15x1)   [-15,-30,-45]
-		    currentPositionYY -= speedY * directionYY; // ? = 0 - (15x-1)  [15,30,45,60] ㅇㅋ수정굿
+		    currentPositionXX -= speedXX * directionXX; // ? = 0 - (15x1)   [-15,-30,-45]
+		    currentPositionYY -= speedYY * directionYY; // ? = 0 - (15x-1)  [15,30,45,60] ㅇㅋ수정굿
 		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
 		  } else {
-		    currentPositionXX += speedX * directionXX; // ? = 0 + 15 30 45 60
-		    currentPositionYY += speedY * directionYY; // ? = 0 + -(15,30,45,60)
+		    currentPositionXX += speedXX * directionXX; // ? = 0 + 15 30 45 60
+		    currentPositionYY += speedYY * directionYY; // ? = 0 + -(15,30,45,60)
 		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
 		  }
 			//	15 30                180
