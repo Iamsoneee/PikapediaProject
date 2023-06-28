@@ -84,6 +84,7 @@
 					</div>
 					<div class="quiz-RightBlank">
 						<input type="hidden" id="pk_name" value="${poketmon.p_name }">>
+						<input type="hidden" id="account_game" value="${account.id}">>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 	console.log(document.getElementById('pk_no').value);
-	document.getElementById('pk_name').value
+	document.getElementById('account_game').value;
+	var userGameId = document.getElementById('pk_name').value
 	
 	var languageDex = document.getElementById('pk_name').value;
 	var cleanDex = languageDex.replace(/[♂♀]/g, '');
@@ -19,6 +20,7 @@
 	var isReturning = false; // 돌아오는 중인지 여부
 	var animationId; // 애니메이션 식별자
 	var selectedOption = 0; // 선택지의 초기 위치
+	
 	var halfLength = Math.floor(cleanDex.length / 2);
 	var hint = cleanDex.slice(0, halfLength);
 	let pkno = document.getElementById('pk_no').value;
@@ -30,15 +32,69 @@
 	for (let i = count; i > -1; i--){
 	
 		if(count === 3) {
-			//db에 값 넣기
 		} else if (count === 2){
 			 document.getElementById("myPokeHp").src = "img/game/myTeamTrainer2.png";
+			    setTimeout(function() {
+		        moveTrainer();
+		      }, 900);
 		} else if (count === 1){
 			 document.getElementById("myPokeHp").src = "img/game/myTeamTrainer1.png";
+			    setTimeout(function() {
+		        moveTrainer();
+		      }, 900);
 		} else {
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer1.png";
+			 document.getElementById("trainerImg").style.width = "68%";
+		      }, 100);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer2.png";
+			 document.getElementById("trainerImg").style.width = "64%";
+		      }, 200);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer3.png";
+			 document.getElementById("trainerImg").style.width = "60%";
+		      }, 300);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer4.png";
+			 document.getElementById("trainerImg").style.width = "56%";
+		      }, 400);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer5.png";
+			 document.getElementById("trainerImg").style.width = "52%";
+		      }, 500);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer6.png";
+			 document.getElementById("trainerImg").style.width = "48%";
+		      }, 600);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer7.png";
+			 document.getElementById("trainerImg").style.width = "44%";
+		      }, 700);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer8.png";
+			 document.getElementById("trainerImg").style.width = "40%";
+		      }, 800);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer9.png";
+			 document.getElementById("trainerImg").style.width = "36%";
+		      }, 900);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer10.png";
+			 document.getElementById("trainerImg").style.width = "32%";
+		      }, 1000);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer11.png";
+			 document.getElementById("trainerImg").style.width = "28%";
+		      }, 1100);
+			  setTimeout(function() {
+			 document.getElementById("trainerImg").src = "img/game/deadTrainer12.png";
+			 document.getElementById("trainerImg").style.width = "0%";
+		      }, 1200);
+			 
 			 setTimeout(function() {
 	          location.reload();
-		      }, 500);
+		      }, 1500);
 		}
 	}
 	}
@@ -160,35 +216,7 @@
 		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = cleanDex;
 		      }, 2500);
 		      
-		      // 포켓몬 고유번호, 아이디
-/* 		        if(account.id != null){
- 		   	    let id = ${account.id}; 
- 		   	    
-		        } else {
-		        	console.log("아이디 에러"); */
-		      let id = "jp";
-		/*         } */
-		      // AJAX 객체 생성
-		      var xhr = new XMLHttpRequest();
-
-		     let url = "InsertDDiBu?id="  + id + "&pkno=" + pkno;
-		     console.log(url);
-		      // POST 요청 설정
-		      xhr.open("POST", url, true);
-		      xhr.setRequestHeader("Content-type", "text");
-
-		      // 응답 처리
-		      xhr.onreadystatechange = function() {
-		        if (xhr.readyState === 4 && xhr.status === 200) {
-		          var response = xhr.responseText;
-		          // 응답 처리 로직 작성
-		          console.log(response);
-		          
-		        }
-		      };
-
-		      // 요청 전송
-		      xhr.send();
+		
 		      
 		      setTimeout(function() {
 	          location.reload();
@@ -198,11 +226,8 @@
 		      return;
 		      
 		    } else {
-				// 몬스터가 와서 패게 하는 애니메이션 <-- + 카운ㅌ
-		      moveImage();
-		      setTimeout(function() {
-		        moveTrainer();
-		      }, 1000);
+			  movePokeImage();
+		
 		      result(); // result() 함수 호출 추가
 		      countGame();
 		      count--;
@@ -257,6 +282,42 @@
 		    cancelAnimationFrame(animationId); // 애니메이션 정지
 		  } else {
 		    animationId = requestAnimationFrame(moveImage); // 다음 프레임 요청
+		  }
+		}
+		
+	var startPositionXX = 0;
+	var startPositionYY = 0;
+	var endPositionXX = -180;
+	var endPositionYY = 180;
+	var currentPositionXX = startPositionXX;
+	var currentPositionYY = startPositionYY;
+	var speed = 15;
+	var directionXX = 1;
+	var directionYY = -1;
+	var isReturningPoke = false; // 돌아오는 중인지 여부
+	var animationIdPoke; // 애니메이션 식별자
+	
+	function movePokeImage() {
+		
+		  if (!isReturningPoke) {
+		    currentPositionXX -= speed * directionXX; // ? = 0 - (15x1)   [-15,-30,-45]
+		    currentPositionYY -= speed * directionYY; // ? = 0 - (15x-1)  [15,30,45,60] ㅇㅋ수정굿
+		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
+		  } else {
+		    currentPositionXX += speed * directionXX; // ? = 0 + 15 30 45 60
+		    currentPositionYY += speed * directionYY; // ? = 0 + -(15,30,45,60)
+		    pokemonImg.style.transform = 'translate(' + currentPositionXX + 'px, ' + currentPositionYY + 'px)';
+		  }
+			//	15 30                180
+		  if (currentPositionYY >= endPositionYY && !isReturningPoke) {
+		    isReturningPoke = true; // 돌아오는 상태로 전환
+		  }
+			// 15 30 45           0						-15 -30 -45     0
+		  if (currentPositionYY <= startPositionYY && currentPositionXX >= startPositionXX && isReturningPoke) {
+		    cancelAnimationFrame(animationIdPoke); // 애니메이션 정지
+		    isReturningPoke = false;
+		  } else {
+		    animationIdPoke = requestAnimationFrame(movePokeImage); // 다음 프레임 요청
 		  }
 		}
 
