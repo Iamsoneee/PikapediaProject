@@ -43,6 +43,7 @@
 		        moveTrainer();
 		      }, 900);
 		} else {
+			 document.getElementById("myPokeHp").src = "img/game/myTeamTrainer0.png";
 			  setTimeout(function() {
 			 document.getElementById("trainerImg").src = "img/game/deadTrainer1.png";
 			 document.getElementById("trainerImg").style.width = "68%";
