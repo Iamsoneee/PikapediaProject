@@ -13,7 +13,7 @@ public class GameC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		GameDAO.random(request);
-		request.setAttribute("contentPage", "jsp/quizOutput.jsp");
+		request.setAttribute("contentPage", "jsp/gameOutput.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
