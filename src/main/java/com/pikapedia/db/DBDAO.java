@@ -87,7 +87,7 @@ public class DBDAO {
 		} 
 	}
 	
-	public static void getAllPokemnJP(HttpServletRequest request) {
+	public static void getAllPokemonJP(HttpServletRequest request) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -259,6 +259,112 @@ public class DBDAO {
 			break;
 		case "fairy":
 			type = "페어리";
+			break;
+		
+		default:
+			break;
+		}
+		
+		try {
+			pstmt = con.prepareStatement(sql);																					
+			pstmt.setString(1, type);
+			pstmt.setString(2, type);
+			rs = pstmt.executeQuery();
+			Pokemon pokemon = null;
+			ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
+			while (rs.next()) {
+			int no = rs.getInt("p_no");
+			String no2 = "";
+			if (no > 0) {
+			no2 = String.format("%03d", no);
+				System.out.println(no2);
+			}
+			
+			String name = rs.getString("p_name");
+			Double height = rs.getDouble("p_height");
+			Double weight = rs.getDouble("p_weight");
+			String type1 = rs.getString("p_type");
+			String type2 = rs.getString("p_type2");
+			String des = rs.getString("p_des");
+			String frontDefault = rs.getString("p_front_default");
+			String backDefault = rs.getString("p_back_default");
+			String frontShiny = rs.getString("p_front_shiny");
+			String backShiny = rs.getString("p_back_shiny");
+			
+			pokemon = new Pokemon(no2, name, height, weight, type1, type2, des, frontDefault, backDefault, frontShiny, backShiny);
+			pokemons.add(pokemon);
+			
+			}
+			request.setAttribute("Pokemons", pokemons); 
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}/*
+		 * finally { DBManager.close(con, pstmt, rs); }
+		 */
+	}
+	
+	public static void getTypePokemonJP(HttpServletRequest request) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from pokemon_ja where p_type = ? or p_type2 = ? order by p_no";
+		String type = request.getParameter("type");
+		System.out.println(type);
+		
+		switch (type) {
+		case "normal":
+			type = "ノーマル";
+			break;
+		case "fire":
+			type = "ほのお";
+			break;
+		case "water":
+			type = "みず";
+			break;
+		case "grass":
+			type = "くさ";
+			break;
+		case "electric":
+			type = "でんき";
+			break;
+		case "ice":
+			type = "こおり";
+			break;
+		case "fight":
+			type = "かくとう";
+			break;
+		case "poison":
+			type = "どく";
+			break;
+		case "ground":
+			type = "じめん";
+			break;
+		case "flying":
+			type = "ひこう";
+			break;
+		case "psychic":
+			type = "エスパー";
+			break;
+		case "bug":
+			type = "むし";
+			break;
+		case "rock":
+			type = "いわ";
+			break;
+		case "ghost":
+			type = "ゴースト";
+			break;
+		case "dragon":
+			type = "ドラゴン";
+			break;
+		case "dark":
+			type = "あく";
+			break;
+		case "steel":
+			type = "はがね";
+			break;
+		case "fairy":
+			type = "フェアリー";
 			break;
 		
 		default:
