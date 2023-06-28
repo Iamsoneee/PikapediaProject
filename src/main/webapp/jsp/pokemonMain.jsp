@@ -143,17 +143,20 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
       <!-- Search Bar -->
       <div class="search-bar-area">
+        <form action="DetailC">
         <input
           type="text"
           id="search-input"
           maxlength="10"
-          placeholder="Search Pokémon"
+          placeholder="Search Pokémon" name="search"
         />
+		<button>제출</button>
+        </form>
       </div>
       <!-- Pokemon Cards Gallery -->
       <div class="scrollable">
         <c:forEach var="pokemon" items="${Pokemons }">
-          <a href="">
+          <a href="DetailC?search=${pokemon.name }">
             <!-- Border-color by each pokemon's type -->
             <div
               class="pokemon-card"

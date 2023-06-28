@@ -11,14 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 public class DetailC extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("input.jsp").forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		DetailDAO.searchPoketmon(request);
 		DetailDAO.typePoketmon(request);
 		request.setCharacterEncoding("utf-8");
-		request.getRequestDispatcher("jsp/pokemonDetail.jsp").forward(request, response);
+		request.setAttribute("contentPage", "jsp/pokemonDetail.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }
