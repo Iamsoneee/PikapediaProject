@@ -22,12 +22,12 @@
 	var halfLength = Math.floor(cleanDex.length / 2);
 	var hint = cleanDex.slice(0, halfLength);
 	let pkno = document.getElementById('pk_no').value;
-	var count = 3;
+	var count = 2;
 	
 	function countGame() {
 	
 	
-	for (let i = count; i > 0; i--){
+	for (let i = count; i > -1; i--){
 	
 		if(count === 3) {
 			//db에 값 넣기
@@ -36,10 +36,10 @@
 		} else if (count === 1){
 			 document.getElementById("myPokeHp").src = "img/game/myTeamTrainer1.png";
 		} else {
-			location.reload();
+			 setTimeout(function() {
+	          location.reload();
+		      }, 500);
 		}
-		console.log(count);
-		count--;
 	}
 	}
 		
@@ -205,9 +205,11 @@
 		      }, 1000);
 		      result(); // result() 함수 호출 추가
 		      countGame();
+		      count--;
 		    }
 		  });
 	
+		
 	
 	
 	
