@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,7 +50,7 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href=""
+              <a href="TranslationC?lang=kr"
                 ><img
                   src="img/icon/korea-icon.png"
                   alt="korean-button"
@@ -57,8 +58,8 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
-              <a href=""
-                ><img
+              <a href="TranslationC?lang=jp">
+                <img
                   src="img/icon/japan-icon.png"
                   alt="japanese-button"
                   class="header-icons"
@@ -66,14 +67,21 @@ pageEncoding="UTF-8"%>
             </li>
           </ul>
           <!-- Dropdown Menu -->
-          <div>
-          <ul class="drop-menu">
+          <div class="drop-menu-wrapper">
+          <ul class="drop-menu" style="max-height: 0px">
             <li><a href="GameHomeC">Quiz</a></li>
-            <li><a href="MyRewardC">MyRewards</a></li>
+            <li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
             <li><a href="CommunityC">Community</a></li>
-            <li><a href="LoginC">Login</a></li>
-            <li><a href="SignupC">SignupC</a></li>
-            <li><a href="MyPageC">Mypage</a></li>
+          		<c:choose>
+          		<c:when test="${empty account.id }">
+            		<li><a href="LoginC">Login</a></li>
+            		<li><a href="SignupC">Signup</a></li>
+          		</c:when>
+          		<c:otherwise>
+            		<li><a href="LogoutC">Logout</a></li>
+            		<li><a href="MyPageC">Mypage</a></li>
+          		</c:otherwise>
+          	</c:choose>
           </ul>
             <a href="" class="drop-icon-area"
             ><img class="drop-icon-img" src="img/icon/list-icon.png" alt=""
@@ -96,6 +104,9 @@ pageEncoding="UTF-8"%>
     <!-- Footer Area -->
     <footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/validCheck.js"></script>
+	<script type="text/javascript" src="js/valueCheck.js"></script>
+	<script type="text/javascript" src="js/mypage.js"></script>
   </body>
 
 </html>

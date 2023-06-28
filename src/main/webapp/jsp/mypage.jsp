@@ -39,10 +39,10 @@
                         </div>
                         <div class="confirm-btn-container">
                             <div>
-                                <button class="confirm-btn" onclick="location.href='#C'">Confirm</button>
+                                <button class="confirm-btn" type="button" onclick="location.href='MyPageEditC'">Edit</button>
                             </div>
                             <div>
-                                <button class="confirm-btn" type="button" onclick="location.href='MyPageEditC?id=${account.id }'">Edit</button>
+                                <button class="confirm-btn" onclick="Signout()">Sign Out</button>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

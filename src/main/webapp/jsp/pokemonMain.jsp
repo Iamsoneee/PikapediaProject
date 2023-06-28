@@ -27,40 +27,40 @@
 		<!-- Pokemon Type Buttons -->
 		<div class="type-icons-wrapper">
 			<div class="type-icons type-icons-first-row">
-				<button name="normal">
+				<button name="normal" onclick="location.href='TypeViewC?type=normal'">
 					<img src="img/pokemon-type/circle-type/normal.png"
 						alt="normal-type" />
 				</button>
-				<button name="fire">
+				<button name="fire" onclick="location.href='TypeViewC?type=fire'">
 					<img src="img/pokemon-type/circle-type/fire.png" alt="fire-type" />
 				</button>
-				<button name="water">
+				<button name="water" onclick="location.href='TypeViewC?type=water'">
 					<img src="img/pokemon-type/circle-type/water.png" alt="water-type" />
 				</button>
 			</div>
 
 			<div class="type-icons type-icons-first-row">
-				<button name="grass">
+				<button name="grass" onclick="location.href='TypeViewC?type=grass'">
 					<img src="img/pokemon-type/circle-type/grass.png" alt="grass-type" />
 				</button>
-				<button name="electric">
+				<button name="electric" onclick="location.href='TypeViewC?type=electric'">
 					<img src="img/pokemon-type/circle-type/electric.png"
 						alt="electric-type" />
 				</button>
-				<button name="ice">
+				<button name="ice" onclick="location.href='TypeViewC?type=ice'">
 					<img src="img/pokemon-type/circle-type/ice.png" alt="ice-type" />
 				</button>
 			</div>
 
 			<div class="type-icons type-icons-first-row">
-				<button name="fight">
+				<button name="fight" onclick="location.href='TypeViewC?type=fight'">
 					<img src="img/pokemon-type/circle-type/fight.png" alt="fight-type" />
 				</button>
-				<button name="poison">
+				<button name="poison" onclick="location.href='TypeViewC?type=poison'">
 					<img src="img/pokemon-type/circle-type/poison.png"
 						alt="poison-type" />
 				</button>
-				<button name="ground">
+				<button name="ground" onclick="location.href='TypeViewC?type=ground'">
 					<img src="img/pokemon-type/circle-type/ground.png"
 						alt="ground-type" />
 				</button>
@@ -69,40 +69,40 @@
 
 		<div class="type-icons-wrapper">
 			<div class="type-icons type-icons-second-row">
-				<button name="flying">
+				<button name="flying" onclick="location.href='TypeViewC?type=flying'">
 					<img src="img/pokemon-type/circle-type/flying.png"
 						alt="flying-type" />
 				</button>
-				<button name="psychic">
+				<button name="psychic" onclick="location.href='TypeViewC?type=psychic'">
 					<img src="img/pokemon-type/circle-type/psychic.png"
 						alt="psychic-type" />
 				</button>
-				<button name="bug">
+				<button name="bug" onclick="location.href='TypeViewC?type=bug'">
 					<img src="img/pokemon-type/circle-type/bug.png" alt="bug-type" />
 				</button>
 			</div>
 
 			<div class="type-icons type-icons-second-row">
-				<button name="rock">
+				<button name="rock" onclick="location.href='TypeViewC?type=rock'">
 					<img src="img/pokemon-type/circle-type/rock.png" alt="rock-type" />
 				</button>
-				<button name="ghost">
+				<button name="ghost" onclick="location.href='TypeViewC?type=ghost'">
 					<img src="img/pokemon-type/circle-type/ghost.png" alt="ghost-type" />
 				</button>
-				<button name="dragon">
+				<button name="dragon" onclick="location.href='TypeViewC?type=dragon'">
 					<img src="img/pokemon-type/circle-type/dragon.png"
 						alt="dragon-type" />
 				</button>
 			</div>
 
 			<div class="type-icons type-icons-second-row">
-				<button name="dark">
+				<button name="dark" onclick="location.href='TypeViewC?type=dark'">
 					<img src="img/pokemon-type/circle-type/dark.png" alt="dark-type" />
 				</button>
-				<button name="steel">
+				<button name="steel" onclick="location.href='TypeViewC?type=steel'">
 					<img src="img/pokemon-type/circle-type/steel.png" alt="steel-type" />
 				</button>
-				<button name="fairy">
+				<button name="fairy" onclick="location.href='TypeViewC?type=fairy'">
 					<img src="img/pokemon-type/circle-type/fairy.png" alt="fairy-type" />
 				</button>
 			</div>
@@ -128,7 +128,7 @@
 						border: 5px solid transparent;
 						</c:if>"> 
 						<div class="card-white-bg">
-							<div class="card-contents">
+							<div class="card-contents"> 
 								<p>#${pokemon.no }</p>
 								<img src="${pokemon.frontDefault }" alt="${pokemon.name }"
 									class="card-pokemon-img" />
@@ -136,19 +136,18 @@
 								<p>${pokemon.name }</p>
 								<div class="type-icons-area">
 									<c:forEach var="type" items="${Types}">
-										<c:if test="${type.typeNameKo eq pokemon.type1}">
+										<c:if test="${type.typeNameKo eq pokemon.type1 || type.typeNameJa eq pokemon.type1}">
 											<img src="img/pokemon-type/circle-type/${type.typeImg}"
 												alt="${type.typeNameKo}" class="card-type-icon" />
 											<input type="hidden" id="type1Color"
 												value="${colors[pokemon.type1]}" />
 										</c:if>
-										<c:if test="${type.typeNameKo eq pokemon.type2}">
+										<c:if test="${type.typeNameKo eq pokemon.type2 || type.typeNameJa eq pokemon.type2}">
 											<img src="img/pokemon-type/circle-type/${type.typeImg}"
 												alt="${type.typeNameKo}" class="card-type-icon" />
 											<input type="hidden" id="type2Color"
 												value="${colors[pokemon.type2]}" />
 										</c:if>
-
 									</c:forEach>
 								</div>
 							</div>
