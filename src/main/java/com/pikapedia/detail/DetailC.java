@@ -16,6 +16,7 @@ public class DetailC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DetailDAO.searchPoketmon(request);
+		DetailDAO.typePoketmon(request);
 		request.setCharacterEncoding("utf-8");
 		request.getRequestDispatcher("jsp/pokemonDetail.jsp").forward(request, response);
 	}

@@ -1,6 +1,7 @@
 package com.pikapedia.detail;
 
 import com.pikapedia.db.DBManager;
+import com.pikapedia.db.Type;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +17,7 @@ public class DetailDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from pokemon where p_name = ?";
+		String sql = "select * from pokemon_ko where p_name = ?";
 		
 		try {
 			con = DBManager.connect();
@@ -31,17 +32,17 @@ public class DetailDAO {
 				String p_name = rs.getString ("p_name");
 				double p_height = rs.getDouble ("p_height");
 				double p_weight = rs.getDouble("p_weight");
-				String p_type1 = rs.getString ("p_type1");
+				String p_type1 = rs.getString ("p_type");
 				String p_type2 = rs.getString ("p_type2");
 				if(p_type2==null)
 				{
 					p_type2="";
 				}
 				String p_des = rs.getString ("p_des");
-				String p_frontDefault = rs.getString("p_front_default_img");
-				String p_backDefault = rs.getString("p_back_default_img");
-				String p_frontShiny = rs.getString("p_front_shiny_img");
-				String p_backShiny = rs.getString("p_back_shiny_img");
+				String p_frontDefault = rs.getString("p_front_default");
+				String p_backDefault = rs.getString("p_back_default");
+				String p_frontShiny = rs.getString("p_front_shiny");
+				String p_backShiny = rs.getString("p_back_shiny");
 				
 				scPokemons.add(new DetailPokeBean(p_no,p_name,p_height,p_weight,p_type1,p_type2,p_des,p_frontDefault,p_backDefault,p_frontShiny,p_backShiny));
 			}
@@ -54,5 +55,31 @@ public class DetailDAO {
 		}
 		
 	}
+	public static void typePoketmon(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from type";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			ArrayList<Type> types = new ArrayList<Type>();
+			while (rs.next()) {
+				String typeNameKo = rs.getString("t_name_ko");
+				String typeNameJa = rs.getString("t_name_ja");
+				String typeNameEn = rs.getString("t_name_en");
+				String typeColor = rs.getString("t_color");
+				String typeImg = rs.getString("t_img");
 
+				Type type = new Type(typeNameKo, typeNameJa, typeNameEn, typeColor, typeImg);
+				types.add(type);
+			}
+			request.setAttribute("Types", types);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 }
