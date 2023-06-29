@@ -218,7 +218,36 @@
 		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = cleanDex;
 		      }, 2500);
 		      
-		
+				      // 포켓몬 고유번호, 아이디
+/* 		        if(account.id != null){
+ 		   	    let id = ${account.id}; 
+ 		   	    
+		        } else {
+		        	console.log("아이디 에러"); */
+		      let id = "jp";
+		/*         } */
+		      // AJAX 객체 생성
+		      var xhr = new XMLHttpRequest();
+
+		     let url = "InsertDDiBu?id="  + id + "&pkno=" + pkno;
+		     console.log(url);
+		      // POST 요청 설정
+		      xhr.open("POST", url, true);
+		      xhr.setRequestHeader("Content-type", "text");
+
+		      // 응답 처리
+		      xhr.onreadystatechange = function() {
+		        if (xhr.readyState === 4 && xhr.status === 200) {
+		          var response = xhr.responseText;
+		          // 응답 처리 로직 작성
+		          console.log(response);
+		          
+		        }
+		      };
+
+		      // 요청 전송
+		      xhr.send();
+		      
 		      
 		      setTimeout(function() {
 	          location.reload();
