@@ -159,9 +159,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <!-- Pokemon Cards Gallery -->
       <div class="scrollable">
         <c:forEach var="pokemon" items="${Pokemons }">
-          <a href="DetailC?search=${pokemon.name }">
             <!-- Border-color by each pokemon's type -->
-            <div
+            <div onclick="location.href='DetailC?search=${pokemon.name }'"
               class="pokemon-card"
               style="border-color: ${colors[pokemon.type1]};
 						<c:if test='${not empty pokemon.type2}'>

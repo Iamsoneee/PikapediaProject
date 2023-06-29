@@ -1,6 +1,6 @@
 	console.log(document.getElementById('pk_no').value);
 	document.getElementById('account_game').value;
-	var userGameId = document.getElementById('pk_name').value
+	var userGameId = document.getElementById('account_game').value;
 	
 	var languageDex = document.getElementById('pk_name').value;
 	var cleanDex = languageDex.replace(/[♂♀]/g, '');
@@ -218,11 +218,38 @@
 		        document.getElementsByClassName("enemyPokeName")[0].innerHTML = cleanDex;
 		      }, 2500);
 		      
-		
+				      // 포켓몬 고유번호, 아이디
+		     
+ 		   	  let id = userGameId;  
+ 		   	    
+		      // AJAX 객체 생성
+		      var xhr = new XMLHttpRequest();
+
+		     let url = "InsertDDiBu?id="  + id + "&pkno=" + pkno;
+		     console.log(url);
+		      // POST 요청 설정
+		      xhr.open("POST", url, true);
+		      xhr.setRequestHeader("Content-type", "text");
+
+		      // 응답 처리
+		      xhr.onreadystatechange = function() {
+		        if (xhr.readyState === 4 && xhr.status === 200) {
+		          var response = xhr.responseText;
+		          // 응답 처리 로직 작성
+		          console.log(response);
+		          
+		        }
+		      };
+
+		      // 요청 전송
+		      xhr.send();
 		      
 		      setTimeout(function() {
 	          location.reload();
 		      }, 3500);
+		      setTimeout(function() {
+		      alert(languageDex + '를 획득하셨습니다.')
+		      }, 3400);
 		      
 		    } else if (inputValue === "" || inputValue === null) {
 		      return;

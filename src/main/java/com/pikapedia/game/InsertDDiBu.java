@@ -18,10 +18,10 @@ public class InsertDDiBu extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		/*
-		 * System.out.println(11); response.setCharacterEncoding("utf-8");
-		 * response.getWriter().write(GameDAO.insertDDibu(request));
-		 */
+		
+		  System.out.println(11); response.setCharacterEncoding("utf-8");
+		  response.getWriter().write(GameDAO.insertDDibu(request));
+		 
 	}
 
 }

@@ -8,10 +8,11 @@
 }
 .mainDescription {
   font-family: "DungGeunMo";
-  font-size: 20pt;
   text-align: center;
-  line-height: 30px;
+  line-height: 1vw;
+  line-height: 3vh;
   color: black;
+  overflow : hidden;
 }
 #followButton {
   font-family: "DungGeunMo";
@@ -19,9 +20,13 @@
   background-color: transparent;
   font-size: 20pt;
   color: purple;
-  
+  line-height: 1vw;
+  line-height: 3vh;
 }
 #followButton:hover {
   font-size: 25pt;
   cursor: pointer;
+}
+#quizLogo-img {
+	width: 20vw;
 }

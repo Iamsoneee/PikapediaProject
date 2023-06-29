@@ -6,7 +6,7 @@ import com.pikapedia.db.DBDAO;
 
 public class TranslationDAO {
 
-	public static void translationJP(HttpServletRequest request) {
+	public static void translation(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		String lang = request.getParameter("lang");
@@ -51,12 +51,9 @@ public static void translationTypeViewJP(HttpServletRequest request) {
 
 		if (language.equals("kr")) {
 			DBDAO.getAllColor(request);
-			DBDAO.TypeView(request);
-		} else if (language.equals("jp")){
-			DBDAO.getAllColorJp(request);
-			DBDAO.TypeViewJP(request);
+			DBDAO.getAllPokemon(request);
 		}
 	}
-	
+		
 	
 }

@@ -23,7 +23,7 @@
     position: absolute;
     width: 20px;
     left: 2vw;
-    margin-top: 10px;
+    margin-top: 1vh;
 }
 .confirm-btn{
     width: 25vw;
@@ -34,10 +34,12 @@
     border-radius: 1.5vw;
     border: transparent;
     color: white;
+	cursor: pointer;   
 }
 .google-logo{
     width: 25px;
 }
 .or-signup{
+	width: 25vw;
     color: black;
 }

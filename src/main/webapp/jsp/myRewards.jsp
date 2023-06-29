@@ -38,33 +38,142 @@ pageEncoding="UTF-8"%>
 						</c:otherwise>
 					</c:choose>
 					</div>
-					<div class="r-account">${account.name }</div>
-					<div class="r-account">님의 리워드</div>
-					<div class="r-account">획득 띠부띠부씰 개수:</div>
-					<div class="r-account">${RewardCount }</div>
-					<div class="r-account">개</div>
+						<c:choose>
+							<c:when test="${empty account.id }">
+								<div class="r-account">???</div>
+								<div class="r-account">'s Rewards</div>
+								<div class="r-account">:</div>
+							</c:when>
+							<c:otherwise>
+								<div class="r-account">${account.name }</div>
+								<div class="r-account">'s Rewards</div>
+								<div class="r-account">:</div>
+							</c:otherwise>
+						</c:choose>
+							<c:choose>
+								<c:when test="">${RewardCount == null || RewardCount == 0 }
+									<div class="r-account">0</div>
+								</c:when>
+								<c:otherwise>
+									<div class="r-account">${RewardCount }</div>
+								</c:otherwise>
+							</c:choose>
+							<div class="r-account">/151</div>
 				</div>	
-				<div class="scrollable">
-				 	<c:forEach var="pokemon" items="${Pokemons }">
+				<c:choose>
+					<c:when test="${empty account || RewardCount == 0}">
+					<div class="scrollable">
 						<div id="r-pokemons">
-							<div id="r-pokemon">
-								<div id="r-pokemon-top">
-									<div id="r-pokemon-name">
-										<div class="r-name">${pokemon.name }</div>
+								<div id="r-pokemon">
+									<div id="r-pokemon-top">
+										<div id="r-pokemon-name">
+											<div class="r-name"></div>
+										</div>
+										<div id="r-pokemon-no">
+											<div class="r-no">000</div>
+										</div>
 									</div>
-									<div id="r-pokemon-no">
-										<div class="r-no">${pokemon.no }</div>
+									<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="https://w7.pngwing.com/pngs/197/883/png-transparent-question-mark-question-mark-miscellaneous-angle-text.png" style="width: 100px;"></div>
+									<div id="r-pokemon-bottom">
+										<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+										<div class="r-pokemon-maker">Pokémon</div>
 									</div>
-								</div>
-								<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="${pokemon.frontDefault }" style="width: 100px;"></div>
-								<div id="r-pokemon-bottom">
-									<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
-									<div class="r-pokemon-maker">Pokémon</div>
 								</div>
 							</div>
-						</div>
-					</c:forEach>
-				</div>	
+							<div id="r-pokemons">
+								<div id="r-pokemon">
+									<div id="r-pokemon-top">
+										<div id="r-pokemon-name">
+											<div class="r-name"></div>
+										</div>
+										<div id="r-pokemon-no">
+											<div class="r-no">000</div>
+										</div>
+									</div>
+									<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="https://w7.pngwing.com/pngs/197/883/png-transparent-question-mark-question-mark-miscellaneous-angle-text.png" style="width: 100px;"></div>
+									<div id="r-pokemon-bottom">
+										<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+										<div class="r-pokemon-maker">Pokémon</div>
+									</div>
+								</div>
+							</div>
+							<div id="r-pokemons">
+								<div id="r-pokemon">
+									<div id="r-pokemon-top">
+										<div id="r-pokemon-name">
+											<div class="r-name"></div>
+										</div>
+										<div id="r-pokemon-no">
+											<div class="r-no">000</div>
+										</div>
+									</div>
+									<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="https://w7.pngwing.com/pngs/197/883/png-transparent-question-mark-question-mark-miscellaneous-angle-text.png" style="width: 100px;"></div>
+									<div id="r-pokemon-bottom">
+										<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+										<div class="r-pokemon-maker">Pokémon</div>
+									</div>
+								</div>
+							</div>
+							<div id="r-pokemons">
+								<div id="r-pokemon">
+									<div id="r-pokemon-top">
+										<div id="r-pokemon-name">
+											<div class="r-name"></div>
+										</div>
+										<div id="r-pokemon-no">
+											<div class="r-no">000</div>
+										</div>
+									</div>
+									<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="https://w7.pngwing.com/pngs/197/883/png-transparent-question-mark-question-mark-miscellaneous-angle-text.png" style="width: 100px;"></div>
+									<div id="r-pokemon-bottom">
+										<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+										<div class="r-pokemon-maker">Pokémon</div>
+									</div>
+								</div>
+							</div>
+							<div id="r-pokemons">
+								<div id="r-pokemon">
+									<div id="r-pokemon-top">
+										<div id="r-pokemon-name">
+											<div class="r-name"></div>
+										</div>
+										<div id="r-pokemon-no">
+											<div class="r-no">000</div>
+										</div>
+									</div>
+									<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="https://w7.pngwing.com/pngs/197/883/png-transparent-question-mark-question-mark-miscellaneous-angle-text.png" style="width: 100px;"></div>
+									<div id="r-pokemon-bottom">
+										<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+										<div class="r-pokemon-maker">Pokémon</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</c:when>
+					<c:otherwise>
+						<div class="scrollable">
+				 			<c:forEach var="pokemon" items="${Pokemons }">
+								<div id="r-pokemons">
+									<div id="r-pokemon">
+										<div id="r-pokemon-top">
+											<div id="r-pokemon-name">
+												<div class="r-name">${pokemon.name }</div>
+											</div>
+											<div id="r-pokemon-no">
+												<div class="r-no">${pokemon.no }</div>
+											</div>
+										</div>
+										<div class="r-pokemon-img"><img alt="포켓몬 이미지" src="${pokemon.frontDefault }" style="width: 100px;"></div>
+										<div id="r-pokemon-bottom">
+											<div class="r-pokemon-ball"><img alt="" src="img/icon/account-icon/ball-bg.png" style="width: 10px;"></div>			
+											<div class="r-pokemon-maker">Pokémon</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>	
+					</c:otherwise>
+				</c:choose>
           </div>
         </div>
       </div>
