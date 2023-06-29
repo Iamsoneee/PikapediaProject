@@ -12,19 +12,37 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 
+
 public class DetailDAO {
+	public static boolean isInteger(String strValue) {
+		try {
+			Integer.parseInt(strValue);
+		    return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
+	}
 	public static void searchPoketmon(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from pokemon_ko where p_name = ?";
+		String sql = "select * from pokemon_ko where ";
 		
 		try {
 			con = DBManager.connect();
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, search);
+			if(isInteger(search)!=true)
+			{
+				sql = sql+"p_name = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, search);
+			}
+			else{
+				sql = sql+"p_no = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, Integer.parseInt(search));
+			}
 			rs = pstmt.executeQuery();
 			ArrayList<DetailPokeBean> scPokemons = new ArrayList<DetailPokeBean>();
 			while (rs.next()) {
