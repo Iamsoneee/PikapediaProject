@@ -64,6 +64,10 @@ public class DBDAO {
 		} else if (lang.equals("jp")) {
 			lang = "jp";
 		} 
+		
+		// 세션에 언어설정을 담아두고
+				session.setAttribute("lang", lang);
+				session = request.getSession();
 	
 		//꺼내서 확인
 		String language = (String) session.getAttribute("lang");

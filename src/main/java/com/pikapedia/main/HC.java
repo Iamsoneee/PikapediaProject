@@ -12,8 +12,8 @@ import com.pikapedia.db.DBDAO;
 @WebServlet("/HC")
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
+		DBDAO.getAllColor(request);
 		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
