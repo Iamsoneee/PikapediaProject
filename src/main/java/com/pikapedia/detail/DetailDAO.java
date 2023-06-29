@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -26,20 +27,36 @@ public class DetailDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from pokemon_ko where ";
+		String sql = "select * from ";
 		
+		HttpSession session = request.getSession();
+		String lang = request.getParameter("lang");
+		
+		if (lang == null || lang.equals("kr")) {
+			lang = "kr";
+		} else if (lang.equals("jp")) {
+			lang = "jp";
+		}
+		
+		String language = (String) session.getAttribute("lang");
 		try {
+
 			con = DBManager.connect();
 			request.setCharacterEncoding("utf-8");
 			String search = request.getParameter("search");
+			if (language.equals("kr")) {
+				sql = sql+" pokemon_ko ";
+			} else if (language.equals("jp")){
+				sql = sql+" pokemon_ja ";
+			}
 			if(isInteger(search)!=true)
 			{
-				sql = sql+"p_name = ?";
+				sql = sql+"where p_name = ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, search);
 			}
 			else{
-				sql = sql+"p_no = ?";
+				sql = sql+"where p_no = ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, Integer.parseInt(search));
 			}
