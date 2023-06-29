@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pikapedia.db.DBDAO;
-import com.pikapedia.translation.TranslationDAO;
 
 @WebServlet("/HC")
 public class HC extends HttpServlet {

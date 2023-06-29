@@ -7,7 +7,7 @@
     <title>quizHome</title>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/pokedexFrame.css">
-    <link rel="stylesheet" href="css/quizHome.css">
+    <link rel="stylesheet" href="css/gameHome.css">
 </head>
 <body>
 <div id="pokedex-wrapper">
@@ -18,7 +18,8 @@
         <div id="pokedex-blue-shadow">
             <div id="pokedex-blue-frame">
                 <div class="mainDescription">
-                    <div>
+                    <div class="pokeQuizLogo">
+                    	<img id="quizLogo-img" alt="포켓몬 로고 이미지" src="img/game/pokemonLogo.png">
                     </div>
                     포켓몬의 실루엣을 보고 <br/>
                     해당 포켓몬의 이름을 맞춰주세요 <br/>

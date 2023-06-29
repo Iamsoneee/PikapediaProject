@@ -1,5 +1,6 @@
 package com.pikapedia.account;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,8 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.pikapedia.db.DBManager;
 
 public class AccountDAO {
@@ -118,40 +121,63 @@ public class AccountDAO {
 	}
 	
 	public static void editAccount(HttpServletRequest request) {
-		String sql = "update account set a_name = ?, a_pw = ?, a_email = ? where a_id = ?";
+		
+		String path = request.getServletContext().getRealPath("img/profile");
+		System.out.println(path);
+		String sql = "update account set a_name = ?, a_pw = ?, a_email = ?, a_img = ? where a_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		Account a = (Account) request.getSession().getAttribute("account");
 		String id = a.getId();
-		String img = a.getImg();
+		String oldImg = a.getImg();
 		
 		try {
-			request.setCharacterEncoding("utf-8");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8",
+					new DefaultFileRenamePolicy());
+
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			request.setCharacterEncoding("utf-8");
-			String name = request.getParameter("UserName");
-			String pw = request.getParameter("pw");
-			String email = request.getParameter("Email");
+			String name = mr.getParameter("UserName");
+			String pw = mr.getParameter("pw");
+			String email = mr.getParameter("Email");
+			String img = mr.getFilesystemName("img");
+			System.out.println(id); 
 			System.out.println(name);
-			System.out.println(id);
 			System.out.println(pw);
 			System.out.println(email);
+			System.out.println(oldImg);
+			System.out.println(img);
 			pstmt.setString(1, name);
 			pstmt.setString(2, pw);
 			pstmt.setString(3, email);
-			pstmt.setString(4, id);
-			if (pstmt.executeUpdate() == 1 ) {
+			if (img == null) {
+				pstmt.setString(4, oldImg);
+			} else {
+				pstmt.setString(4, img);
+			}
+			pstmt.setString(5, id);
+			
+			if (pstmt.executeUpdate() >= 1 ) {
 				System.out.println("수정 성공!");
 				request.setAttribute("r", "수정 성공!");
+				
 				Account account = new Account();
 				account.setName(name);
 				account.setId(id);
 				account.setPw(pw);
 				account.setEmail(email);
-				account.setImg(img);
+				account.setImg(oldImg);
+				
+				if (img != null) {
+					File f = new File(path + "/" + oldImg);
+					f.delete();
+					account.setImg(img);
+				}
+			
 				HttpSession hs = request.getSession();
 				hs.setAttribute("account", account);
+				
+					
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

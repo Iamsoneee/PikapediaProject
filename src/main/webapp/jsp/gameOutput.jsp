@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>quizOutput</title>
-<link rel="stylesheet" href="css/quiz.css" />
+<link rel="stylesheet" href="css/game.css" />
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/pokedexFramegame.css" />
 </head>
@@ -44,7 +44,7 @@
 										src="${poketmon.p_frontDefault}"> 
 								</div>
 								<div class="enemyPoke-Down">
-								<div class="enemyPoke-name">이재강 Lv1</div>
+								<div class="enemyPoke-name">${account.id} Lv1</div>
 									<img id="myPokeHp" alt="우리트레이너 체력바" src="img/game/myPokemonHp.png">
 								</div>
 							</div>
@@ -84,11 +84,12 @@
 					</div>
 					<div class="quiz-RightBlank">
 						<input type="hidden" id="pk_name" value="${poketmon.p_name }">>
+						<input type="hidden" id="account_game" value="${account.id}">>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	 <script type="text/javascript" src="js/quiz.js"></script>
+	 <script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>

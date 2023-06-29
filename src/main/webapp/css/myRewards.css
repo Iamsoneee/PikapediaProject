@@ -44,15 +44,15 @@
 }
 
 .r-account:nth-child(4){
-	margin-top: 140px;
-	margin-left: -140px;
+	margin-top: 110px;
 }
 .r-account:nth-child(5){
-	margin-top: 140px;
+	margin-left: 10px;
+	margin-top: 110px;
 	color: #C54431;
 }
 .r-account:nth-child(6){
-	margin-top: 140px;
+	margin-top: 110px;
 }
 
 /* 스크롤 */
@@ -149,6 +149,9 @@
 	line-height: 14px;
 	text-align: center;
 	color: #FFFFFF;
+}
+.r-pokemon-img{
+	width: 100px;
 }
 #r-pokemon-bottom{
 	display: flex;
