@@ -2,6 +2,7 @@
 body {
 	position:relative;
 }
+/* 원형 이미지 */
 #detailimg{
 	border-radius:50%;
 	border:solid white 3px;
@@ -10,18 +11,22 @@ body {
 	position:absolute;
 	left:50%;
 	top:50%;
-	transform: translate(25%,-150%);
+	transform: translate(25%,-180%);
 	background-color:rgb(255,255,255, 0.5);
 }
+
+/* 원형 이미지 안의 포켓몬 이미지 */
 #pokeimg{
 	position:absolute;
-	width: 26vh;
+	width: 25vh;
 	left:50%;
 	top:50%;
-	transform: translate(27%,-150%);
+	transform: translate(31%,-185%);
 	z-index:1;
 	
 }
+
+/* 이름, 넘버 div */
 #content1{
 	margin-top:5%;
 	display:flex;
@@ -44,18 +49,22 @@ body {
 	margin-left:0.5vw;
 	
 }
+
+/* 기본정보 설명, 이미지 들어갈 div 페이지*/
 #mainpage{
 	border-radius: 50px;
 	border: 3px solid white;
 	background-color:rgb(255,255,255, 0.8);
 	width: 50vw;
-	height: 50vh;
+	height: 55vh;
 	position:absolute;
 	left:50%;
 	top:50%;
-	transform: translate(-50%,-45%);
+	transform: translate(-50%,-60%);
 	
 }
+
+/* 기본 정보 */
 #content2{
 	
 	justify-content:space-between;
@@ -93,12 +102,14 @@ body {
 	font-weight:800;
 	color:gray;
 }
+
+/* 설명 div */
 #content4{
 	background-color:rgba(0,0,0,0.15);
 	border-radius : 8px;
 	box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
 	margin-bottom:10vh;
-	height:10%;
+	height:13%;
 	width:80%;
 	margin:0 auto;
 	margin-bottom:5vh;
@@ -108,21 +119,24 @@ body {
 	font-size:11pt;
 	padding-left:0.5vw;
 	padding-right:0.5vw;
-	padding-top:4pt;
-	padding-bottom:4pt;
+	padding-top:0.7vh;
+	padding-bottom:0.7vh;
 	word-break:break-all;
+	line-height:150%;
 	font-weight:bold;
 }
+
+/* 이미지 div */
 #content5{
 	background-color:rgba(0,0,0,0.1);
 	border-radius : 10px;
 	box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
-	height:10vh;
+	height:12vh;
 	width:80%;
 	display:flex;
 	margin:0 auto;
 	justify-content:space-around;
 }
 .p_img {
-	width:5vw;
+	width:6vw;
 }

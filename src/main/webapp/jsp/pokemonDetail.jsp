@@ -11,7 +11,7 @@
 </head>
 <c:forEach var="pokemon" items="${scPokemons}">
 	<c:forEach var="type" items="${Types }">
-		<c:if test="${type.typeNameKo eq pokemon.p_type1 }">
+		<c:if test="${type.typeNameKo eq pokemon.p_type1  }">
 			<c:set var="color1" value="${type.typeColor }"/>
 		</c:if>
 		<c:if test="${type.typeNameKo eq pokemon.p_type2 }">
