@@ -93,9 +93,15 @@
   color: black;
 }
 
+/* Media Query for Responsive Website */
+@media screen and (max-width : 1024px) {
+	.pokedex-title-txt {
+		margin-top: 20vh;
+	}
+
 #poke-spot-icon {
   width: 10vw;
-  margin-top: 70%;
+  margin-top: 50%;
 }
 
 #pokedex-white-bg {
