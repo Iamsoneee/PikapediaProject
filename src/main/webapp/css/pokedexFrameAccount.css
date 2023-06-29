@@ -78,6 +78,13 @@
   margin-left: 8%;
 }
 
+/* Media Query for Responsive Website */
+@media screen and (max-width : 1024px) {
+	#pokedex-title-area {
+	  margin-left: 0;
+	}
+}
+
 .pokedex-title-txt {
   margin-top: 40%;
   font-size: 3vw;

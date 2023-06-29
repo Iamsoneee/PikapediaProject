@@ -74,19 +74,5 @@
 	</div>
 </div>
 </c:forEach>
-
-
-<%-- ${pokemon.p_no }<br>
-${pokemon.p_name }<br>
-${pokemon.p_height }<br>
-${pokemon.p_weight }<br>
-${pokemon.p_type1 }<br>
-${pokemon.p_type2 }<br>
-${pokemon.p_des }<br>
-<img alt="" src="${pokemon.p_frontDefault }" style="width:200px; height:200px;"><br>
-<img alt="" src="${pokemon.p_backDefault }" style="width:50px; height:50px;">
-<img alt="" src="${pokemon.p_frontShiny }" style="width:50px; height:50px;">
-<img alt="" src="${pokemon.p_backShiny }" style="width:50px; height:50px;"><br> --%>
-
 </body>
 </html>
