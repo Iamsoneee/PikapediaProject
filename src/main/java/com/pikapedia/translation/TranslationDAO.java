@@ -6,7 +6,7 @@ import com.pikapedia.db.DBDAO;
 
 public class TranslationDAO {
 
-	public static void translationJP(HttpServletRequest request) {
+	public static void translation(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		String lang = request.getParameter("lang");
