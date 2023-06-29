@@ -44,7 +44,7 @@
 										src="${poketmon.p_frontDefault}"> 
 								</div>
 								<div class="enemyPoke-Down">
-								<div class="enemyPoke-name">이재강 Lv1</div>
+								<div class="enemyPoke-name">${account.id} Lv1</div>
 									<img id="myPokeHp" alt="우리트레이너 체력바" src="img/game/myPokemonHp.png">
 								</div>
 							</div>
