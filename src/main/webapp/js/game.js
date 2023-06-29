@@ -1,6 +1,6 @@
 	console.log(document.getElementById('pk_no').value);
 	document.getElementById('account_game').value;
-	var userGameId = document.getElementById('pk_name').value
+	var userGameId = document.getElementById('account_game').value;
 	
 	var languageDex = document.getElementById('pk_name').value;
 	var cleanDex = languageDex.replace(/[♂♀]/g, '');
@@ -219,13 +219,9 @@
 		      }, 2500);
 		      
 				      // 포켓몬 고유번호, 아이디
-/* 		        if(account.id != null){
- 		   	    let id = ${account.id}; 
+		     
+ 		   	  let id = userGameId;  
  		   	    
-		        } else {
-		        	console.log("아이디 에러"); */
-		      let id = "jp";
-		/*         } */
 		      // AJAX 객체 생성
 		      var xhr = new XMLHttpRequest();
 
@@ -248,10 +244,12 @@
 		      // 요청 전송
 		      xhr.send();
 		      
-		      
 		      setTimeout(function() {
 	          location.reload();
 		      }, 3500);
+		      setTimeout(function() {
+		      alert(languageDex + '를 획득하셨습니다.')
+		      }, 3400);
 		      
 		    } else if (inputValue === "" || inputValue === null) {
 		      return;
