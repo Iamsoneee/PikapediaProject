@@ -11,15 +11,14 @@
 </head>
 <c:forEach var="pokemon" items="${scPokemons}">
 	<c:forEach var="type" items="${Types }">
-		<c:if test="${type.typeNameKo eq pokemon.p_type1  }">
+		<c:if test="${type.typeNameKo eq pokemon.p_type1 || type.typeNameJa eq pokemon.p_type1 }">
 			<c:set var="color1" value="${type.typeColor }"/>
 		</c:if>
-		<c:if test="${type.typeNameKo eq pokemon.p_type2 }">
+		<c:if test="${type.typeNameKo eq pokemon.p_type2 || type.typeNameJa eq pokemon.p_type2 }">
 			<c:set var="color2" value="${type.typeColor }"/> 
 		</c:if>
 	</c:forEach>
 </c:forEach>
-<c:if test ="${param.isDarkMode != true}">
 		<c:choose>
 		<c:when test="${color2 != null}">
 			<body style="background: linear-gradient( to bottom, <c:out value='${color1}'/>, <c:out value='${color2}'/> );">
@@ -28,7 +27,6 @@
 			<body style="background-color:<c:out value='${color1}'/>;">	
 		</c:otherwise>
 		</c:choose>
-</c:if>
 <c:forEach var="pokemon" items="${scPokemons}">
 <div id="detailimg">
 </div>
@@ -38,10 +36,10 @@
 		<div id="p_numName">#${pokemon.p_no }<br>${pokemon.p_name }</div>
 		<div id="p_typeImgs">
 		<c:forEach var="type" items="${Types }">
-		<c:if test="${type.typeNameKo eq pokemon.p_type1 }"> 
+		<c:if test="${type.typeNameKo eq pokemon.p_type1 || type.typeNameJa eq pokemon.p_type1 }"> 
 		<img class="type_img" alt="" src="img/pokemon-type/square-type/${type.typeImg }">
 		</c:if>
-		<c:if test="${type.typeNameKo eq pokemon.p_type2 }"> 
+		<c:if test="${type.typeNameKo eq pokemon.p_type2 || type.typeNameJa eq pokemon.p_type2 }"> 
 		<img class="type_img" alt="" src="img/pokemon-type/square-type/${type.typeImg }">
 		</c:if>
 		</c:forEach></div>
