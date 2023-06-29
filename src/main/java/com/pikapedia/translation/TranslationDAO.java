@@ -28,34 +28,10 @@ public class TranslationDAO {
 			DBDAO.getAllColor(request);
 			DBDAO.getAllPokemon(request);
 		} else if (language.equals("jp")){
-			DBDAO.getAllColorJp(request);
-			DBDAO.getAllPokemonJP(request);
-		}
-	}
-	
-public static void translationTypeViewJP(HttpServletRequest request) {
-		
-		HttpSession session = request.getSession();
-		String lang = request.getParameter("lang");
-		
-		
-		if (lang == null || lang.equals("kr")) {
-			lang = "kr";
-		} else if (lang.equals("jp")) {
-			lang = "jp";
-		} 
-
-		//꺼내서 확인
-		String language = (String) session.getAttribute("lang");
-
-		if (language.equals("kr")) {
 			DBDAO.getAllColor(request);
-			DBDAO.TypeView(request);
-		} else if (language.equals("jp")){
-			DBDAO.getAllColorJp(request);
-			DBDAO.TypeViewJP(request);
+			DBDAO.getAllPokemon(request);
 		}
 	}
-	
+		
 	
 }
