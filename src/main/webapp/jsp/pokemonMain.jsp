@@ -22,16 +22,16 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <!-- Pokemon Type Buttons -->
       <div class="type-icons-wrapper">
         <div class="type-icons type-icons-first-row">
-          <button name="normal" onclick="location.href='TypeViewC?type=normal'">
+          <button name="normal" onclick="location.href='TypeViewC?type=Normal'">
             <img
               src="img/pokemon-type/circle-type/normal.png"
               alt="normal-type"
             />
           </button>
-          <button name="fire" onclick="location.href='TypeViewC?type=fire'">
+          <button name="fire" onclick="location.href='TypeViewC?type=Fire'">
             <img src="img/pokemon-type/circle-type/fire.png" alt="fire-type" />
           </button>
-          <button name="water" onclick="location.href='TypeViewC?type=water'">
+          <button name="water" onclick="location.href='TypeViewC?type=Water'">
             <img
               src="img/pokemon-type/circle-type/water.png"
               alt="water-type"
@@ -40,7 +40,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         </div>
 
         <div class="type-icons type-icons-first-row">
-          <button name="grass" onclick="location.href='TypeViewC?type=grass'">
+          <button name="grass" onclick="location.href='TypeViewC?type=Grass'">
             <img
               src="img/pokemon-type/circle-type/grass.png"
               alt="grass-type"
@@ -48,32 +48,32 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </button>
           <button
             name="electric"
-            onclick="location.href='TypeViewC?type=electric'"
+            onclick="location.href='TypeViewC?type=Electric'"
           >
             <img
               src="img/pokemon-type/circle-type/electric.png"
               alt="electric-type"
             />
           </button>
-          <button name="ice" onclick="location.href='TypeViewC?type=ice'">
+          <button name="ice" onclick="location.href='TypeViewC?type=Ice'">
             <img src="img/pokemon-type/circle-type/ice.png" alt="ice-type" />
           </button>
         </div>
 
         <div class="type-icons type-icons-first-row">
-          <button name="fight" onclick="location.href='TypeViewC?type=fight'">
+          <button name="fight" onclick="location.href='TypeViewC?type=Fight'">
             <img
               src="img/pokemon-type/circle-type/fight.png"
               alt="fight-type"
             />
           </button>
-          <button name="poison" onclick="location.href='TypeViewC?type=poison'">
+          <button name="poison" onclick="location.href='TypeViewC?type=Poison'">
             <img
               src="img/pokemon-type/circle-type/poison.png"
               alt="poison-type"
             />
           </button>
-          <button name="ground" onclick="location.href='TypeViewC?type=ground'">
+          <button name="ground" onclick="location.href='TypeViewC?type=Ground'">
             <img
               src="img/pokemon-type/circle-type/ground.png"
               alt="ground-type"
@@ -84,7 +84,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
       <div class="type-icons-wrapper">
         <div class="type-icons type-icons-second-row">
-          <button name="flying" onclick="location.href='TypeViewC?type=flying'">
+          <button name="flying" onclick="location.href='TypeViewC?type=Flying'">
             <img
               src="img/pokemon-type/circle-type/flying.png"
               alt="flying-type"
@@ -92,29 +92,29 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </button>
           <button
             name="psychic"
-            onclick="location.href='TypeViewC?type=psychic'"
+            onclick="location.href='TypeViewC?type=Psychic'"
           >
             <img
               src="img/pokemon-type/circle-type/psychic.png"
               alt="psychic-type"
             />
           </button>
-          <button name="bug" onclick="location.href='TypeViewC?type=bug'">
+          <button name="bug" onclick="location.href='TypeViewC?type=Bug'">
             <img src="img/pokemon-type/circle-type/bug.png" alt="bug-type" />
           </button>
         </div>
 
         <div class="type-icons type-icons-second-row">
-          <button name="rock" onclick="location.href='TypeViewC?type=rock'">
+          <button name="rock" onclick="location.href='TypeViewC?type=Rock'">
             <img src="img/pokemon-type/circle-type/rock.png" alt="rock-type" />
           </button>
-          <button name="ghost" onclick="location.href='TypeViewC?type=ghost'">
+          <button name="ghost" onclick="location.href='TypeViewC?type=Ghost'">
             <img
               src="img/pokemon-type/circle-type/ghost.png"
               alt="ghost-type"
             />
           </button>
-          <button name="dragon" onclick="location.href='TypeViewC?type=dragon'">
+          <button name="dragon" onclick="location.href='TypeViewC?type=Dragon'">
             <img
               src="img/pokemon-type/circle-type/dragon.png"
               alt="dragon-type"
@@ -123,16 +123,16 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         </div>
 
         <div class="type-icons type-icons-second-row">
-          <button name="dark" onclick="location.href='TypeViewC?type=dark'">
+          <button name="dark" onclick="location.href='TypeViewC?type=Dark'">
             <img src="img/pokemon-type/circle-type/dark.png" alt="dark-type" />
           </button>
-          <button name="steel" onclick="location.href='TypeViewC?type=steel'">
+          <button name="steel" onclick="location.href='TypeViewC?type=Steel'">
             <img
               src="img/pokemon-type/circle-type/steel.png"
               alt="steel-type"
             />
           </button>
-          <button name="fairy" onclick="location.href='TypeViewC?type=fairy'">
+          <button name="fairy" onclick="location.href='TypeViewC?type=Fairy'">
             <img
               src="img/pokemon-type/circle-type/fairy.png"
               alt="fairy-type"
