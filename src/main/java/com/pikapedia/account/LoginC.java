@@ -17,8 +17,8 @@ public class LoginC extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.Login(request);
-		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
+		DBDAO.getAllColor(request);
 		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);	
