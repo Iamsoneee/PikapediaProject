@@ -3,17 +3,17 @@
 #pokedex-white-bg{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .btn-container{
     align-items: center;
     justify-content: center;
-    margin-top: 20vh;
 }
 .btn-container > div{
     position: relative;
 }
 .info-input-btn{
-    width: 25vw;
+	width: 25vw;
     height: 40px;
     background-color: lightgray;
     border-radius: 1.5vw;
@@ -25,8 +25,9 @@
     position: absolute;
     width: 20px;
     left: 2vw;
-    margin-top: 10px;
+    margin-top: 1vh;
 }
+
 .confirm-btn-container{
     display: flex;
     justify-content: space-between;
@@ -40,7 +41,9 @@
     border-radius: 1.5vw;
     border: transparent;
     color: white;
+    cursor: pointer;
 }
+
 .google-logo-container{
     display: flex;
     justify-content: center;
@@ -49,6 +52,7 @@
     width: 25px;
 }
 .or-signup{
+	width: 25vw;
     color: black;
     text-align: center;
 }

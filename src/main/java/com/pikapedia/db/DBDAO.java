@@ -196,9 +196,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
+		} 
 	}
 	
 	public static void TypeView(HttpServletRequest request) {
@@ -380,9 +378,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}/*
-		 * finally { DBManager.close(con, pstmt, rs); }
-		 */
+		}
 	}
 	
 	public static void getRewardCount(HttpServletRequest request) {
@@ -405,9 +401,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
+		} 
 	}
 	
 }

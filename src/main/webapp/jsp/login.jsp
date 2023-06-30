@@ -29,11 +29,15 @@
                             </div>
                             <div>
                                 <img class="user-icon" src="img/icon/account-icon/pw.png">
-                                <input name="pw" type="password" class="info-input-btn" >
+                                <input name="pw" type="password" class="info-input-btn" placeholder="PW">
                             </div>
                             <div class="confirm-btn-container">
-                                <div><button class="confirm-btn">Login</button></div>
-                                <div><button type="button" onclick="location.href='SignupC'" class="confirm-btn">Sign Up</button></div>
+                                <div>
+                                	<button class="confirm-btn">Login</button>
+                                </div>
+                                <div>
+                                	<button class="confirm-btn" type="button" onclick="location.href='SignupC'">Sign Up</button>
+                               	</div>
                             </div>
                             <br>
                             <div class="or-signup">Or Sign Up With</div>
