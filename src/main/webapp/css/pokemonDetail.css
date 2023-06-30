@@ -2,33 +2,23 @@
 body {
 	position:relative;
 }
-/* 원형 이미지 */
-#detailimg{
-	border-radius:50%;
-	border:solid white 3px;
-	height:14vw;
-	width:14vw;
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform: translate(25%,-170%);
-	background-color:rgb(255,255,255, 0.5);
-}
-
 /* 원형 이미지 안의 포켓몬 이미지 */
 #pokeimg{
 	position:absolute;
-	width: 10vw;
-	left:50%;
-	top:50%;
-	transform: translate(54%,-215%);
+	width: 14vw;
+	left:60%;
+	top:24%;
+	transform: translate(-50%,-45%);
 	z-index:1;
+	border-radius:50%;
+	border:3px solid white;
+	background-color: rgba(255,255,255,0.5);
+	padding:1%;
 	
 }
 
 /* 이름, 넘버 div */
 #content1{
-	margin-top:4%;
 	display:flex;
 	margin-bottom:2%;
 	margin-left:10%;
@@ -58,12 +48,14 @@ body {
 	border: 3px solid white;
 	background-color:rgb(255,255,255, 0.8);
 	width: 50vw;
-	height: 55vh;
+	height: 60vh;
 	position:absolute;
 	left:50%;
 	top:50%;
 	transform: translate(-50%,-55%);
-	
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
 }
 
 /* 기본 정보 */
