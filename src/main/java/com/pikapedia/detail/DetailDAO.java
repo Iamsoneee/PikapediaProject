@@ -36,6 +36,8 @@ public class DetailDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
+		} else if (lang.equals("en")) {
+			lang = "en";
 		}
 		
 		String language = (String) session.getAttribute("lang");
@@ -48,7 +50,10 @@ public class DetailDAO {
 				sql = sql+" pokemon_ko ";
 			} else if (language.equals("jp")){
 				sql = sql+" pokemon_ja ";
+			} else if (language.equals("en")) {
+				sql = sql+" pokemon_en ";
 			}
+			
 			if(isInteger(search)!=true)
 			{
 				sql = sql+"where p_name = ?";

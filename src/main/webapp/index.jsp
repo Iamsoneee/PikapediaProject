@@ -59,6 +59,14 @@ pageEncoding="UTF-8"%>
               /></a>
             </li>
             <li>
+              <a href="TranslationC?lang=en"
+                ><img
+                  src="img/icon/korea-icon.png"
+                  alt="korean-button"
+                  class="header-icons"
+              /></a>
+            </li>
+            <li>
               <a href="TranslationC?lang=jp">
                 <img
                   src="img/icon/japan-icon.png"
