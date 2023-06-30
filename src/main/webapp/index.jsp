@@ -32,24 +32,26 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="menu-area">
           <ul class="header-icons">
+        
             <li>
+              <div id="dark-mode-bg">
               <a href=""
                 ><img
                   src="img/icon/sun-icon-active.png"
                   alt="bright-mode"
-                  class="header-icons"
+                  class="header-icons dark-mode-icons-gap"
                   id="bright-mode-toggle"
               /></a>
-            </li>
-            <li>
               <a href=""
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
-                  class="header-icons"
+                  class="header-icons dark-mode-icons-gap"
                   id="dark-mode-toggle"
               /></a>
+                </div>
             </li>
+          
             <li>
               <a href="TranslationC?lang=kr"
                 ><img
@@ -61,8 +63,8 @@ pageEncoding="UTF-8"%>
             <li>
               <a href="TranslationC?lang=en"
                 ><img
-                  src="img/icon/korea-icon.png"
-                  alt="korean-button"
+                  src="img/icon/us-icon.png"
+                  alt="english-button"
                   class="header-icons"
               /></a>
             </li>
