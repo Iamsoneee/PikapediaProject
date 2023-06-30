@@ -185,7 +185,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <div class="type-icons-area">
                     <c:forEach var="type" items="${Types}">
                       <c:if
-                        test="${type.typeNameKo eq pokemon.type1 || type.typeNameJa eq pokemon.type1}"
+                        test="${type.typeNameKo eq pokemon.type1 || type.typeNameJa eq pokemon.type1 || type.typeNameEn eq pokemon.type1}"
                       >
                         <img
                           src="img/pokemon-type/circle-type/${type.typeImg}"
@@ -199,7 +199,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         />
                       </c:if>
                       <c:if
-                        test="${type.typeNameKo eq pokemon.type2 || type.typeNameJa eq pokemon.type2}"
+                        test="${type.typeNameKo eq pokemon.type2 || type.typeNameJa eq pokemon.type2 || type.typeNameEn eq pokemon.type2}"
                       >
                         <img
                           src="img/pokemon-type/circle-type/${type.typeImg}"
