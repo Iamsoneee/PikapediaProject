@@ -16,7 +16,8 @@ public class TypeViewC extends HttpServlet {
 		
 
 		DBDAO.getPokemonTypes(request);		//포켓몬 타입테이블 가져오는 기능
-		TranslationDAO.translationTypeViewJP(request);
+		DBDAO.TypeView(request);
+		DBDAO.getAllColor(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
