@@ -28,8 +28,6 @@
 		</c:otherwise>
 		</c:choose>
 <c:forEach var="pokemon" items="${scPokemons}">
-<div id="detailimg">
-</div>
 <img id="pokeimg" alt="" src="${pokemon.p_frontDefault }">
 <div id="mainpage">
 	<div id="content1">
