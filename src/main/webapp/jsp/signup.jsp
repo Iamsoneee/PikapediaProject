@@ -52,13 +52,15 @@
                                 <!--유효성검사1:HTML5의 새로운 input type인 email로 가능-->
                             </div>
                             <button class="confirm-btn">Sign Up</button>
+                            <!-- 
                             <br>
                             <div class="or-signup">Or Sign Up With</div>
                             <br>
                             <div>
                                 <img class="google-logo" alt="구글 로고"
                                      src="img/icon/account-icon/google-icon.png">
-                            </div>
+                            </div> 
+                            -->
                         </div>
                     </form>
                 </div>
