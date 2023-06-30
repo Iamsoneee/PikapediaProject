@@ -38,6 +38,7 @@
     border: transparent;
     margin-bottom: 10px;
     padding-left: 6vw;
+	overflow: hidden;
 }
 .user-icon {
     position: absolute;
