@@ -168,7 +168,9 @@ public class AccountDAO {
 				account.setEmail(email);
 				account.setImg(oldImg);
 				
-				if (img != null) {
+				if (img != null && oldImg.equals("ball.png")) {
+					account.setImg(img);
+				} else if (img != null) {
 					File f = new File(path + "/" + oldImg);
 					f.delete();
 					account.setImg(img);
@@ -193,8 +195,11 @@ public class AccountDAO {
 		String sql = "delete from account where a_id = ?";
 		Account a = (Account) request.getSession().getAttribute("account");
 		String id = a.getId();
+		String oldImg = a.getImg();
+		String path = request.getServletContext().getRealPath("img/profile");
 		
-		try {
+		
+		try {	
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -202,6 +207,10 @@ public class AccountDAO {
 				System.out.println("삭제 성공!");
 				AccountDAO.Logout(request);
 				request.setAttribute("r", "삭제 성공!");
+				if (!oldImg.equals("ball.png")) {
+					File f = new File(path + "/" + oldImg);
+					f.delete();
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
