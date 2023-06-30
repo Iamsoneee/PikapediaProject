@@ -143,14 +143,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
       <!-- Search Bar -->
       <div class="search-bar-area">
-        <form action="DetailC">
+        <form action="DetailC" id="searchForm">
+        <div id="search-button-flex">
         <input
           type="text"
           id="search-input"
           maxlength="10"
           placeholder="Search Pokémon" name="search"
+          onkeydown="handleKeyPress(event)"
         />
-		<button>제출</button>
+		<button id="search-button" type="button" onclick="checkPokemon()"></button>
+		<input type="hidden" value="${param.lang }" id="lang">
+		</div>
         </form>
       </div>
       <!-- Pokemon Cards Gallery -->

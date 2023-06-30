@@ -14,9 +14,10 @@ import com.pikapedia.translation.TranslationDAO;
 public class TypeViewC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		DBDAO.getPokemonTypes(request);	//포켓몬 타입테이블 가져오는 기능
-		DBDAO.getAllColor(request);
+
+		DBDAO.getPokemonTypes(request);		//포켓몬 타입테이블 가져오는 기능
 		DBDAO.TypeView(request);
+		DBDAO.getAllColor(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

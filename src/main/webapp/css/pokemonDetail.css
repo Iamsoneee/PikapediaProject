@@ -6,46 +6,48 @@ body {
 #detailimg{
 	border-radius:50%;
 	border:solid white 3px;
-	height:27vh;
-	width:27vh;
+	height:14vw;
+	width:14vw;
 	position:absolute;
 	left:50%;
 	top:50%;
-	transform: translate(25%,-180%);
+	transform: translate(25%,-170%);
 	background-color:rgb(255,255,255, 0.5);
 }
 
 /* 원형 이미지 안의 포켓몬 이미지 */
 #pokeimg{
 	position:absolute;
-	width: 25vh;
+	width: 10vw;
 	left:50%;
 	top:50%;
-	transform: translate(31%,-185%);
+	transform: translate(54%,-215%);
 	z-index:1;
 	
 }
 
 /* 이름, 넘버 div */
 #content1{
-	margin-top:5%;
+	margin-top:4%;
 	display:flex;
-	margin-bottom:1%;
+	margin-bottom:2%;
 	margin-left:10%;
 	
 }
 #p_numName{
 	color:gray;
-	font-size:20pt;
+	font-size:1.4vw;
 	font-weight:bold;
+	padding-top:1%;
+	line-height:130%;
 }
 #p_typeImgs{
 	display:flex;
 	align-items:flex-end;
 }
 .type_img{
-	width:4vh;
-	height:4vh;
+	width:2vw;
+	height:2vw;
 	margin-left:0.5vw;
 	
 }
@@ -72,6 +74,7 @@ body {
 	height:4vh;
 	padding-left:10%;
 	padding-right:10%;
+	align-items:center;
 	
 }
 .p_info_column{
@@ -79,12 +82,15 @@ body {
 	border-radius:7px;
 	border-style: none;
 	width:25%;
+	height:4vh;
 	color:gray;
 	font-weight:bold;
-	font-size:11pt;
-	text-align:center;
-	padding-top:1.5%;
+	font-size:0.8vw;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
+
 #content3{
 	justify-content:space-between;
 	display:flex;
@@ -98,14 +104,14 @@ body {
 .p_info_column2{
 	width:25%;
 	text-align:center;
-	font-size:11pt;
+	font-size:0.8vw;
 	font-weight:800;
 	color:gray;
 }
 
 /* 설명 div */
 #content4{
-	background-color:rgba(0,0,0,0.15);
+	background-color:rgba(0,0,0,0.1);
 	border-radius : 8px;
 	box-shadow: 4px 4px 5px rgba(0,0,0,0.3);
 	margin-bottom:10vh;
@@ -115,8 +121,8 @@ body {
 	margin-bottom:5vh;
 }
 .p_des{
-	color:black;
-	font-size:11pt;
+	color:rgba(0,0,0,0.7);
+	font-size:0.8vw;
 	padding-left:0.5vw;
 	padding-right:0.5vw;
 	padding-top:0.7vh;
@@ -139,6 +145,7 @@ body {
 	display:flex;
 	margin:0 auto;
 	justify-content:space-around;
+	align-items:center;
 }
 .p_img {
 	width:6vw;
