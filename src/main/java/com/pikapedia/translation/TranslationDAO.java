@@ -28,8 +28,8 @@ public class TranslationDAO {
 			DBDAO.getAllColor(request);
 			DBDAO.getAllPokemon(request);
 		} else if (language.equals("jp")){
-			DBDAO.getAllColorJp(request);
-			DBDAO.getAllPokemonJP(request);
+			DBDAO.getAllColor(request);
+			DBDAO.getAllPokemon(request);
 
 		}
 	}
