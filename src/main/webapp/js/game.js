@@ -1,7 +1,10 @@
 	console.log(document.getElementById('pk_no').value);
 	document.getElementById('account_game').value;
 	var userGameId = document.getElementById('account_game').value;
+	var PokeRno = document.getElementById('PokeRno').value;
+	console.log(PokeRno);
 	
+	console.log(userGameId);
 	var languageDex = document.getElementById('pk_name').value;
 	var cleanDex = languageDex.replace(/[♂♀]/g, '');
 	console.log(cleanDex);
@@ -26,6 +29,18 @@
 	var hint = cleanDex.slice(0, halfLength);
 	let pkno = document.getElementById('pk_no').value;
 	var count = 2;
+	
+	function accountNull() {
+		if(userGameId == null || userGameId =="") {
+			document.getElementsByClassName("enemyPoke-name")[0].innerHTML = "이재강 Lv1";
+	}	
+}	
+accountNull();
+	
+	function changePokemon(){
+		
+	}
+	
 	
 	function countGame() {
 	
@@ -351,8 +366,6 @@
 		  } else {
 		    animationIdPoke = requestAnimationFrame(movePokeImage); // 다음 프레임 요청
 		  }
-		  console.log(currentPositionXX);
-		  console.log(currentPositionYY);
 		}
 
 
