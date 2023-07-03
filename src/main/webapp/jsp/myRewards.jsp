@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
             </div>
             <div id="pokedex-white-bg">
 				<div id="r-accounts">
-					<div class="r-account">
+					<div class="r-account-profile">
 					<c:choose>
 						<c:when test="${empty account.img }">
 						<div id="r-account-img"><img alt="프로필 이미지" src="img/icon/account-icon/profile-user1.png" style="width: 100px; margin-top: 35px; margin-left: 1vh;"></div>						
@@ -41,13 +41,11 @@ pageEncoding="UTF-8"%>
 						<c:choose>
 							<c:when test="${empty account.id }">
 								<div class="r-account">???</div>
-								<div class="r-account">'s Rewards</div>
-								<div class="r-account">:</div>
+								<div class="r-account">'s Rewards :</div>
 							</c:when>
 							<c:otherwise>
 								<div class="r-account">${account.name }</div>
-								<div class="r-account">'s Rewards</div>
-								<div class="r-account">:</div>
+								<div class="r-account">'s Rewards :</div>
 							</c:otherwise>
 						</c:choose>
 							<c:choose>
@@ -58,7 +56,7 @@ pageEncoding="UTF-8"%>
 									<div class="r-account">${RewardCount }</div>
 								</c:otherwise>
 							</c:choose>
-							<div class="r-account">/151</div>
+							<div class="r-account">/${PokemonCount }</div>
 				</div>	
 				<c:choose>
 					<c:when test="${empty account || RewardCount == 0}">

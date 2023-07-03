@@ -17,10 +17,14 @@ function checkPokemon(){
 	let lang = $("#lang").val();
 	console.log(search);
 	console.log(lang);
-	let str = 'ポケモン名、または番号再確認してください。';
+	let str = '포켓몬 이름, 또는 번호 재확인 해주세요';
 	if(lang == 'ko' || lang == ""){
 		str = "포켓몬 이름, 또는 번호 재확인 해주세요";
-	}
+	} else if(lang == 'jp'){
+		str = 'ポケモン名、または番号再確認してください。';
+	} else if(lang == 'en'){
+		str = 'Please reconfirm Pokemon name or number';
+	} 
 	
 	$.ajax({
 		url : 'CheckPokemon',
