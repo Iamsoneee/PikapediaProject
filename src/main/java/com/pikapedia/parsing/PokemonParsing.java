@@ -64,15 +64,11 @@ public class PokemonParsing {
 					String languageName = (String) ((JSONObject) nameData.get("language")).get("name");
 					String name = (String) nameData.get("name");
 					if (languageName.equals("ko")) {
-//						System.out.println("ÀÌ¸§: " + name);
 						p_name = name;
 					}
 				}
 				
-//				System.out.println("¹«°Ô : " + pokemonObject.get("weight"));
 				p_weight = Double.parseDouble(String.valueOf(pokemonObject.get("weight")))/10;
-				
-//				System.out.println("Å° : " + pokemonObject.get("height"));
 				p_height = Double.parseDouble(String.valueOf(pokemonObject.get("height")))/10;
 				
 				JSONArray typesArray = (JSONArray) pokemonObject.get("types");
@@ -91,7 +87,6 @@ public class PokemonParsing {
 						String languageName = (String) ((JSONObject) typeNameData.get("language")).get("name");
 						String typeName = (String) typeNameData.get("name");
 						if (languageName.equals("ko")) {
-//							System.out.println("Å¸ÀÔ : " + typeName);
 							if(typesArray.indexOf(typeObj)==0)
 							{
 								p_type1 = typeName;
@@ -112,7 +107,6 @@ public class PokemonParsing {
 					String versionName = (String) ((JSONObject) nameData.get("version")).get("name");
 					String name = (String) nameData.get("flavor_text");
 					if (languageName.equals("ko")&&versionName.equals("alpha-sapphire")) {
-//						System.out.println("¼³¸í : " + name);
 						p_des = name;
 						
 					}
@@ -124,22 +118,7 @@ public class PokemonParsing {
 				String backDefault = (String) pmg.get("back_default");
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
-				
-//				System.out.println("»çÁø : " + frontDefault);
-//				System.out.println("»çÁø : " + backDefault);
-//				System.out.println("»çÁø : " + frontShiny);
-//				System.out.println("»çÁø : " + backShiny);
-				
-//				System.out.println();
-				System.out.println(p_name);
-//				System.out.println(p_des);
-//				System.out.println(p_type1);
-//				System.out.println(p_type2);
-//				System.out.println(p_height);
-//				System.out.println(p_weight);
-//				
 				String sql = "insert into pokemon_ko values (?,?,?,?,?,?,?,?,?,?,?)";
-				
 				
 				con = DBManager.connect();
 				pstmt = con.prepareStatement(sql);
@@ -157,7 +136,7 @@ public class PokemonParsing {
 				pstmt.setString(11, backShiny);
 				if(pstmt.executeUpdate() == 1) {
 					System.out.println(guide);
-					System.out.println("µî·Ï¿Ï·á");
+					System.out.println("ï¿½ï¿½Ï¿Ï·ï¿½");
 				}
 						
 			}
@@ -215,15 +194,12 @@ public class PokemonParsing {
 					String languageName = (String) ((JSONObject) nameData.get("language")).get("name");
 					String name = (String) nameData.get("name");
 					if (languageName.equals("ja")) {
-//						System.out.println("ÀÌ¸§: " + name);
 						p_name = name;
 					}
 				}
 				
-//				System.out.println("¹«°Ô : " + pokemonObject.get("weight"));
 				p_weight = Double.parseDouble(String.valueOf(pokemonObject.get("weight")))/10;
 				
-//				System.out.println("Å° : " + pokemonObject.get("height"));
 				p_height = Double.parseDouble(String.valueOf(pokemonObject.get("height")))/10;
 				
 				JSONArray typesArray = (JSONArray) pokemonObject.get("types");
@@ -242,7 +218,6 @@ public class PokemonParsing {
 						String languageName = (String) ((JSONObject) typeNameData.get("language")).get("name");
 						String typeName = (String) typeNameData.get("name");
 						if (languageName.equals("ja")) {
-//							System.out.println("Å¸ÀÔ : " + typeName);
 							if(typesArray.indexOf(typeObj)==0)
 							{
 								p_type1 = typeName;
@@ -263,7 +238,6 @@ public class PokemonParsing {
 					String versionName = (String) ((JSONObject) nameData.get("version")).get("name");
 					String name = (String) nameData.get("flavor_text");
 					if (languageName.equals("ja")&&versionName.equals("alpha-sapphire")) {
-//						System.out.println("¼³¸í : " + name);
 						p_des = name;
 						
 					}
@@ -275,20 +249,7 @@ public class PokemonParsing {
 				String backDefault = (String) pmg.get("back_default");
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
-				
-//				System.out.println("»çÁø : " + frontDefault);
-//				System.out.println("»çÁø : " + backDefault);
-//				System.out.println("»çÁø : " + frontShiny);
-//				System.out.println("»çÁø : " + backShiny);
-//				
-//				System.out.println();
-				System.out.println(p_name);
-//				System.out.println(p_des);
-//				System.out.println(p_type1);
-//				System.out.println(p_type2);
-//				System.out.println(p_height);
-//				System.out.println(p_weight);
-				
+
 				String sql = "insert into pokemon_ja values (?,?,?,?,?,?,?,?,?,?,?)";
 				
 				con = DBManager.connect();
@@ -307,7 +268,7 @@ public class PokemonParsing {
 				pstmt.setString(11, backShiny);
 				if(pstmt.executeUpdate() == 1) {
 					System.out.println(guide);
-					System.out.println("µî·Ï¿Ï·á");
+					System.out.println("ï¿½ï¿½Ï¿Ï·ï¿½");
 				}
 						
 			}
@@ -364,16 +325,11 @@ public class PokemonParsing {
 					String languageName = (String) ((JSONObject) nameData.get("language")).get("name");
 					String name = (String) nameData.get("name");
 					if (languageName.equals("en")) {
-//						System.out.println("ÀÌ¸§: " + name);
 						p_name = name;
 					}
 				}
 				
-//				System.out.println("¹«°Ô : " + pokemonObject.get("weight"));
 				p_weight = Double.parseDouble(String.valueOf(pokemonObject.get("weight")))/10;
-				
-				
-//				System.out.println("Å° : " + pokemonObject.get("height"));
 				p_height = Double.parseDouble(String.valueOf(pokemonObject.get("height")))/10;
 				
 				JSONArray typesArray = (JSONArray) pokemonObject.get("types");
@@ -392,7 +348,6 @@ public class PokemonParsing {
 						String languageName = (String) ((JSONObject) typeNameData.get("language")).get("name");
 						String typeName = (String) typeNameData.get("name");
 						if (languageName.equals("en")) {
-//							System.out.println("Å¸ÀÔ : " + typeName);
 							if(typesArray.indexOf(typeObj)==0)
 							{
 								p_type1 = typeName;
@@ -413,9 +368,7 @@ public class PokemonParsing {
 					String versionName = (String) ((JSONObject) nameData.get("version")).get("name");
 					String name = (String) nameData.get("flavor_text");
 					if (languageName.equals("en")&&versionName.equals("alpha-sapphire")) {
-//						System.out.println("¼³¸í : " + name);
 						p_des = name;
-						
 					}
 				}
 				
@@ -425,20 +378,7 @@ public class PokemonParsing {
 				String backDefault = (String) pmg.get("back_default");
 				String frontShiny = (String) pmg.get("front_shiny");
 				String backShiny = (String) pmg.get("back_shiny");
-				
-//				System.out.println("»çÁø : " + frontDefault);
-//				System.out.println("»çÁø : " + backDefault);
-//				System.out.println("»çÁø : " + frontShiny);
-//				System.out.println("»çÁø : " + backShiny);
-//				
-//				System.out.println();
-				System.out.println(p_name);
-//				System.out.println(p_des);
-//				System.out.println(p_type1);
-//				System.out.println(p_type2);
-//				System.out.println(p_height);
-//				System.out.println(p_weight);
-				
+
 				String sql = "insert into pokemon_en values (?,?,?,?,?,?,?,?,?,?,?)";
 				
 				con = DBManager.connect();
@@ -457,7 +397,7 @@ public class PokemonParsing {
 				pstmt.setString(11, backShiny);
 				if(pstmt.executeUpdate() == 1) {
 					System.out.println(guide);
-					System.out.println("µî·Ï¿Ï·á");
+					System.out.println("ï¿½ï¿½Ï¿Ï·ï¿½");
 				}
 						
 			}
