@@ -24,7 +24,7 @@
 			<div id="pokedex-blue-shadow">
 				<div class="quiz-Container">
 					<div class="quiz-LeftBlank">
-					<button id="changePoke" onclick=""> 포켓몬 교체TEST </button>
+						<!-- <button id="changePoke" onclick=""> 포켓몬 교체TEST </button> -->
 					</div>
 					<div class="quiz-Center">
 						<div class="center-Up">
@@ -86,7 +86,7 @@
 					<div class="quiz-RightBlank">
 						<input type="hidden" id="pk_name" value="${poketmon.p_name }">>
 						<input type="hidden" id="account_game" value="${account.id}">>
-						<input type="hidden" id="PokeRno" value="${GameRBean.r_no }">
+						<input type="hidden" id="PokeRno" value="${Rbean.r_id }">
 					</div>
 				</div>
 			</div>
