@@ -18,7 +18,7 @@
             <div id="pokedex-blue-frame" class="iframe-wrapper">
                 <h1 align="center">
                   </h1>
-                 <iframe id="iframe" src="https://d5d0-121-160-41-223.ngrok-free.app" width="100%" height="550"></iframe>
+                 <iframe id="iframe" src="https://f2a5-121-160-41-223.ngrok-free.app" width="100%" height="550"></iframe>
             </div>
         </div>
     </div>
