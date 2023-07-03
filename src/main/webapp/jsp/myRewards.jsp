@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
             </div>
             <div id="pokedex-white-bg">
 				<div id="r-accounts">
-					<div class="r-account-profile">
+					<div class="r-account">
 					<c:choose>
 						<c:when test="${empty account.img }">
 						<div id="r-account-img"><img alt="프로필 이미지" src="img/icon/account-icon/profile-user1.png" style="width: 100px; margin-top: 35px; margin-left: 1vh;"></div>						
