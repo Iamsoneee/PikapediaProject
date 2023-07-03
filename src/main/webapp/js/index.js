@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		body.classList.add("dark-mode");
 		moonIcon.setAttribute("src", "img/icon/moon-icon-active.png");
 		sunIcon.setAttribute("src", "img/icon/sun-icon.png");
-		
+
 	}
 
 	moonIcon.addEventListener("click", function() {
@@ -51,5 +51,5 @@ document.addEventListener("DOMContentLoaded", function() {
 		dropMenu.classList.remove('active');
 		dropMenu.style.maxHeight = '0';
 	});
-	
+
 });
