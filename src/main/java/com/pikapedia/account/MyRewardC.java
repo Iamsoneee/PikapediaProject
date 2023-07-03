@@ -15,6 +15,7 @@ public class MyRewardC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DBDAO.getRewardPokemon(request);
 		DBDAO.getRewardCount(request);
+		DBDAO.getAllPokemonCount(request);
 		request.setAttribute("contentPage", "jsp/myRewards.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
