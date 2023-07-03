@@ -13,7 +13,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.pikapedia.db.DBManager;
 
 public class AccountDAO {
-
+	private static Connection con = DBManager.connect();
+	
 	public static void Login(HttpServletRequest request) {
 		
 		String id = request.getParameter("id");
@@ -21,7 +22,6 @@ public class AccountDAO {
 		
 		String result ="";
 		
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from account where a_id = ?";
@@ -57,8 +57,6 @@ public class AccountDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
 		}
 		
 
@@ -87,7 +85,6 @@ public class AccountDAO {
 	public static void SignUp(HttpServletRequest request) {
 		// 1. 값 or DB
 		String sql = "insert into account values(?, ?, ?, ?, 'ball.png')";
-		Connection con = null;
 		PreparedStatement pstmt = null;
 				
 		try {
@@ -115,9 +112,7 @@ public class AccountDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("db server error");
-		} finally {
-			DBManager.close(con, pstmt, null);
-		}
+		} 
 	}
 	
 	public static void editAccount(HttpServletRequest request) {
@@ -125,7 +120,6 @@ public class AccountDAO {
 		String path = request.getServletContext().getRealPath("img/profile");
 		System.out.println(path);
 		String sql = "update account set a_name = ?, a_pw = ?, a_email = ?, a_img = ? where a_id = ?";
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		Account a = (Account) request.getSession().getAttribute("account");
 		String id = a.getId();
@@ -168,7 +162,9 @@ public class AccountDAO {
 				account.setEmail(email);
 				account.setImg(oldImg);
 				
-				if (img != null) {
+				if (img != null && oldImg.equals("ball.png")) {
+					account.setImg(img);
+				} else if (img != null) {
 					File f = new File(path + "/" + oldImg);
 					f.delete();
 					account.setImg(img);
@@ -182,19 +178,19 @@ public class AccountDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("db server error");
-		} finally {
-			DBManager.close(con, pstmt, null);
 		}
 	}
 	
 	public static void Signout(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "delete from account where a_id = ?";
 		Account a = (Account) request.getSession().getAttribute("account");
 		String id = a.getId();
+		String oldImg = a.getImg();
+		String path = request.getServletContext().getRealPath("img/profile");
 		
-		try {
+		
+		try {	
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -202,13 +198,15 @@ public class AccountDAO {
 				System.out.println("삭제 성공!");
 				AccountDAO.Logout(request);
 				request.setAttribute("r", "삭제 성공!");
+				if (!oldImg.equals("ball.png")) {
+					File f = new File(path + "/" + oldImg);
+					f.delete();
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("db server error");
 			request.setAttribute("r", "db server error");
-		}finally {
-			DBManager.close(con, pstmt, null);
 		}
 	}
 }

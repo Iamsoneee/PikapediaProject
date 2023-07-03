@@ -23,7 +23,7 @@ public class DetailDAO {
 			return false;
 		}
 	}
-	public static void searchPoketmon(HttpServletRequest request) {
+	public static String searchPoketmon(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -36,6 +36,8 @@ public class DetailDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
+		} else if (lang.equals("en")) {
+			lang = "en";
 		}
 		
 		String language = (String) session.getAttribute("lang");
@@ -48,7 +50,10 @@ public class DetailDAO {
 				sql = sql+" pokemon_ko ";
 			} else if (language.equals("jp")){
 				sql = sql+" pokemon_ja ";
+			} else if (language.equals("en")) {
+				sql = sql+" pokemon_en ";
 			}
+			
 			if(isInteger(search)!=true)
 			{
 				sql = sql+"where p_name = ?";
@@ -62,7 +67,8 @@ public class DetailDAO {
 			}
 			rs = pstmt.executeQuery();
 			ArrayList<DetailPokeBean> scPokemons = new ArrayList<DetailPokeBean>();
-			while (rs.next()) {
+			
+			if (rs.next()) {
 				int p_no = rs.getInt("p_no");
 				String p_name = rs.getString ("p_name");
 				double p_height = rs.getDouble ("p_height");
@@ -80,14 +86,19 @@ public class DetailDAO {
 				String p_backShiny = rs.getString("p_back_shiny");
 				
 				scPokemons.add(new DetailPokeBean(p_no,p_name,p_height,p_weight,p_type1,p_type2,p_des,p_frontDefault,p_backDefault,p_frontShiny,p_backShiny));
+				request.setAttribute("scPokemons", scPokemons);
+				request.setAttribute("search", search);
+				return "1";
+			}else {
+				return "0";
 			}
-			request.setAttribute("scPokemons", scPokemons);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return "-1";
 		
 	}
 	public static void typePoketmon(HttpServletRequest request) {

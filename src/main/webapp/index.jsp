@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
   <head>
     <meta charset="UTF-8" />
     <title>Pikapedia</title>
-     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/pikachu-favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,29 +32,39 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="menu-area">
           <ul class="header-icons">
+        
             <li>
+              <div id="dark-mode-bg">
               <a href=""
                 ><img
                   src="img/icon/sun-icon-active.png"
                   alt="bright-mode"
-                  class="header-icons"
+                  class="header-icons dark-mode-icons-gap"
                   id="bright-mode-toggle"
               /></a>
-            </li>
-            <li>
               <a href=""
                 ><img
                   src="img/icon/moon-icon.svg"
                   alt="dark-mode"
-                  class="header-icons"
+                  class="header-icons dark-mode-icons-gap"
                   id="dark-mode-toggle"
               /></a>
+                </div>
             </li>
+          
             <li>
               <a href="TranslationC?lang=kr"
                 ><img
                   src="img/icon/korea-icon.png"
                   alt="korean-button"
+                  class="header-icons"
+              /></a>
+            </li>
+            <li>
+              <a href="TranslationC?lang=en"
+                ><img
+                  src="img/icon/us-icon.png"
+                  alt="english-button"
                   class="header-icons"
               /></a>
             </li>
@@ -104,6 +114,7 @@ pageEncoding="UTF-8"%>
 
     <!-- Footer Area -->
     <footer class="footer">© 2023 Pikapedia. All rights reserved.</footer>
+    <script type="text/javascript" src="js/pokemonMain.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/password.js"></script>
 	<script type="text/javascript" src="js/mypage.js"></script>

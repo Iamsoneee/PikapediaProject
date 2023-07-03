@@ -21,6 +21,7 @@
                     <div class="pokeQuizLogo">
                     	<img id="quizLogo-img" alt="포켓몬 로고 이미지" src="img/game/pokemonLogo.png">
                     </div>
+                    <br/>
                     포켓몬의 실루엣을 보고 <br/>
                     해당 포켓몬의 이름을 맞춰주세요 <br/>
                     <br/>

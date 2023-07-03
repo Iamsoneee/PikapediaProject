@@ -25,6 +25,8 @@ public class DBDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
+		} else if (lang.equals("en")) {
+			lang = "en";
 		}
 		
 		String language = (String) session.getAttribute("lang");
@@ -40,7 +42,9 @@ public class DBDAO {
 					colors.put(rs.getString("t_name_ko"), rs.getString("t_color"));
 				} else if (language.equals("jp")){
 					colors.put(rs.getString("t_name_ja"), rs.getString("t_color"));
-				} 
+				} else if (language.equals("en")) {
+					colors.put(rs.getString("t_name_en"), rs.getString("t_color"));
+				}
 				
 			}
 			request.setAttribute("colors", colors);
@@ -63,7 +67,9 @@ public class DBDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
-		} 
+		} else if (lang.equals("en")) {
+			lang = "en";
+		}
 		
 		// 세션에 언어설정을 담아두고
 				session.setAttribute("lang", lang);
@@ -76,6 +82,8 @@ public class DBDAO {
 			sql = "select * from pokemon_ko order by p_no";
 		} else if (language.equals("jp")){
 			sql = "select * from pokemon_ja order by p_no";
+		} else if (language.equals("en")) {
+			sql = "select * from pokemon_en order by p_no";
 		}
 		
 		try {
@@ -153,7 +161,9 @@ public class DBDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
-		} 
+		} else if (lang.equals("en")) {
+			lang = "en";
+		}
 	
 		//꺼내서 확인
 		String language = (String) session.getAttribute("lang");
@@ -162,8 +172,10 @@ public class DBDAO {
 			sql = "select * from pokemon_ko where p_no in (select r_no from reward where r_id = ?)";
 		} else if (language.equals("jp")){
 			sql = "select * from pokemon_ja where p_no in (select r_no from reward where r_id = ?)";
+		} else if (language.equals("en")) {
+			sql = "select * from pokemon_en where p_no in (select r_no from reward where r_id = ?)";
 		}
-		
+		 
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -196,9 +208,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
+		} 
 	}
 	
 	public static void TypeView(HttpServletRequest request) {
@@ -217,6 +227,8 @@ public class DBDAO {
 			lang = "kr";
 		} else if (lang.equals("jp")) {
 			lang = "jp";
+		} else if (lang.equals("en")) {
+			lang = "en";
 		} 
 	
 		//꺼내서 확인
@@ -225,58 +237,58 @@ public class DBDAO {
 		if (language.equals("kr")) {
 			sql = "select * from pokemon_ko where p_type = ? or p_type2 = ? order by p_no";
 			switch (type) {
-			case "normal":
+			case "Normal":
 				type = "노말";
 				break;
-			case "fire":
+			case "Fire":
 				type = "불꽃";
 				break;
-			case "water":
+			case "Water":
 				type = "물";
 				break;
-			case "grass":
+			case "Grass":
 				type = "풀";
 				break;
-			case "electric":
+			case "Electric":
 				type = "전기";
 				break;
-			case "ice":
+			case "Ice":
 				type = "얼음";
 				break;
-			case "fight":
+			case "Fight":
 				type = "격투";
 				break;
-			case "poison":
+			case "Poison":
 				type = "독";
 				break;
-			case "ground":
+			case "Ground":
 				type = "땅";
 				break;
-			case "flying":
+			case "Flying":
 				type = "비행";
 				break;
-			case "psychic":
+			case "Psychic":
 				type = "에스퍼";
 				break;
-			case "bug":
+			case "Bug":
 				type = "벌레";
 				break;
-			case "rock":
+			case "Rock":
 				type = "바위";
 				break;
-			case "ghost":
+			case "Ghost":
 				type = "고스트";
 				break;
-			case "dragon":
+			case "Dragon":
 				type = "드래곤";
 				break;
-			case "dark":
+			case "Dark":
 				type = "악";
 				break;
-			case "steel":
+			case "Steel":
 				type = "강철";
 				break;
-			case "fairy":
+			case "Fairy":
 				type = "페어리";
 				break;
 			
@@ -286,64 +298,66 @@ public class DBDAO {
 		} else if (language.equals("jp")){
 			sql = "select * from pokemon_ja where p_type = ? or p_type2 = ? order by p_no";
 			switch (type) {
-			case "normal":
+			case "Normal":
 				type = "ノーマル";
 				break;
-			case "fire":
+			case "Fire":
 				type = "ほのお";
 				break;
-			case "water":
+			case "Water":
 				type = "みず";
 				break;
-			case "grass":
+			case "Grass":
 				type = "くさ";
 				break;
-			case "electric":
+			case "Electric":
 				type = "でんき";
 				break;
-			case "ice":
+			case "Ice":
 				type = "こおり";
 				break;
-			case "fight":
+			case "Fight":
 				type = "かくとう";
 				break;
-			case "poison":
+			case "Poison":
 				type = "どく";
 				break;
-			case "ground":
+			case "Ground":
 				type = "じめん";
 				break;
-			case "flying":
+			case "Flying":
 				type = "ひこう";
 				break;
-			case "psychic":
+			case "Psychic":
 				type = "エスパー";
 				break;
-			case "bug":
+			case "Bug":
 				type = "むし";
 				break;
-			case "rock":
+			case "Rock":
 				type = "いわ";
 				break;
-			case "ghost":
+			case "Ghost":
 				type = "ゴースト";
 				break;
-			case "dragon":
+			case "Dragon":
 				type = "ドラゴン";
 				break;
-			case "dark":
+			case "Dark":
 				type = "あく";
 				break;
-			case "steel":
+			case "Steel":
 				type = "はがね";
 				break;
-			case "fairy":
+			case "Fairy":
 				type = "フェアリー";
 				break;
 			
 			default:
 				break;
 			}
+		} else if (language.equals("en")) {
+			sql = "select * from pokemon_en where p_type = ? or p_type2 = ? order by p_no";
 		}
 		
 		try {
@@ -380,9 +394,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}/*
-		 * finally { DBManager.close(con, pstmt, rs); }
-		 */
+		}
 	}
 	
 	public static void getRewardCount(HttpServletRequest request) {
@@ -405,9 +417,7 @@ public class DBDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} /*
-			 * finally { DBManager.close(con, pstmt, rs); }
-			 */
+		} 
 	}
 	
 }

@@ -13,8 +13,8 @@ import com.pikapedia.db.DBDAO;
 public class SignoutC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AccountDAO.Signout(request);
-		DBDAO.getAllColor(request);
 		DBDAO.getAllPokemon(request);
+		DBDAO.getAllColor(request);
 		DBDAO.getPokemonTypes(request);
 		request.setAttribute("contentPage", "jsp/pokemonMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);	

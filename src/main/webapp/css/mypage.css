@@ -7,25 +7,23 @@
 }
 
 .profile-container{
+	position: relative;
     background-color: lightgray;
     height: 210px;
     width: 200px;
     border-radius: 45%;
-    margin-right: 50px;
+    margin-right: 2vw;
 }
 .profile-icon{
-    position: relative;
-    width: 100px;
-    top: 50px;
-    left: 50px;
+    position: absolute;
+    width: 70%;
+    top: 15%;
+    left: 15%;
 }
 
 .btn-container{
-    /*display: flex;*/
-    /*flex-direction: column;*/
     align-items: center;
     justify-content: center;
-    /*margin-top: 10vh;*/
 }
 .btn-container > div{
     position: relative;
@@ -33,20 +31,22 @@
     line-height: 40px;
 }
 .info-input-btn{
-    width: 25vw;
+	width: 25vw;
     height: 40px;
     background-color: lightgray;
     border-radius: 1.5vw;
     border: transparent;
     margin-bottom: 10px;
     padding-left: 6vw;
+	overflow: hidden;
 }
 .user-icon {
     position: absolute;
     width: 20px;
     left: 2vw;
-    margin-top: 10px;
+    margin-top: 1vh;
 }
+
 .confirm-btn-container{
     display: flex;
     justify-content: space-between;
@@ -60,4 +60,5 @@
     border-radius: 1.5vw;
     border: transparent;
     color: white;
+    cursor: pointer;
 }
