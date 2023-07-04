@@ -41,13 +41,11 @@ pageEncoding="UTF-8"%>
 						<c:choose>
 							<c:when test="${empty account.id }">
 								<div class="r-account">???</div>
-								<div class="r-account">'s Rewards</div>
-								<div class="r-account">:</div>
+								<div class="r-account">'s Rewards :</div>
 							</c:when>
 							<c:otherwise>
 								<div class="r-account">${account.name }</div>
-								<div class="r-account">'s Rewards</div>
-								<div class="r-account">:</div>
+								<div class="r-account">'s Rewards :</div>
 							</c:otherwise>
 						</c:choose>
 							<c:choose>
@@ -58,7 +56,7 @@ pageEncoding="UTF-8"%>
 									<div class="r-account">${RewardCount }</div>
 								</c:otherwise>
 							</c:choose>
-							<div class="r-account">/151</div>
+							<div class="r-account">/${PokemonCount }</div>
 				</div>	
 				<c:choose>
 					<c:when test="${empty account || RewardCount == 0}">
