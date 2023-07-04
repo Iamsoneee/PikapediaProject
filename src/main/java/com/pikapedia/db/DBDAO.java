@@ -419,5 +419,24 @@ public class DBDAO {
 			e.printStackTrace();
 		} 
 	}
-	
+	public static void getAllPokemonCount(HttpServletRequest request) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from Pokemon_ko";
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1); 
+				System.out.println(count);
+			}
+			
+			request.setAttribute("PokemonCount", count);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
 }
