@@ -13,10 +13,10 @@ project description link : https://www.notion.so/kaplaproject/Pikapedia-d523d9c5
 
 ## 👥 Member
 Sanghyun Kim (💁🏻‍♂️Team leader)  : vison901@gmail.com  
-Sowon Jung (🎨Designer, Git master) : 
-Jeagang Lea (🎮Game Developer)  
-jeapill Heo (💾DB master)    
-jimin Lea (🥷Devloper)  
+Sowon Jeong (🎨Designer, Git master) : sowon0512@gmail.com
+Jaekang Lee (🎮Game Developer) : aa54389aa@gmail.com
+Jeapill Heo (💾DB master) : does0539@gmail.com
+Jimin Lea (🥷Devloper)  
   
 ## 🛠️Used
 language : Java, Javascript  
