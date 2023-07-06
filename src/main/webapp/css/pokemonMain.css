@@ -126,6 +126,7 @@
 
 .pokemon-card {
 /*   box-sizing: border-box; */
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   margin-top: 5vh;
