@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mypageEdit</title>
 <link rel="stylesheet" href="css/pokedexFrameAccount.css" />
 <link rel="stylesheet" href="css/mypageEdit.css">
@@ -26,8 +27,11 @@
 						<div id="pokedex-white-bg">
 							<div class="profile-container">
 								<img class="profile-icon" src="img/profile/${account.img }">
-								<input type="file" name="img" id="file" style="display:none"/> 
-								<img class="profile-gear-icon" src="img/icon/account-icon/gear.png" onclick="document.all.file.click()"> <%--이걸 누르면 프로필 사진 수정기능 넣어야함--%>
+								<input type="file" name="img" id="file" style="display: none" />
+								<img class="profile-gear-icon"
+									src="img/icon/account-icon/gear.png"
+									onclick="document.all.file.click()">
+								<%--이걸 누르면 프로필 사진 수정기능 넣어야함--%>
 							</div>
 							<div class="btn-container">
 								<div>

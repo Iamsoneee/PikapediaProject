@@ -13,13 +13,14 @@ import com.pikapedia.detail.DetailPokeBean;
 
 public class GameDAO {
 
+	
 	public static void random(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT *FROM POKEMON_KO WHERE P_NO =?";
 		Random random = new Random();
-		int randomNumber = random.nextInt(151) + 1;
+		int randomNumber = random.nextInt(493) + 1;
+		String sql = "SELECT *FROM POKEMON_KO WHERE P_NO =?";
 		
 		try {
 			request.setCharacterEncoding("utf-8");
@@ -88,5 +89,6 @@ public class GameDAO {
 	    
 	    return 0;
 	}
+
 
 }

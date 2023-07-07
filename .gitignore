@@ -12,3 +12,4 @@ DBManager.java
 /target/
 .classpath
 .project
+.metadata/

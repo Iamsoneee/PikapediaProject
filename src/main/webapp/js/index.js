@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		sunIcon.setAttribute("src", "img/icon/sun-icon.png");
 	});
 
-	sunIcon.addEventListener("click", function() {
+	sunIcon.addEventListener("click", function(event) {
 		// 다크 모드 설정을 로컬 스토리지에서 제거합니다.
 		event.preventDefault(); // 클릭 이벤트의 기본 동작 중지
 		localStorage.removeItem("darkMode");
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		sunIcon.setAttribute("src", "img/icon/sun-icon-active.png");
 	});
 
-
 	/* Drop Down Menu JS */
+	/*
 	const dropIcon = document.querySelector('.drop-icon-img');
 	const dropMenu = document.querySelector('.drop-menu');
 	dropIcon.addEventListener('click', (event) => {
@@ -51,5 +51,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		dropMenu.classList.remove('active');
 		dropMenu.style.maxHeight = '0';
 	});
+	*/
 
 });
+
+/*Off-Canvas Menu*/
+function openNav() {
+	document.getElementById("mySidenav").style.width = "70%";
+	document.getElementById("main").style.marginLeft = "0";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+	document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("main").style.marginLeft = "0";
+	
+}
