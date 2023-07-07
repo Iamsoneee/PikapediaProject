@@ -90,39 +90,5 @@ public class GameDAO {
 	    return 0;
 	}
 
-	public static void reviewPoke(HttpServletRequest request) {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "SELECT R_NO FROM REWARD WHERE R_ID = ?";
-		String id = request.getParameter("id");
-		
-		try {
-			request.setCharacterEncoding("utf-8");
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			
-			
-			pstmt.setString(1,id);
-			rs = pstmt.executeQuery();
-			
-			if (rs.next()) {
-				int r_no = rs.getInt("R_NO");
-				String r_id = rs.getString("R_ID");
-				
-				
-				GameRBean Rbean = new GameRBean(r_no, r_id);
-				request.setAttribute("Rbean", Rbean);
-				
-			}
-			
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-	}
 
 }

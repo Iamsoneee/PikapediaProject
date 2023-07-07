@@ -7,6 +7,7 @@ pageEncoding="UTF-8"%>
     <meta charset="UTF-8" />
     <title>Pikapedia</title>
     <link rel="icon" href="img/pikachu-favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="any" href="image/x-icon">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
