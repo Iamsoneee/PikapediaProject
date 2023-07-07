@@ -16,6 +16,7 @@
 .quiz-LeftBlank{
   height: 71vh;
   width: 20vw;
+/*   border : 3px solid red; */
 }
 
 .quiz-RightBlank{
@@ -83,7 +84,7 @@
 	width: 9vw;
 /* 	border: none; */
 	position: absolute;
-	top: 6vw;
+	top: 50%;
 	left: 6vw;
 	}
 #attackBtn{
@@ -91,7 +92,7 @@
 	font-size: 1.5vw;
 	position: absolute;
 	right: 7.5vw;
-	top: 8vw;
+	top: 7vw;
 }
 /* #cancelBtn{
 	display : none;
@@ -244,7 +245,7 @@ width: 22vw;
 	text-align : center;
 	color: black;
 	position : absolute;
-	left : 9vw;
+	left : 10vw;
 	bottom : 4vw;
 	letter-spacing: 10px;
 	white-space: nowrap;
