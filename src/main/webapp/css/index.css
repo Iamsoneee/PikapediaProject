@@ -5,7 +5,6 @@
 	box-sizing: border-box;
 	font-family: "Open Sans", sans-serif;
 }
-
 body {
 	background-color: #ecc22e;
 	color: white;
@@ -123,6 +122,59 @@ article {
 	width: 1em;
 }
 
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color:#ecc22e; /* Color*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-right .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
 /* Main Area */
 #contents-area /* Include Area */ {
 	background-color: rgb(172, 215, 215, 0.8);
@@ -160,17 +212,20 @@ article {
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
+
 /* Media Query for Responsive Website */
 @media screen and (max-width : 1024px) {
 	.header-wrapper {
 		align-items: center;
 		position: relative;
 	}
+	
 	.drop-menu-wrapper {
 		display: flex;
 		position: relative;
 		width: 100%;
 	}
+	
 	.drop-menu {
 		display: none;
 		flex-direction: column;
@@ -187,9 +242,11 @@ article {
 	.drop-menu li {
 		text-align: center;
 	}
+	/*
 	.drop-menu li a:hover {
 		color: #ecc22e;
 	}
+	*/
 	.drop-icon-img {
 		display: flex;
 		position: absolute;

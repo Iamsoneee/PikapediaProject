@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>quizOutput</title>
 <link rel="stylesheet" href="css/game.css" />
 <link rel="stylesheet" href="css/index.css" />
@@ -23,9 +24,9 @@
 			</div>
 			<div id="pokedex-blue-shadow">
 				<div class="quiz-Container">
-					<div class="quiz-LeftBlank">
-						<!-- <button id="changePoke" onclick=""> 포켓몬 교체TEST </button> -->
-					</div>
+
+					<div class="quiz-LeftBlank"></div>
+
 					<div class="quiz-Center">
 						<div class="center-Up">
 							<div class="myPoke">
@@ -42,11 +43,14 @@
 							<div class="enemyPoke">
 								<div class="enemyPoke-Up">
 									<img id="imgshaddow" alt="포켓몬 이미지"
-										src="${poketmon.p_frontDefault}"> 
+										src="${poketmon.p_frontDefault}">
 								</div>
 								<div class="enemyPoke-Down">
-								<div class="enemyPoke-name"> ${account.id } Lv1</div>
-									<img id="myPokeHp" alt="우리트레이너 체력바" src="img/game/myPokemonHp.png">
+
+									<div class="enemyPoke-name">${account.id}Lv1</div>
+									<img id="myPokeHp" alt="우리트레이너 체력바"
+										src="img/game/myPokemonHp.png">
+
 								</div>
 							</div>
 						</div>
@@ -54,10 +58,11 @@
 							<div class="blank-Space">
 								<div class="blank-SpaceIn">
 									<div class="spaceInTwo">
-							 		<img id="userInputSpace" alt="인풋창" src="img/game/userInputImg.png">
-										<input type="hidden" id="userInputName" onkeydown="handleEnterKey(event)"> 
+										<img id="userInputSpace" alt="인풋창"
+											src="img/game/userInputImg.png"> <input type="hidden"
+											id="userInputName" onkeydown="handleEnterKey(event)">
 										<button id="attackBtn">공격하기</button>
-									<!-- 	<button id="cancelBtn">취소</button> -->
+										<!-- 	<button id="cancelBtn">취소</button> -->
 									</div>
 								</div>
 							</div>
@@ -92,6 +97,6 @@
 			</div>
 		</div>
 	</div>
-	 <script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>
