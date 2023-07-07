@@ -50,11 +50,9 @@
 								src="img/icon/japan-icon.png" alt="japanese-button"
 								class="header-icons" /></a></li>
 					</ul>
-
-					<!-- OffCanvas Menu -->
 					<div class="drop-menu-wrapper">
 						<ul class="drop-menu" style="max-height: 0px">
-							<li><a href="GameHomeC">Quiz</a></li>
+							<li><a href="GameHomeC">Game</a></li>
 							<li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
 							<li><a href="CommunityC">Community</a></li>
 							<c:choose>
@@ -71,7 +69,6 @@
 						<img onclick="openNav()" class="drop-icon-img"
 							src="img/icon/list-icon.png" alt="menu-icon" />
 					</div>
-
 					<!-- OffCanvas Menu -->
 					<div id="mySidenav" class="sidenav">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -88,29 +85,28 @@
 							</c:otherwise>
 						</c:choose>
 					</div>
-
 					<!-- Dropdown Menu -->
 					<!-- 
-				<div class="drop-menu-wrapper">
-					<ul class="drop-menu" style="max-height: 0px">
-						<li><a href="GameHomeC">Quiz</a></li>
-						<li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
-						<li><a href="CommunityC">Community</a></li>
-						<c:choose>
-							<c:when test="${empty account.id }">
-								<li><a href="LoginC">Login</a></li>
-								<li><a href="SignupC">Signup</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="LogoutC">Logout</a></li>
-								<li><a href="MyPageC">Mypage</a></li>
-							</c:otherwise>
-						</c:choose>
-					</ul>
-					<a href="" class="drop-icon-area"><img class="drop-icon-img"
-						src="img/icon/list-icon.png" alt="" /></a>
-				</div>
-				 -->
+					<div class="drop-menu-wrapper">
+						<ul class="drop-menu" style="max-height: 0px">
+							<li><a href="GameHomeC">Quiz</a></li>
+							<li><a href="MyRewardC?id=${account.id }">MyRewards</a></li>
+							<li><a href="CommunityC">Community</a></li>
+							<c:choose>
+								<c:when test="${empty account.id }">
+									<li><a href="LoginC">Login</a></li>
+									<li><a href="SignupC">Signup</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a href="LogoutC">Logout</a></li>
+									<li><a href="MyPageC">Mypage</a></li>
+								</c:otherwise>
+							</c:choose>
+						</ul>
+						<a href="" class="drop-icon-area"><img class="drop-icon-img"
+							src="img/icon/list-icon.png" alt="" /></a>
+					</div>
+					 -->
 				</div>
 			</div>
 		</header>

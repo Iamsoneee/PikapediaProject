@@ -155,7 +155,6 @@
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0 0 10px 10px;
   bottom: 0;
-  z-index: 9999;
 }
 
 .card-contents {
@@ -175,7 +174,6 @@
 
 .card-pokemon-img {
   width: 95px;
-  z-index: 5;
 }
 
 .card-type-icon {
