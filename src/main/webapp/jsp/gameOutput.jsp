@@ -24,7 +24,9 @@
 			</div>
 			<div id="pokedex-blue-shadow">
 				<div class="quiz-Container">
+
 					<div class="quiz-LeftBlank"></div>
+
 					<div class="quiz-Center">
 						<div class="center-Up">
 							<div class="myPoke">
@@ -35,7 +37,7 @@
 										src="img/game/enemyPokeHpNew.png">
 								</div>
 								<div class="myPoke-Down">
-									<img id="trainerImg" alt="트레이너 이미지" src="img/game/trainer.png">
+					\				<img id="trainerImg" alt="트레이너 이미지" src="img/game/trainer.png">
 								</div>
 							</div>
 							<div class="enemyPoke">
@@ -44,9 +46,11 @@
 										src="${poketmon.p_frontDefault}">
 								</div>
 								<div class="enemyPoke-Down">
+
 									<div class="enemyPoke-name">${account.id}Lv1</div>
 									<img id="myPokeHp" alt="우리트레이너 체력바"
 										src="img/game/myPokemonHp.png">
+
 								</div>
 							</div>
 						</div>
@@ -87,6 +91,7 @@
 					<div class="quiz-RightBlank">
 						<input type="hidden" id="pk_name" value="${poketmon.p_name }">>
 						<input type="hidden" id="account_game" value="${account.id}">>
+						<input type="hidden" id="PokeRno" value="${Rbean.r_id }">
 					</div>
 				</div>
 			</div>
