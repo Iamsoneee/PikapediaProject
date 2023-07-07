@@ -4,6 +4,7 @@ pageEncoding="UTF-8" %>
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>community</title>
     <link rel="stylesheet" href="css/community.css" />
     <link rel="stylesheet" href="css/pokedexFrame.css" />

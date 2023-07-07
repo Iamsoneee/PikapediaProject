@@ -1,7 +1,10 @@
 	console.log(document.getElementById('pk_no').value);
 	document.getElementById('account_game').value;
 	var userGameId = document.getElementById('account_game').value;
+	var PokeRno = document.getElementById('PokeRno').value;
+	console.log("PokeRno : " + PokeRno);
 	
+	console.log("userGameId : " + userGameId); // 로그인 안할 시에 공백
 	var languageDex = document.getElementById('pk_name').value;
 	var cleanDex = languageDex.replace(/[♂♀]/g, '');
 	console.log(cleanDex);
@@ -26,6 +29,18 @@
 	var hint = cleanDex.slice(0, halfLength);
 	let pkno = document.getElementById('pk_no').value;
 	var count = 2;
+	
+	function accountNull() {
+		if(userGameId == null || userGameId =="") {
+			document.getElementsByClassName("enemyPoke-name")[0].innerHTML = "이재강 Lv1";
+	}	
+}	
+accountNull();
+	
+	function changePokemon(){
+		
+	}
+	
 	
 	function countGame() {
 	
@@ -200,7 +215,6 @@
 	
 	  attackBtn.addEventListener("click", function() {
 		  isReturning = false;
-		  console.log(isReturning);
 		    inputValue = userInputName.value; // inputValue에 값을 할당
 		    console.log("사용자 입력 값:", inputValue);
 		    console.log("포켓몬 입력 값:", cleanDex);
@@ -312,8 +326,6 @@
 		  } else {
 		    animationId = requestAnimationFrame(moveImage); // 다음 프레임 요청
 		  }
-		  console.log(currentPositionX);
-		  console.log(currentPositionY);
 		}
 		
 	var startPositionXX = 0;
@@ -351,8 +363,6 @@
 		  } else {
 		    animationIdPoke = requestAnimationFrame(movePokeImage); // 다음 프레임 요청
 		  }
-		  console.log(currentPositionXX);
-		  console.log(currentPositionYY);
 		}
 
 
