@@ -22,7 +22,7 @@ Jimin Lea (🥷Devloper)
 language : Java, Javascript  
 Build : Maven  
 DB : Oracle Cloud DB  
-Server : Asure (local : tomcat)  
+Server : Azure (local : tomcat)  
 VCS : Git  
 
 ## Features
