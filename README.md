@@ -2,8 +2,10 @@
 Hi there! 👋  We are a short-term team studying to become a professional developer in Korea  
 This app is a great app allows you to search for Pokemon up to 4th generation by type
 
+project link :  https://pikapedia.azurewebsites.net/
 
-project description link : https://www.notion.so/kaplaproject/Pikapedia-d523d9c547294f87907ad105c6625d08?pvs=4 (korean document)
+
+project description Notion link :<br> https://www.notion.so/kaplaproject/Pikapedia-d523d9c547294f87907ad105c6625d08?pvs=4 (korean document)
 
 
 
