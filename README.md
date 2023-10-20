@@ -30,7 +30,7 @@ VCS : Git
 ## ✨ Features
 
 1. 🎮　Guess the Pokemon by looking at the silhouette. If you guess the name of the Pokemon, you will get a Pokemon sticker. (Only support Korean right now)
-(Developed by Jeagang Lea)
+(Developed by Jaegang Lee)
 <img width="40%" alt="game_description" src="https://github.com/Iamsoneee/pikapediaProject/assets/116790133/5112b6dd-5ff3-4a47-86e0-bff094566400">
 <img width="40%" alt="pokemon_shadow_img" src="https://github.com/Iamsoneee/pikapediaProject/assets/116790133/5c1f8898-ba58-4183-88d4-6e507cff6073">
 <img width="40%" alt="right_answer" src="https://github.com/Iamsoneee/pikapediaProject/assets/116790133/e640c16d-9e6d-43b5-84d3-49671bc17bd3">
